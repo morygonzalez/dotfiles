@@ -1,0 +1,8 @@
+*history
+*.DS_Store
+*.log
+.bash_logout
+.lesshst
+.sudo_as_admin_successful
+.viminfo
+.zcompdump

@@ -1,0 +1,6 @@
+---
+gem: "--no-ri --no-rdoc"
+#gem: "--no-ri --no-rdoc --user-install"
+:source:
+- http://rubygems.org/
+- http://gemcutter.org

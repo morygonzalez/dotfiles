@@ -1,0 +1,37 @@
+# 修飾キーをctrl + t
+escape ^Tt
+
+# 最終行のウィンドウ一覧を表示
+hardstatus alwayslastline "%w"
+
+# 最終行に時刻を表示
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+
+# スタートメッセージを表示させない
+startup_message off
+
+# ビープを鳴らさない
+vbell off
+
+# $TERM
+# 'ti@:te@' をつけるとスクロールバックバッファーを
+# 操作できて便利だけど、vimで編集が終わったあとに
+# コンソールが復元されない。
+#termcapinfo xterm* ti@:te@
+term xterm-color
+
+# scrollback
+defscrollback 2000
+
+altscreen on
+
+# 分割線など
+sorendition "+rb .G"
+
+screen -t vim 1
+screen -t zsh 2
+screen -t db 3
+screen -t termtter 4
+select 1
+
+
