@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Library/WebServer/Documents/asonmon/.git'
+let g:netrw_dirhist_2='/Library/WebServer/Documents/aso-denku/app/views/satellites'
+let g:netrw_dirhist_3='/private/etc/apache2'
+let g:netrw_dirhist_4='/Library/WebServer/Documents/geopark/geosites/limonade'
+let g:netrw_dirhist_5='/var/www/yomigana'
+let g:netrw_dirhist_6='/var/www/codeigniter/system/application/config'
+let g:netrw_dirhist_7='/usr/local/nginx/conf'
