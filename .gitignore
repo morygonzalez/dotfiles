@@ -7,3 +7,5 @@
 .viminfo
 .zcompdump
 *.mine
+*.netrwhist
+
