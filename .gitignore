@@ -8,4 +8,5 @@
 .zcompdump
 *.mine
 *.netrwhist
+.gitCOMMIT_EDITMSG
 
