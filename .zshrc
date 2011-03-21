@@ -64,6 +64,7 @@ function _update_vcs_info_msg() {
 }
 add-zsh-hook precmd _update_vcs_info_msg
 RPROMPT="%1(v|%F{green}%1v%f|)"
+
 # auto change directory
 #
 setopt auto_cd
