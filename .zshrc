@@ -229,7 +229,7 @@ esac
 
 
 # Editor
-export EDITOR=/usr/bin/vim
+export EDITOR=vim
 
 # hitode909 cd
 # http://d.hatena.ne.jp/hitode909/20101002/1285994430
