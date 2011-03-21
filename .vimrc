@@ -57,5 +57,8 @@ set backspace=indent,eol,start
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
+" Vimpathogen
 let g:neocomplcache_enable_at_startup = 1
 
+" Vim command completion
+set wildmode=list
