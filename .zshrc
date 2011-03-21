@@ -14,7 +14,7 @@
 # ls -s のときのファイルサイズを1024バイト単位で表示
 export BLOCKSIZE=1024
 
-autoload colors
+autoload -Uz colors
 colors
 
 case ${UID} in
@@ -37,8 +37,6 @@ esac
 # VCS branch name
 # http://d.hatena.ne.jp/mollifier/20100906/p1
 autoload -Uz add-zsh-hook
-autoload -Uz colors
-colors
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' enable git svn hg bzr
