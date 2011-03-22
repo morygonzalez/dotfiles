@@ -14,8 +14,9 @@
 # ls -s のときのファイルサイズを1024バイト単位で表示
 export BLOCKSIZE=1024
 
-autoload colors
+autoload -Uz colors
 colors
+
 case ${UID} in
 0)
     PROMPT="%B%{${fg[red]}%}%/#%{${reset_color}%}%b "
@@ -32,6 +33,35 @@ case ${UID} in
         PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
     ;;
 esac
+
+# VCS branch name
+# http://d.hatena.ne.jp/mollifier/20100906/p1
+autoload -Uz add-zsh-hook
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' enable git svn hg bzr
+zstyle ':vcs_info:*' formats '(%s)-[%b]'
+zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
+zstyle ':vcs_info:bzr:*' use-simple true
+
+autoload -Uz is-at-least
+if is-at-least 4.3.10; then
+  # この check-for-changes が今回の設定するところ
+  zstyle ':vcs_info:git:*' check-for-changes true
+  zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
+  zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
+  zstyle ':vcs_info:git:*' formats '(%s)-[%b] %c%u'
+  zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
+fi
+
+function _update_vcs_info_msg() {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+add-zsh-hook precmd _update_vcs_info_msg
+RPROMPT="%1(v|%F{green}%1v%f|)"
 
 # auto change directory
 #
@@ -198,7 +228,7 @@ esac
 
 
 # Editor
-export EDITOR=/usr/bin/vim
+export EDITOR=vim
 
 # hitode909 cd
 # http://d.hatena.ne.jp/hitode909/20101002/1285994430
