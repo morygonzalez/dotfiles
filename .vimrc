@@ -1,4 +1,4 @@
-set nocompatible "vi非互換モード
+" set nocompatible "vi非互換モード
 
 "#######################
 " 表示系
@@ -10,14 +10,24 @@ set ruler "ルーラーの表示
 set showcmd "入力中のコマンドをステータスに表示する
 set showmatch "括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
+set background=dark
+set t_Co=256 " 256 color
+colorscheme delek
+
+" ファイルを開いた際に、前回終了時の行で起動
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+
+" カーソル移動を見た目のやつに
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 "#######################
 " プログラミングヘルプ系
 "#######################
 syntax on "カラー表示
 set smartindent "オートインデント
-set background=dark
-colorscheme delek
 
 " tab関連
 set expandtab "タブの代わりに空白文字挿入
@@ -26,9 +36,6 @@ set ts=2 sw=2 sts=0 "タブは半角4文字分のスペース
 set shiftwidth=2
 " :set shiftwidth=4
 set softtabstop=0
-
-" ファイルを開いた際に、前回終了時の行で起動
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
 "#######################
 " 検索系
@@ -39,7 +46,7 @@ set wrapscan "検索時に最後まで行ったら最初に戻る
 set noincsearch "検索文字列入力時に順次対象文字列にヒットさせない
 set hlsearch "検索結果をハイライト表示
 " ESCキー2度押しでハイライトを消す
-nnoremap <Esc><Esc> :<C-u>nohl<Return>
+nnoremap <Esc><Esc> :<C-u>nohl<Return><Esc>
 " set nohlsearch "検索結果文字列の非ハイライト表示
 
 "#######################
@@ -57,5 +64,8 @@ set backspace=indent,eol,start
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
+" Vimpathogen
 let g:neocomplcache_enable_at_startup = 1
 
+" Vim command completion
+set wildmode=longest,list

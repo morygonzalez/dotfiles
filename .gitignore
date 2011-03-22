@@ -1,6 +1,7 @@
 *history
 *.DS_Store
 *.log
+*.swp
 .bash_logout
 .lesshst
 .sudo_as_admin_successful
@@ -8,4 +9,5 @@
 .zcompdump
 *.mine
 *.netrwhist
+.gitCOMMIT_EDITMSG
 
