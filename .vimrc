@@ -1,4 +1,4 @@
-" set nocompatible "vi非互換モード
+set nocompatible "vi非互換モード
 
 "#######################
 " 表示系
