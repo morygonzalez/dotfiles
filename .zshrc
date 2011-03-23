@@ -14,7 +14,7 @@
 # ls -s のときのファイルサイズを1024バイト単位で表示
 export BLOCKSIZE=1024
 
-autoload -Uz colors
+autoload U colors
 colors
 
 case ${UID} in
@@ -36,8 +36,8 @@ esac
 
 # VCS branch name
 # http://d.hatena.ne.jp/mollifier/20100906/p1
-autoload -Uz add-zsh-hook
-autoload -Uz vcs_info
+autoload U add-zsh-hook
+autoload U vcs_info
 
 zstyle ':vcs_info:*' enable git svn hg bzr
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
@@ -45,7 +45,7 @@ zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
 zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
 zstyle ':vcs_info:bzr:*' use-simple true
 
-autoload -Uz is-at-least
+autoload U is-at-least
 if is-at-least 4.3.10; then
   # この check-for-changes が今回の設定するところ
   zstyle ':vcs_info:git:*' check-for-changes true
