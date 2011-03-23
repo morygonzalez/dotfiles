@@ -3,6 +3,9 @@
 	status = auto
 	branch = auto
 	interactive = auto
+	ui = true
 [user]
 	name = 森井ゴンザレス
 	email = morygonzalez@gmail.com
+[core]
+	editor = vim
