@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/opsplorer"]
 	path = .vim/bundle/opsplorer
 	url = https://github.com/vim-scripts/opsplorer.git
+[submodule ".vim/bundle/neocomplcache"]
+	path = .vim/bundle/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.git
