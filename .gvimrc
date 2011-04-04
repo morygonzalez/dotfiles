@@ -1,5 +1,7 @@
 colorscheme delek
-set guifont=MS_Gothic:h10:w5
+if has('kaoriya')
+  set guifont=MS_Gothic:h10:w5
+endif
 set bg=dark
 set nobackup
 set lines=24
