@@ -1,4 +1,4 @@
-colorscheme delek
+colorscheme desert256
 if has('kaoriya')
   set guifont=MS_Gothic:h10:w5
 endif
@@ -11,6 +11,6 @@ set lines=24
 set columns=80
 
 "Note background set to dark in .vimrc
-highlight Normal guifg=grey guibg=black
-highlight NonText guifg=grey guibg=black
-highlight Search guifg=black guibg=yellow
+"highlight Normal guifg=grey guibg=black
+"highlight NonText guifg=grey guibg=black
+"highlight Search guifg=black guibg=yellow
