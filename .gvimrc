@@ -9,6 +9,8 @@ set bg=dark
 set nobackup
 set lines=24
 set columns=80
+
+" enable toolbar and menu
 set guioptions-=T
 set guioptions-=m
 
