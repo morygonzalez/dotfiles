@@ -197,7 +197,11 @@ esac
 unset LSCOLORS
 case "${TERM}" in
 xterm)
-    export TERM=xterm-color
+    if [ -e /lib/terminfo/x/xterm-256color ] || [ -e /usr/share/terminfo/x/xterm*256color ] ; then
+        export TERM=xterm-256color
+    else
+        export TERM=xterm-color
+    fi
     ;;
 kterm)
     export TERM=kterm-color
