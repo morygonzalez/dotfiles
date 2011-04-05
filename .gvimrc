@@ -10,6 +10,10 @@ set nobackup
 set lines=24
 set columns=80
 
+" enable toolbar and menu
+set guioptions-=T
+set guioptions-=m
+
 "Note background set to dark in .vimrc
 "highlight Normal guifg=grey guibg=black
 "highlight NonText guifg=grey guibg=black
