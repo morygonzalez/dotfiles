@@ -163,6 +163,8 @@ alias lg="ls |grep"
 alias du="du -h"
 alias df="df -h"
 
+alias pd="popd"
+
 alias su="su -l"
 
 case "${OSTYPE}" in
