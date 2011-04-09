@@ -20,19 +20,19 @@ colors
 
 case ${UID} in
 0)
-    PROMPT="%B%{${fg[red]}%}%/#%{${reset_color}%}%b "
-    PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
-    SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-        PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
-    ;;
+  PROMPT="%B%{${fg[red]}%}%/#%{${reset_color}%}%b "
+  PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
+  SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
+  [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+    PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
+  ;;
 *)
-    PROMPT="%{${fg[red]}%}%/%%%{${reset_color}%} "
-    PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
-    SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-        PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
-    ;;
+  PROMPT="%{${fg[red]}%}%/%%%{${reset_color}%} "
+  PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
+  SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+  [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+    PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
+  ;;
 esac
 
 # VCS branch name
@@ -50,16 +50,16 @@ autoload U is-at-least
 if is-at-least 4.3.10; then
   # この check-for-changes が今回の設定するところ
   zstyle ':vcs_info:git:*' check-for-changes true
-  zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
+  zstyle ':vcs_info:git:*' stagedstr "+"  # 適当な文字列に変更する
   zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
   zstyle ':vcs_info:git:*' formats '(%s)-[%b] %c%u'
   zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
 fi
 
 function _update_vcs_info_msg() {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 add-zsh-hook precmd _update_vcs_info_msg
 RPROMPT="%1(v|%F{green}%1v%f|)"
@@ -115,8 +115,8 @@ bindkey '^S' history-incremental-pattern-search-forward
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt share_history        # share command history data
+setopt hist_ignore_dups   # ignore duplication command history list
+setopt share_history    # share command history data
 
 
 ## Completion configuration
@@ -141,18 +141,18 @@ autoload zed
 #
 # expand aliases before completing
 #
-setopt complete_aliases     # aliased ls needs if file/dir completions work
+setopt complete_aliases   # aliased ls needs if file/dir completions work
 
 alias where="command -v"
 alias j="jobs -l"
 
 case "${OSTYPE}" in
 freebsd*|darwin*)
-    alias ls="ls -G -w"
-    ;;
+  alias ls="ls -G -w"
+  ;;
 linux*)
-    alias ls="ls --color"
-    ;;
+  alias ls="ls --color"
+  ;;
 esac
 
 alias la="ls -a"
@@ -169,28 +169,28 @@ alias su="su -l"
 
 case "${OSTYPE}" in
 darwin*)
-    alias updateports="sudo port selfupdate; sudo port outdated"
-    alias portupgrade="sudo port upgrade installed"
-    ;;
+  alias updateports="sudo port selfupdate; sudo port outdated"
+  alias portupgrade="sudo port upgrade installed"
+  ;;
 freebsd*)
-    case ${UID} in
-    0)
-        updateports() 
-        {
-            if [ -f /usr/ports/.portsnap.INDEX ]
-            then
-                portsnap fetch update
-            else
-                portsnap fetch extract update
-            fi
-            (cd /usr/ports/; make index)
+  case ${UID} in
+  0)
+    updateports() 
+    {
+      if [ -f /usr/ports/.portsnap.INDEX ]
+      then
+        portsnap fetch update
+      else
+        portsnap fetch extract update
+      fi
+      (cd /usr/ports/; make index)
 
-            portversion -v -l \<
-        }
-        alias appsupgrade='pkgdb -F && BATCH=YES NO_CHECKSUM=YES portupgrade -a'
-        ;;
-    esac
+      portversion -v -l \<
+    }
+    alias appsupgrade='pkgdb -F && BATCH=YES NO_CHECKSUM=YES portupgrade -a'
     ;;
+  esac
+  ;;
 esac
 
 
@@ -199,38 +199,38 @@ esac
 unset LSCOLORS
 case "${TERM}" in
 xterm)
-    if [ -e /lib/terminfo/x/xterm-256color ] || [ -e /usr/share/terminfo/x/xterm*256color ] ; then
-        export TERM=xterm-256color
-    else
-        export TERM=xterm-color
-    fi
-    ;;
+  if [ -e /lib/terminfo/x/xterm-256color -o -e /usr/share/terminfo/x/xterm*256color ] ; then
+    export TERM=xterm-256color
+  else
+    export TERM=xterm-color
+  fi
+  ;;
 kterm)
-    export TERM=kterm-color
-    # set BackSpace control character
-    stty erase
-    ;;
+  export TERM=kterm-color
+  # set BackSpace control character
+  stty erase
+  ;;
 cons25)
-    unset LANG
-    export LSCOLORS=FxFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors \
-        'di=;35;01' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-    ;;
+  unset LANG
+  export LSCOLORS=FxFxCxdxBxegedabagacad
+  export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+  zstyle ':completion:*' list-colors \
+    'di=;35;01' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+  ;;
 esac
 
 # set terminal title including current directory
 #
 case "${TERM}" in
 kterm*|xterm*)
-    precmd() {
-        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
-    }
-    export LSCOLORS=Exfxcxdxbxegedabagacad
-    export LS_COLORS='di=34;01:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors \
-        'di=34;01' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-    ;;
+  precmd() {
+    echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
+  }
+  export LSCOLORS=Exfxcxdxbxegedabagacad
+  export LS_COLORS='di=34;01:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+  zstyle ':completion:*' list-colors \
+    'di=34;01' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+  ;;
 esac
 
 
@@ -241,13 +241,13 @@ export EDITOR=vim
 # http://d.hatena.ne.jp/hitode909/20101002/1285994430
 function up()
 {
-    to=$(perl -le '$p=$ENV{PWD}."/";$d="/".$ARGV[0]."/";$r=rindex($p,$d);\
-                   $r>=0 && print substr($p, 0, $r+length($d))' $1)
-    if [ "$to" = "" ]; then
-        echo "no such file or directory: $1" 1>&2
-        return 1
-    fi
-    cd $to
+  to=$(perl -le '$p=$ENV{PWD}."/";$d="/".$ARGV[0]."/";$r=rindex($p,$d);\
+           $r>=0 && print substr($p, 0, $r+length($d))' $1)
+  if [ "$to" = "" ]; then
+    echo "no such file or directory: $1" 1>&2
+    return 1
+  fi
+  cd $to
 }
 
 ## load user .zshrc configuration file#
