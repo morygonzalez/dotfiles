@@ -1,11 +1,16 @@
-colorscheme desert256
-if has('kaoriya')
-  set guifont=MS_Gothic:h10:w5
+colorscheme newspaper
+if has('kaoriya') 
+  if has('win32')
+    set guifont=MS_Gothic:h12:w5
+  endif
+  if has('mac')
+    set guifont=Osaka-Mono:h16
+  endif
 endif
 if has('gui_gtk2')
   set guifont=Monospace\ 12
 endif
-set bg=dark
+set bg=light
 set nobackup
 set lines=24
 set columns=80
