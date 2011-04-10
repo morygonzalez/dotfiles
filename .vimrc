@@ -61,12 +61,11 @@ filetype plugin on
 " 普通にバックスペースで削除できるようにする
 set backspace=indent,eol,start
 
-" Needed on some linux distros.
-" see http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
+" Vimpathogen
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
-" Vimpathogen
+" Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
 " Vim command completion
