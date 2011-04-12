@@ -1,7 +1,11 @@
 colorscheme newspaper
 if has('kaoriya') 
   if has('win32')
-    set guifont=MS_Gothic:h12:w5
+    scriptencoding utf-8
+    set guifont=Consolas:h11
+    "set guifontwide=MS_Gothic
+    let &guifontwide = iconv('Osaka－等幅:h10:cSHIFTJIS', &encoding, 'cp932')
+    set ambiwidth=double
   endif
   if has('mac')
     set guifont=Osaka-Mono:h16
