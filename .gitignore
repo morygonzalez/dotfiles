@@ -10,3 +10,5 @@
 *.mine
 *.netrwhist
 .gitCOMMIT_EDITMSG
+doc/tags
+doc/tags-ja
