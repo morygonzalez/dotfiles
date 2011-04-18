@@ -54,9 +54,10 @@ if is-at-least 4.3.10; then
   zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
   zstyle ':vcs_info:git:*' formats '(%s)-[%b] %c%u'
   zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
-  add-zsh-hook precmd _update_vcs_info_msg
-  RPROMPT="%1(v|%F{green}%1v%f|)"
 fi
+
+add-zsh-hook precmd _update_vcs_info_msg
+RPROMPT="%1(v|%F{green}%1v%f|)"
 
 function _update_vcs_info_msg() {
   psvar=()
