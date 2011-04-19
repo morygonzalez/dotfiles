@@ -10,8 +10,9 @@ set ruler "ルーラーの表示
 set showcmd "入力中のコマンドをステータスに表示する
 set showmatch "括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
-" 256 color
-set t_Co=256
+set splitbelow "新しいウィンドウを下に開く
+set splitright "新しいウィンドウを右に開く
+set t_Co=256 " 256 color
 set background=dark
 "set background=light
 colorscheme desert256
