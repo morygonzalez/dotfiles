@@ -72,3 +72,7 @@ let g:neocomplcache_enable_at_startup = 1
 
 " Vim command completion
 set wildmode=longest,list
+
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+autocmd WinEnter * match WhitespaceEOL /\s\+$/
