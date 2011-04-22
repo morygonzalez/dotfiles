@@ -169,7 +169,7 @@ alias pd="popd"
 alias su="su -l"
 
 # command ranking
-alias cr="perl -pe 's/.+;//' ~/.zsh_history | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort -nr | head -10"
+alias cr="perl -pe 's/.+;//' ~/.zsh_history | awk 'BEGIN {FS=\"|\"} {print $1}' | sort | uniq -c | sort -nr | head -10"
 
 case "${OSTYPE}" in
 darwin*)
