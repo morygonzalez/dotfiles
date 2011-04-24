@@ -150,6 +150,7 @@ alias j="jobs -l"
 case "${OSTYPE}" in
 freebsd*|darwin*)
   alias ls="ls -G -w"
+  alias gvim='env LANG=ja_JP.UTF-8 open -a /Applications/MacVim.app "$@"'
   ;;
 linux*)
   alias ls="ls --color"
@@ -203,7 +204,7 @@ esac
 unset LSCOLORS
 case "${TERM}" in
 xterm)
-  if [ -e /lib/terminfo/x/xterm-256color -o -e /usr/share/terminfo/x/xterm*256color ] ; then
+  if [ -e /lib/terminfo/x/xterm-256color -o -e /usr/share/terminfo/x/xterm-256color ] ; then
     export TERM=xterm-256color
   else
     export TERM=xterm-color
