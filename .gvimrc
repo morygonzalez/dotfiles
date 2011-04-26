@@ -1,5 +1,5 @@
-colorscheme newspaper
-if has('kaoriya') 
+colorscheme wombat
+if has('kaoriya')
   if has('win32')
     scriptencoding utf-8
     set guifont=Consolas:h11
@@ -14,7 +14,7 @@ endif
 if has('gui_gtk2')
   set guifont=Monospace\ 12
 endif
-set bg=light
+set bg=dark
 set nobackup
 set lines=24
 set columns=80
