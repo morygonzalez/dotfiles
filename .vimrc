@@ -13,10 +13,10 @@ set laststatus=2 "ステータスラインを常に表示
 set splitbelow "新しいウィンドウを下に開く
 set splitright "新しいウィンドウを右に開く
 set t_Co=256 " 256 color
-set background=dark
-"set background=light
 colorscheme desert256
+" set background=dark
 "colorscheme newspaper
+"set background=light
 
 " ファイルを開いた際に、前回終了時の行で起動
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
