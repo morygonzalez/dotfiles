@@ -1,36 +1,6 @@
 set nocompatible "vi非互換モード
 
 "#######################
-" 表示系
-"#######################
-set number "行番号表示
-set showmode "モード表示
-set title "編集中のファイル名を表示
-set ruler "ルーラーの表示
-set showcmd "入力中のコマンドをステータスに表示する
-set showmatch "括弧入力時の対応する括弧を表示
-set laststatus=2 "ステータスラインを常に表示
-set splitbelow "新しいウィンドウを下に開く
-set splitright "新しいウィンドウを右に開く
-set t_Co=256 " 256 color
-colorscheme wombat
-set background=dark
-" colorscheme newspaper
-" set background=light
-
-" ファイルを開いた際に、前回終了時の行で起動
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-
-" カーソル移動を見た目のやつに
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
-" Vim command completion
-set wildmode=longest,list
-
-"#######################
 " プログラミングヘルプ系
 "#######################
 syntax on "カラー表示
@@ -142,3 +112,34 @@ if has('win32')
     set ambiwidth=double
   endif
 endif
+
+
+"#######################
+" 表示系
+"#######################
+set number "行番号表示
+set showmode "モード表示
+set title "編集中のファイル名を表示
+set ruler "ルーラーの表示
+set showcmd "入力中のコマンドをステータスに表示する
+set showmatch "括弧入力時の対応する括弧を表示
+set laststatus=2 "ステータスラインを常に表示
+set splitbelow "新しいウィンドウを下に開く
+set splitright "新しいウィンドウを右に開く
+set t_Co=256 " 256 color
+colorscheme molokai
+set background=dark
+" colorscheme newspaper
+" set background=light
+
+" ファイルを開いた際に、前回終了時の行で起動
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+
+" カーソル移動を見た目のやつに
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+" Vim command completion
+set wildmode=longest,list
