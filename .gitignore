@@ -12,3 +12,4 @@
 .gitCOMMIT_EDITMSG
 doc/tags
 doc/tags-ja
+.vim/bundle/*
