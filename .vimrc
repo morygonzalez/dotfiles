@@ -56,6 +56,8 @@ Bundle 'Markdown'
 Bundle 'Shogo/neocomplcache'
 Bundle 'thica/vim-quickrun'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-git'
+Bundle 'tsaleh/vim-tcomment'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
