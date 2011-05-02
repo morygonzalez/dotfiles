@@ -46,12 +46,13 @@ Bundle 'FuzzyFinder'
 Bundle 'Opsplorer'
 Bundle 'Markdown'
 
-Bundle 'Shogo/neocomplcache'
+Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-git'
 Bundle 'tsaleh/vim-tcomment'
 Bundle 'othree/eregex.vim'
+Bundle 'Shougo/unite.vim'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
