@@ -1,7 +1,7 @@
 set nocompatible "vi非互換モード
 
 " Vundle
-set rtp+=~/.vim/vundle/ 
+set rtp+=~/.vim/vundle/
 call vundle#rc()
 
 "#######################
@@ -10,17 +10,10 @@ call vundle#rc()
 syntax on "カラー表示
 set smartindent "オートインデント
 
-" 行末の空白を強調表示
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
-autocmd WinEnter * match WhitespaceEOL /\s\+$/
-
 " tab関連
 set expandtab "タブの代わりに空白文字挿入
-set ts=2 sw=2 sts=0 "タブは半角4文字分のスペース
-" :set ts=4 sw=4 sts=0 "タブは半角4文字分のスペース
+set ts=2 sw=2 sts=0 "タブは半角2文字分のスペース
 set shiftwidth=2
-" :set shiftwidth=4
 set softtabstop=0
 
 "#######################
@@ -54,10 +47,11 @@ Bundle 'Opsplorer'
 Bundle 'Markdown'
 
 Bundle 'Shogo/neocomplcache'
-Bundle 'thica/vim-quickrun'
+Bundle 'thinca/vim-quickrun'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-git'
 Bundle 'tsaleh/vim-tcomment'
+Bundle 'othree/eregex.vim'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -76,9 +70,6 @@ set splitbelow "新しいウィンドウを下に開く
 set splitright "新しいウィンドウを右に開く
 set t_Co=256 " 256 color
 colorscheme molokai
-set background=dark
-" colorscheme newspaper
-" set background=light
 
 " ファイルを開いた際に、前回終了時の行で起動
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
@@ -91,3 +82,8 @@ vnoremap k gk
 
 " Vim command completion
 set wildmode=longest,list
+
+" 行末の空白を強調表示
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+autocmd WinEnter * match WhitespaceEOL /\s\+$/
