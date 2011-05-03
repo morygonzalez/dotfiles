@@ -1,4 +1,4 @@
-colorscheme wombat
+colorscheme molokai
 if has('kaoriya')
   if has('win32')
     scriptencoding utf-8
