@@ -1,4 +1,3 @@
-colorscheme molokai
 if has('kaoriya')
   if has('win32')
     scriptencoding utf-8
@@ -12,7 +11,7 @@ if has('kaoriya')
   endif
 endif
 if has('gui_gtk2')
-  set guifont=Monospace\ 12
+  set guifont=Monospace\ 11
 endif
 set bg=dark
 set nobackup
