@@ -16,7 +16,7 @@ if has('gui_gtk2')
 endif
 set bg=dark
 set nobackup
-set lines=24
+set lines=48
 set columns=80
 
 " enable toolbar and menu
