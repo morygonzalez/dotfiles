@@ -1,5 +1,8 @@
 set nocompatible "vi非互換モード
 
+set encoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis,cp932
+
 " Vundle
 set rtp+=~/.vim/vundle/
 call vundle#rc()
