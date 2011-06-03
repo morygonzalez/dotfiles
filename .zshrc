@@ -132,6 +132,12 @@ compinit
 autoload zed
 
 
+## url-quote-magic
+#
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+
+
 ## Prediction configuration
 #
 #autoload predict-on
