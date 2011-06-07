@@ -16,7 +16,7 @@ endif
 set bg=dark
 set nobackup
 set lines=48
-set columns=80
+set columns=96
 
 " enable toolbar and menu
 set guioptions-=T

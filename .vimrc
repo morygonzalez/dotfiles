@@ -56,6 +56,8 @@ Bundle 'tpope/vim-git'
 Bundle 'tsaleh/vim-tcomment'
 Bundle 'othree/eregex.vim'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimshell'
+Bundle 'Shougo/vimproc'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -72,6 +74,7 @@ set showmatch "括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
 set splitbelow "新しいウィンドウを下に開く
 set splitright "新しいウィンドウを右に開く
+let g:molokai_original = 1
 set t_Co=256 " 256 color
 colorscheme molokai
 
