@@ -1,5 +1,8 @@
 set nocompatible "vi非互換モード
 
+set encoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis,cp932
+
 " Vundle
 set rtp+=~/.vim/vundle/
 call vundle#rc()
@@ -53,6 +56,8 @@ Bundle 'tpope/vim-git'
 Bundle 'tsaleh/vim-tcomment'
 Bundle 'othree/eregex.vim'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimshell'
+Bundle 'Shougo/vimproc'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -69,6 +74,7 @@ set showmatch "括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
 set splitbelow "新しいウィンドウを下に開く
 set splitright "新しいウィンドウを右に開く
+let g:molokai_original = 1
 set t_Co=256 " 256 color
 colorscheme molokai
 
@@ -80,6 +86,21 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+
+" Unite.vim
+let g:unite_enable_start_insert=1
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
 " Vim command completion
 set wildmode=longest,list
