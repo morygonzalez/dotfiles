@@ -45,7 +45,6 @@ set backspace=indent,eol,start
 " Plugin
 "#######################
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'Opsplorer'
 Bundle 'Markdown'
 
