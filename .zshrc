@@ -204,7 +204,7 @@ freebsd*)
   ;;
 linux-gnu)
   if [ -e /usr/bin/colordiff ] ; then
-    alias diff="colordiff"
+    alias diff="colordiff -u"
   fi
   ;;
 esac
