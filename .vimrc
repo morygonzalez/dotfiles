@@ -46,7 +46,6 @@ set backspace=indent,eol,start
 "#######################
 " Plugin
 "#######################
-Bundle 'L9'
 Bundle 'Markdown'
 
 Bundle 'Shougo/neocomplcache'
