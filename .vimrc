@@ -57,6 +57,7 @@ Bundle 'othree/eregex.vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
+Bundle 'mattn/gist-vim'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
