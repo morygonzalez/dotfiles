@@ -21,3 +21,5 @@ doc/tags-ja
 .vim/autoload/vimproc/parser.vim
 .vim/autoload/vimproc/util.vim
 .vim/autoload/vimstack.c
+.vim/ftplugin/*ruby.vim
+.vim/ftdetect/ruby.vim
