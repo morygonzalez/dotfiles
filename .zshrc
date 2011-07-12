@@ -270,5 +270,10 @@ function chpwd() {
   ls
 }
 
+## load git-completion.sh
+autoload bashcompinit
+bashcompinit
+[ -f ~/.git-completion.sh ] && source ~/.git-completion.sh
+
 ## load user .zshrc configuration file#
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
