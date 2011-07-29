@@ -1,1 +1,0 @@
-/home/morygonzalez/.vim/bundle/vim-ruby/ftdetect/ruby.vim
