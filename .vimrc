@@ -113,7 +113,7 @@ autocmd WinEnter * match WhitespaceEOL /\s\+$/
 " vim quickrun
 let g:quickrun_config = {}
 " quickrun rspec
-let g:quickrun_config['ruby.rspec'] = {'command': 'spec'}
+let g:quickrun_config['ruby.rspec'] = {'command': 'rspec'}
 augroup UjihisaRSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
