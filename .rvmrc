@@ -1,0 +1,2 @@
+export rvm_path="/usr/local/rvm"
+rvm_trust_rvmrcs_flag=1
