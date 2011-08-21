@@ -7,7 +7,8 @@ if has('kaoriya')
     set ambiwidth=double
   endif
   if has('mac')
-    set guifont=Osaka-Mono:h16
+    set guifont=Menlo:h13
+    set guifontwide=Osaka-Mono:h13
   endif
 endif
 if has('gui_gtk2')
