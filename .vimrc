@@ -47,6 +47,7 @@ set backspace=indent,eol,start
 " Plugin
 "#######################
 Bundle 'Markdown'
+Bundle 'Align'
 
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
@@ -58,6 +59,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'mattn/gist-vim'
+Bundle 'ujihisa/vimshell-ssh'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
