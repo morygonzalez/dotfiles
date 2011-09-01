@@ -111,3 +111,12 @@ set wildmode=longest,list
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 autocmd WinEnter * match WhitespaceEOL /\s\+$/
+
+" vim quickrun
+let g:quickrun_config = {}
+" quickrun rspec
+let g:quickrun_config['ruby.rspec'] = {'command': 'rspec'}
+augroup UjihisaRSpec
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+augroup END
