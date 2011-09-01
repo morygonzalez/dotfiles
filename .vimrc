@@ -89,6 +89,9 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" Align.vim
+let g:Align_xstrlen=3
+
 " Unite.vim
 let g:unite_enable_start_insert=1
 " バッファ一覧
