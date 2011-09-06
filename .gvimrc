@@ -11,7 +11,8 @@ if has('kaoriya')
   endif
 endif
 if has('gui_gtk2')
-  set guifont=Monospace\ 11
+  " set guifont=Monospace\\ 11
+  set gfn=Takaoゴシック\ 11
 endif
 set bg=dark
 set nobackup
