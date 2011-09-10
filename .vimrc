@@ -82,10 +82,10 @@ colorscheme molokai
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
 " カーソル移動を見た目のやつに
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
 
 " Unite.vim
 let g:unite_enable_start_insert=1
