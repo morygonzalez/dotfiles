@@ -60,6 +60,7 @@ Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'mattn/gist-vim'
 Bundle 'ujihisa/vimshell-ssh'
+Bundle 'tyru/open-browser.vim'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -123,3 +124,7 @@ augroup UjihisaRSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
+" preview markdown with browser
+let g:quickrun_config['markdown'] = {
+      \ 'outputter': 'browser'
+      \}
