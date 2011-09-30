@@ -46,9 +46,12 @@ set backspace=indent,eol,start
 "#######################
 " Plugin
 "#######################
+" vundle
+Bundle 'gmarik/vundle'
+" vim online
 Bundle 'Markdown'
 Bundle 'Align'
-
+" github
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'vim-ruby/vim-ruby'
