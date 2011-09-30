@@ -59,7 +59,6 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'mattn/gist-vim'
-Bundle 'ujihisa/vimshell-ssh'
 Bundle 'tyru/open-browser.vim'
 
 " Neocomplcache
