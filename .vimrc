@@ -46,9 +46,12 @@ set backspace=indent,eol,start
 "#######################
 " Plugin
 "#######################
+" vundle
+Bundle 'gmarik/vundle'
+" vim online
 Bundle 'Markdown'
 Bundle 'Align'
-
+" github
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'vim-ruby/vim-ruby'
@@ -59,7 +62,6 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'mattn/gist-vim'
-Bundle 'ujihisa/vimshell-ssh'
 Bundle 'tyru/open-browser.vim'
 
 " Neocomplcache
@@ -89,10 +91,6 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
-" nnoremap <Down> gj
-" nnoremap <Up> gk
-" vnoremap <Down> gj
-" vnoremap <Up> gk
 
 " Align.vim
 let g:Align_xstrlen=3
