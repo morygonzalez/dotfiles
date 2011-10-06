@@ -63,6 +63,7 @@ Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'mattn/gist-vim'
 Bundle 'tyru/open-browser.vim'
+Bundle 'msanders/snipmate.vim'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
