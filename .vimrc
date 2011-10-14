@@ -33,12 +33,6 @@ set hlsearch "検索結果をハイライト表示
 nnoremap <Esc><Esc> :<C-u>nohl<Return><Esc>
 " set nohlsearch "検索結果文字列の非ハイライト表示
 
-"#######################
-" vim-ruby向けの設定
-"#######################
-filetype on
-filetype indent on
-filetype plugin on
 
 " 普通にバックスペースで削除できるようにする
 set backspace=indent,eol,start
@@ -46,11 +40,13 @@ set backspace=indent,eol,start
 "#######################
 " Plugin
 "#######################
+filetype off " for vundle
 " vundle
 Bundle 'gmarik/vundle'
 " vim online
 Bundle 'Markdown'
 Bundle 'Align'
+Bundle 'taskpaper.vim'
 " github
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
@@ -64,6 +60,7 @@ Bundle 'Shougo/vimproc'
 Bundle 'mattn/gist-vim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'msanders/snipmate.vim'
+filetype plugin indent on " for vundle
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
