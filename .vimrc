@@ -59,6 +59,7 @@ Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'mattn/gist-vim'
 Bundle 'tyru/open-browser.vim'
+Bundle 'ujihisa/unite-colorscheme'
 Bundle 'msanders/snipmate.vim'
 filetype plugin indent on " for vundle
 
@@ -128,3 +129,6 @@ augroup END
 let g:quickrun_config['markdown'] = {
       \ 'outputter': 'browser'
       \}
+
+" shebang template
+autocmd BufNewFile *.rb 0r ~/.vim/templates/skel.rb
