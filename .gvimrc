@@ -9,6 +9,7 @@ if has('kaoriya')
   if has('mac')
     set guifont=Menlo:h13
     set guifontwide=Osaka-Mono:h13
+    set transparency=20
   endif
 endif
 if has('gui_gtk2')
