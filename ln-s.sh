@@ -6,3 +6,4 @@ ln -fs $HOME/dotfiles/.vim $HOME/.vim
 ln -fs $HOME/dotfiles/.screenrc $HOME/.screenrc
 ln -fs $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -fs $HOME/dotfiles/.bashrc $HOME/.bashrc
+ln -fs $HOME/dotfiles/.gemrc $HOME/.gemrc
