@@ -1,7 +1,4 @@
-# load libraries
-require 'rubygems'
-require 'wirble'
+require "wirble"
 
-# start wirble (with color)
 Wirble.init
 Wirble.colorize

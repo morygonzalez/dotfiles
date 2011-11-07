@@ -9,3 +9,5 @@
 	email = morygonzaelz@gmail.com
 [core]
 	editor = vim
+[merge]
+	tool = vimdiff
