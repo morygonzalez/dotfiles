@@ -138,3 +138,7 @@ let g:quickrun_config['markdown'] = {
 
 " shebang template
 autocmd BufNewFile *.rb 0r ~/.vim/templates/skel.rb
+
+" ファイルタイプ別の設定
+autocmd FileType nginx setlocal sw=4 sts=4 ts=4 noet
+autocmd FileType apache setlocal sw=4 sts=4 ts=4 noet
