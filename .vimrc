@@ -81,6 +81,7 @@ set splitbelow "新しいウィンドウを下に開く
 set splitright "新しいウィンドウを右に開く
 let g:molokai_original = 1
 set t_Co=256 " 256 color
+" colorscheme Monokai
 colorscheme molokai
 
 " ファイルを開いた際に、前回終了時の行で起動

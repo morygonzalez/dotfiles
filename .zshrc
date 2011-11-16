@@ -275,5 +275,8 @@ autoload bashcompinit
 bashcompinit
 [ -f ~/.git-completion.sh ] && source ~/.git-completion.sh
 
+# bundler-exec.sh
+[ -f ~/.bundler-exec.sh ] && source ~/.bundler-exec.sh
+
 ## load user .zshrc configuration file#
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
