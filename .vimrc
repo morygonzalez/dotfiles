@@ -18,8 +18,9 @@ set smartindent "オートインデント
 " tab関連
 set expandtab "タブの代わりに空白文字挿入
 set ts=2 sw=2 sts=0 "タブは半角2文字分のスペース
-set shiftwidth=2
-set softtabstop=0
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=0
 
 "#######################
 " 検索系
@@ -53,6 +54,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
 Bundle 'tsaleh/vim-tcomment'
 Bundle 'othree/eregex.vim'
 Bundle 'Shougo/unite.vim'
@@ -143,3 +145,6 @@ autocmd BufNewFile *.rb 0r ~/.vim/templates/skel.rb
 " ファイルタイプ別の設定
 autocmd FileType nginx setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType apache setlocal sw=4 sts=4 ts=4 noet
+autocmd FileType conf setlocal sw=4 sts=4 ts=4 noet
+autocmd FileType javascript setlocal sw=4 sts=4 ts=4 noet
+autocmd FileType css setlocal sw=4 sts=4 ts=4 et
