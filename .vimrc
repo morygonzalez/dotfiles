@@ -49,12 +49,14 @@ Bundle 'Markdown'
 Bundle 'Align'
 Bundle 'taskpaper.vim'
 Bundle 'sudo.vim'
+Bundle 'html5.vim'
 " github
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-endwise'
 Bundle 'tsaleh/vim-tcomment'
 Bundle 'othree/eregex.vim'
 Bundle 'Shougo/unite.vim'
@@ -64,6 +66,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'ujihisa/unite-colorscheme'
 Bundle 'msanders/snipmate.vim'
+Bundle 'kchmck/vim-coffee-script'
 filetype plugin indent on " for vundle
 
 " Neocomplcache
@@ -148,3 +151,4 @@ autocmd FileType apache setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType conf setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType javascript setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType css setlocal sw=4 sts=4 ts=4 et
+autocmd FileType scss setlocal sw=4 sts=4 ts=4 et
