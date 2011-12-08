@@ -149,6 +149,5 @@ autocmd BufNewFile *.rb 0r ~/.vim/templates/skel.rb
 autocmd FileType nginx setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType apache setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType conf setlocal sw=4 sts=4 ts=4 noet
-autocmd FileType javascript setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType css setlocal sw=4 sts=4 ts=4 et
 autocmd FileType scss setlocal sw=4 sts=4 ts=4 et
