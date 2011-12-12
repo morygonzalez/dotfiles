@@ -60,8 +60,9 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tsaleh/vim-tcomment'
 Bundle 'othree/eregex.vim'
 Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimshell'
-Bundle 'Shougo/vimproc'
+" Bundle 'Shougo/vimshell'
+" Bundle 'Shougo/vimproc'
+Bundle 'mileszs/ack.vim.git'
 Bundle 'mattn/gist-vim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'ujihisa/unite-colorscheme'
@@ -149,6 +150,5 @@ autocmd BufNewFile *.rb 0r ~/.vim/templates/skel.rb
 autocmd FileType nginx setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType apache setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType conf setlocal sw=4 sts=4 ts=4 noet
-autocmd FileType javascript setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType css setlocal sw=4 sts=4 ts=4 et
 autocmd FileType scss setlocal sw=4 sts=4 ts=4 et
