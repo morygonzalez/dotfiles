@@ -287,6 +287,21 @@ sudo() {
   esac
 }
 
+# ニャンニャン鳴るやつ
+
+p() {
+  local pid exit
+  # http://www.filesonic.com/file/703099021
+  play -l ~/Music/Nyan\ Cat.mp3 &
+  pid=$!
+  trap "kill -9 $pid" INT
+  command $*
+  exit=$?
+  kill -9 $pid
+  trap INT
+  return $exit
+}
+
 ## load git-completion.sh
 autoload bashcompinit
 bashcompinit
