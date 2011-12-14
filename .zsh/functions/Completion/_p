@@ -1,6 +1,0 @@
-#compdef - p
-
-shift words
-(( CURRENT-- ))
-
-_normal
