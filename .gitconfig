@@ -11,3 +11,6 @@
 	editor = vim
 [merge]
 	tool = vimdiff
+[alias]
+	co = checkout
+	st = status
