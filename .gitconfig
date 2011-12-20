@@ -9,5 +9,9 @@
 	email = morygonzaelz@gmail.com
 [core]
 	editor = vim
+	excludesfile = /Users/morygonzalez/.gitignore
 [merge]
 	tool = vimdiff
+[alias]
+	co = checkout
+	st = status

@@ -124,7 +124,7 @@ setopt share_history    # share command history data
 #
 fpath=(~/.zsh/functions/Completion ${fpath})
 autoload -U compinit
-compinit
+compinit -u
 
 
 ## zsh editor
@@ -249,7 +249,6 @@ kterm*|xterm*)
   ;;
 esac
 
-
 # Editor
 export EDITOR=vim
 
@@ -268,6 +267,24 @@ function up()
 
 function chpwd() {
   ls
+}
+
+# sudo vim filename を vim sudo:filename に展開する設定
+sudo() {
+  local args
+  case $1 in
+    vi|vim)
+      args=()
+      for arg in $@[2,-1]
+      do
+        args[$(( 1+$#args ))]="sudo:$arg"
+      done
+      command vim $args
+      ;;
+    *)
+      command sudo $@
+      ;;
+  esac
 }
 
 ## load git-completion.sh
