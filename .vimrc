@@ -1,7 +1,7 @@
 set nocompatible "vi非互換モード
 
 set encoding=utf-8
-set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis,cp932
+set fileencodings=utf-8,utf-16le,iso-2022-jp,euc-jp,sjis,cp932
 
 set nowritebackup
 
