@@ -167,16 +167,11 @@ alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
 alias lg="ls |grep"
-
 alias du="du -h"
 alias df="df -h"
-
 alias pd="popd"
-
 alias su="su -l"
-
-# command ranking
-alias cr="perl -pe 's/.+;//' ~/.zsh_history | awk 'BEGIN {FS=\"|\"} {print $1}' | sort | uniq -c | sort -nr | head -10"
+alias cr="perl -pe 's/.+;//' ~/.zsh_history | awk 'BEGIN {FS=\"|\"} {print $1}' | sort | uniq -c | sort -nr | head -10" # command ranking
 
 case "${OSTYPE}" in
 darwin*)
@@ -294,6 +289,9 @@ bashcompinit
 
 # bundler-exec.sh
 [ -f ~/.bundler-exec.sh ] && source ~/.bundler-exec.sh
+
+## grep options
+export GREP_OPTIONS='--color=auto'
 
 ## load user .zshrc configuration file#
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
