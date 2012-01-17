@@ -264,6 +264,17 @@ function chpwd() {
   ls
 }
 
+
+# ssh known_hosts completion
+# http://trashbox.g.hatena.ne.jp/lurker/20071109/1194586015
+function print_known_hosts (){
+  if [ -f $HOME/.ssh/known_hosts ]; then
+    cat $HOME/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
+  fi
+}
+_cache_hosts=($( print_known_hosts ))
+
+
 # sudo vim filename を vim sudo:filename に展開する設定
 sudo() {
   local args
