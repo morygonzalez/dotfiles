@@ -1,11 +1,23 @@
 git filter-branch -f --commit-filter '
-if [ "$GIT_AUTHOR_NAME" = "" ]; then
-  GIT_AUTHOR_NAME=""
-  GIT_AUTHOR_EMAIL=""
-fi
-if [ "$GIT_COMMITER_NAME" = "" ]; then
-  GIT_COMMITTER_NAME=""
-  GIT_COMMITTER_EMAIL=""
-fi
+case $GIT_AUTHOR_NAME in
+  * )
+    GIT_AUTHOR_NAME="森井ゴンザレス"
+    GIT_AUTHOR_EMAIL="morygonzalez@gmail.com"
+    ;;
+  * )
+    GIT_AUTHOR_NAME="森井ゴンザレス"
+    GIT_AUTHOR_EMAIL="morygonzalez@gmail.com"
+    ;;
+esac
+case $GIT_COMMITTER_NAME in
+  * )
+    GIT_AUTHOR_NAME="森井ゴンザレス"
+    GIT_AUTHOR_EMAIL="morygonzalez@gmail.com"
+    ;;
+  * )
+    GIT_AUTHOR_NAME="森井ゴンザレス"
+    GIT_AUTHOR_EMAIL="morygonzalez@gmail.com"
+    ;;
+esac
 git commit-tree "$@"
 ' HEAD
