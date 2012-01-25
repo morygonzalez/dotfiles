@@ -25,4 +25,4 @@ doc/tags-ja
 .vim/ftplugin/eruby.vim
 .vim/ftdetect/ruby.vim
 .rvmrc
-*Gemfile.lock
+Gemfile.lock
