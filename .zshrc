@@ -102,10 +102,8 @@ bindkey -v
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^n" history-beginning-search-forward-end
-bindkey "\\ep" history-beginning-search-backward-end
-bindkey "\\en" history-beginning-search-forward-end
+bindkey '^p' history-beginning-search-backward-end
+bindkey '^n' history-beginning-search-forward-end
 # history-incremental-pattern-search
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
@@ -264,7 +262,19 @@ function chpwd() {
   ls
 }
 
+
+# ssh known_hosts completion
+# http://trashbox.g.hatena.ne.jp/lurker/20071109/1194586015
+function print_known_hosts (){
+  if [ -f $HOME/.ssh/known_hosts ]; then
+    cat $HOME/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
+  fi
+}
+_cache_hosts=($( print_known_hosts ))
+
+
 # sudo vim filename を vim sudo:filename に展開する設定
+# http://blog.monoweb.info/article/2011120320.html
 sudo() {
   local args
   case $1 in
@@ -272,7 +282,11 @@ sudo() {
       args=()
       for arg in $@[2,-1]
       do
-        args[$(( 1+$#args ))]="sudo:$arg"
+        if [ $arg[1] = '-' ]; then
+          args[$(( 1+$#args ))]=$arg
+        else
+          args[$(( 1+$#args ))]="sudo:$arg"
+        fi
       done
       command vim $args
       ;;
@@ -282,6 +296,7 @@ sudo() {
   esac
 }
 
+
 ## load git-completion.sh
 autoload bashcompinit
 bashcompinit
@@ -289,6 +304,9 @@ bashcompinit
 
 # bundler-exec.sh
 [ -f ~/.bundler-exec.sh ] && source ~/.bundler-exec.sh
+
+## load zsh completion function
+[ -f ~/.zsh/functions/Completion/_incr ] && source ~/.zsh/functions/Completion/_incr
 
 ## grep options
 export GREP_OPTIONS='--color=auto'

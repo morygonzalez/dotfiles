@@ -1,0 +1,45 @@
+# エスケープキー
+#set-option -g prefix C-t
+
+set-window-option -g utf8 on # 日本語環境なら今のところ必須。
+set-window-option -g mode-keys vi # コピーモードのキーマップ。標準はemacs
+
+set-option -g status-keys vi # ステータスラインで vi スタイルのキーバインドを利用
+
+set-option default-shell "/bin/zsh"
+
+# ウィンドウ番号を1から開始
+set-option -g base-index 1
+
+# 256color
+set-option -g default-terminal xterm-256color
+
+# pbcopy と pbpasete 復活
+<<<<<<< HEAD
+#set-option -g default-command "reattach-to-user-namespace -l zsh"
+=======
+# set-option -g default-command "reattach-to-user-namespace -l zsh"
+>>>>>>> 9c55e55f47bb41bc1a1ed2704d9d1259783440a2
+
+# vim風ペイン分割
+bind-key v split-window -h
+bind-key s split-window -v
+
+# Vim風のペイン移動
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+# 下のバー
+set-window-option -g window-status-current-bg red
+set -g status-bg black
+set -g status-fg white
+set -g status-left '#[fg=yellow]#H'
+set -g status-right '#[fg=green]#(uptime | cut -d "," -f 2-)'
+
+# ハセコスペシャル
+bind -r H select-layout main-vertical \; swap-pane -s : -t 0 \; select-pane -t 0 \; resize-pane -R 29
+# bind -r H select-layout main-vertical \; swap-pane -s : -t 0 \; select-pane -t 0 \; resize-pane -R 9
+bind -r K select-layout main-horizontal \; swap-pane -s : -t 0 \; select-pane -t 0 \; resize-pane -D 18
+# bind -r K select-layout main-horizontal \; swap-pane -s : -t 0 \; select-pane -t 0 \; resize-pane -D 18
