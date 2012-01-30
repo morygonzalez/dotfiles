@@ -132,55 +132,6 @@ nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mr
 " colorscheme
 nnoremap <silent> ,uc :<C-u>Unite colorscheme<CR>
 
-"#######################
-" 表示系
-"#######################
-set number "行番号表示
-set showmode "モード表示
-set title "編集中のファイル名を表示
-set ruler "ルーラーの表示
-set showcmd "入力中のコマンドをステータスに表示する
-set showmatch "括弧入力時の対応する括弧を表示
-set laststatus=2 "ステータスラインを常に表示
-set splitbelow "新しいウィンドウを下に開く
-set splitright "新しいウィンドウを右に開く
-let g:molokai_original = 1
-set t_Co=256 " 256 color
-" colorscheme Monokai
-colorscheme molokai
-
-" ファイルを開いた際に、前回終了時の行で起動
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-
-" カーソル移動を見た目のやつに
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
-" カーソル行をハイライト表示
-" set cursorline
-
-" Align.vim
-let g:Align_xstrlen=3
-
-" Unite.vim
-let g:unite_enable_start_insert=1
-" バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-" ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" レジスタ一覧
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-" 最近使用したファイル一覧
-nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
-" 常用セット
-nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
-" 全部乗せ
-nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-" colorscheme
-nnoremap <silent> ,uc :<C-u>Unite colorscheme<CR>
-
 " Vim command completion
 set wildmode=longest,list
 
