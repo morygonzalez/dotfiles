@@ -69,6 +69,7 @@ Bundle 'tyru/open-browser.vim'
 Bundle 'ujihisa/unite-colorscheme'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'Lokaltog/vim-powerline'
 filetype plugin indent on " for vundle
 
 "########################
