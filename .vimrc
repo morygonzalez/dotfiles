@@ -72,8 +72,6 @@ Bundle 'kchmck/vim-coffee-script'
 filetype plugin indent on " for vundle
 
 "########################
-" Neocomplcache
-"########################
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.

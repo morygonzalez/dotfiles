@@ -298,7 +298,6 @@ sudo() {
   esac
 }
 
-
 ## load git-completion.sh
 autoload bashcompinit
 bashcompinit
