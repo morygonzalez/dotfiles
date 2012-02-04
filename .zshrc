@@ -260,6 +260,8 @@ function up()
 
 function chpwd() {
   ls
+  # http://filmlang.org/2011/05/12/tmux/setting
+  # [ -n $TMUX ] && tmux setenv TMUXPWD_$(tmux display -p "#I") $PWD
 }
 
 
@@ -295,7 +297,6 @@ sudo() {
       ;;
   esac
 }
-
 
 ## load git-completion.sh
 autoload bashcompinit
