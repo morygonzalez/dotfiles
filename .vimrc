@@ -74,6 +74,7 @@ filetype plugin indent on " for vundle
 
 "########################
 " Use neocomplcache.
+"########################
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
@@ -118,7 +119,7 @@ vnoremap j gj
 vnoremap k gk
 
 " カーソル行をハイライト表示
-" set cursorline
+set cursorline
 
 " Align.vim
 let g:Align_xstrlen=3
