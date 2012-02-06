@@ -118,7 +118,7 @@ vnoremap j gj
 vnoremap k gk
 
 " カーソル行をハイライト表示
-" set cursorline
+set cursorline
 
 " Align.vim
 let g:Align_xstrlen=3
