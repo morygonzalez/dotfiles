@@ -298,6 +298,20 @@ sudo() {
   esac
 }
 
+# https://gist.github.com/805901
+p() {
+  local pid exit
+  # http://www.filesonic.com/file/703099021
+  afplay ~/Music/Nyan\ Cat.mp3 &
+  pid=$!
+  trap "kill -9 $pid" INT
+  command $*
+  exit=$?
+  kill -9 $pid
+  trap INT
+  return $exit
+}
+
 ## load git-completion.sh
 autoload bashcompinit
 bashcompinit
