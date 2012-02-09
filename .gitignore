@@ -10,6 +10,7 @@
 *.mine
 *.netrwhist
 .gitCOMMIT_EDITMSG
+update-author-*
 doc/tags
 doc/tags-ja
 .vim/bundle/*

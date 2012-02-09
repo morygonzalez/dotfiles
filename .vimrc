@@ -60,6 +60,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'othree/eregex.vim'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimfiler'
 " Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'mileszs/ack.vim.git'
@@ -68,10 +69,12 @@ Bundle 'tyru/open-browser.vim'
 Bundle 'ujihisa/unite-colorscheme'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'Lokaltog/vim-powerline'
 filetype plugin indent on " for vundle
 
 "########################
 " Use neocomplcache.
+"########################
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
@@ -82,6 +85,12 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+"#######################
+" Vimfiler
+"#######################
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
 
 "#######################
 " 表示系
