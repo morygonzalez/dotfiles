@@ -27,7 +27,7 @@ case ${UID} in
     PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
   ;;
 *)
-  PROMPT="%{${fg[red]}%}%/%%%{${reset_color}%} "
+  PROMPT="%{${fg[red]}%}%/%{${reset_color}%}%{${fg[yellow]}%}⚡%{${reset_color}%} "
   PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
   SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
@@ -260,6 +260,8 @@ function up()
 
 function chpwd() {
   ls
+  # http://filmlang.org/2011/05/12/tmux/setting
+  # [ -n $TMUX ] && tmux setenv TMUXPWD_$(tmux display -p "#I") $PWD
 }
 
 
@@ -296,6 +298,19 @@ sudo() {
   esac
 }
 
+# https://gist.github.com/805901
+p() {
+  local pid exit
+  # http://www.filesonic.com/file/703099021
+  afplay ~/Music/Nyan\ Cat.mp3 &
+  pid=$!
+  trap "kill -9 $pid" INT
+  command $*
+  exit=$?
+  kill -9 $pid
+  trap INT
+  return $exit
+}
 
 ## load git-completion.sh
 autoload bashcompinit
