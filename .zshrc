@@ -106,7 +106,7 @@ bindkey '^p' history-beginning-search-backward-end
 bindkey '^n' history-beginning-search-forward-end
 # history-incremental-pattern-search
 bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
+bindkey '^F' history-incremental-pattern-search-forward
 
 
 ## Command history configuration
