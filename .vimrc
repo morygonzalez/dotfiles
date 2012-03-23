@@ -36,6 +36,7 @@ Bundle 'ujihisa/unite-colorscheme'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'altercation/vim-colors-solarized'
 filetype plugin indent on " for vundle
 
 "#######################
@@ -78,10 +79,13 @@ set showmatch "括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
 set splitbelow "新しいウィンドウを下に開く
 set splitright "新しいウィンドウを右に開く
-let g:molokai_original = 1
 set t_Co=256 " 256 color
-" colorscheme Monokai
-colorscheme molokai
+" molokai
+let g:molokai_original = 1
+colorscheme molokai-mod
+" solarized
+" let g:solarized_termcolors=256
+" colorscheme solarized
 
 " ファイルを開いた際に、前回終了時の行で起動
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
@@ -133,7 +137,7 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "#######################
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
-nnoremap <silent> ,vf :<C-u>VimFiler %:h<CR>
+nnoremap <silent> ,vf :<C-u>VimFilerBufferDir<CR>
 
 "#######################
 " Align.vim
@@ -175,3 +179,4 @@ augroup END
 let g:quickrun_config['markdown'] = {
       \ 'outputter': 'browser'
       \}
+
