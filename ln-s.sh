@@ -7,3 +7,4 @@ ln -fs $HOME/dotfiles/.screenrc $HOME/.screenrc
 ln -fs $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -fs $HOME/dotfiles/.bashrc $HOME/.bashrc
 ln -fs $HOME/dotfiles/.gemrc $HOME/.gemrc
+ln -fs $HOME/dotfiles/hooks/vimproc-post-receive $HOME/dotfiles/.vim/bundle/vimproc/.git/hooks/post-receive
