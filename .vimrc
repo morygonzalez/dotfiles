@@ -29,7 +29,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimfiler'
 " Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
-Bundle 'mileszs/ack.vim.git'
+Bundle 'mileszs/ack.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'ujihisa/unite-colorscheme'
@@ -37,6 +37,7 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'csexton/jekyll.vim'
 filetype plugin indent on " for vundle
 
 "#######################
@@ -72,6 +73,7 @@ set backspace=indent,eol,start
 
 set number "行番号表示
 set showmode "モード表示
+set hidden "保存せずに buffer を移動する
 set title "編集中のファイル名を表示
 set ruler "ルーラーの表示
 set showcmd "入力中のコマンドをステータスに表示する
@@ -82,7 +84,7 @@ set splitright "新しいウィンドウを右に開く
 set t_Co=256 " 256 color
 " molokai
 let g:molokai_original = 1
-colorscheme molokai-mod
+colorscheme molokai
 " solarized
 " let g:solarized_termcolors=256
 " colorscheme solarized
@@ -97,7 +99,7 @@ vnoremap j gj
 vnoremap k gk
 
 " カーソル行をハイライト表示
-" set cursorline
+set cursorline
 
 " command completion
 set wildmode=longest,list
@@ -180,3 +182,10 @@ let g:quickrun_config['markdown'] = {
       \ 'outputter': 'browser'
       \}
 
+"#######################
+" Jekyll.vim
+"#######################
+let g:jekyll_path = "~/Projects/tech.portalshit.net"
+map <Leader>jb :JekyllBuild<CR>
+map <Leader>jn :JekyllPost<CR>
+map <Leader>jl :JekyllList<CR>
