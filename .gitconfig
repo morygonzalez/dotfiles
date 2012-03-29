@@ -6,7 +6,7 @@
 	ui = true
 [user]
 	name = 森井ゴンザレス
-	email = morygonzaelz@gmail.com
+	email = morygonzalez@gmail.com
 [core]
 	editor = vim
 	excludesfile = /Users/morygonzalez/.gitignore
