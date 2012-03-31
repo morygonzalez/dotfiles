@@ -100,6 +100,7 @@ vnoremap k gk
 
 " カーソル行をハイライト表示
 set cursorline
+hi CursorLine ctermbg=88 cterm=none
 
 " command completion
 set wildmode=longest,list
