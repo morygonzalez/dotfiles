@@ -51,6 +51,7 @@ set nobackup
 " プログラミングヘルプ系
 syntax on "カラー表示
 set smartindent "オートインデント
+set clipboard+=autoselect
 
 " tab関連
 set expandtab "タブの代わりに空白文字挿入
