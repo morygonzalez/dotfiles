@@ -17,7 +17,7 @@ if has('gui_gtk2')
   " set guifont=Monospace\\ 11
   set gfn=Takaoゴシック\ 11
 endif
-set bg=dark
+" set bg=dark
 set nobackup
 " set lines=48
 " set columns=96

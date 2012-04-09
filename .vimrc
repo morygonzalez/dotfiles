@@ -86,10 +86,11 @@ set splitright "新しいウィンドウを右に開く
 set t_Co=256 " 256 color
 " molokai
 let g:molokai_original = 1
-colorscheme molokai
+" colorscheme molokai
 " solarized
 " let g:solarized_termcolors=256
-" colorscheme solarized
+colorscheme solarized
+set bg=light
 
 " ファイルを開いた際に、前回終了時の行で起動
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
