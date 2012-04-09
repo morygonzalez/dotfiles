@@ -35,3 +35,9 @@ autocmd WinEnter * match WhitespaceEOL /\s\+$/
 "highlight Normal guifg=grey guibg=black
 "highlight NonText guifg=grey guibg=black
 "highlight Search guifg=black guibg=yellow
+
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
