@@ -5,4 +5,6 @@ do
   fi
 done
 
-ln -fs $HOME/dotfiles/hooks/vimproc-post-receive $HOME/dotfiles/.vim/bundle/vimproc/.git/hooks/post-receive
+if [ ! -e $HOME/dotfiles/.vim/bundle/vimproc/.git/hooks/post-receive ] ; then
+  ln -fs $HOME/dotfiles/hooks/vimproc-post-receive $HOME/dotfiles/.vim/bundle/vimproc/.git/hooks/post-receive
+fi
