@@ -1,10 +1,8 @@
-ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
-ln -fs $HOME/dotfiles/.zsh $HOME/.zsh
-ln -fs $HOME/dotfiles/.vimrc $HOME/.vimrc
-ln -fs $HOME/dotfiles/.gvimrc $HOME/.gvimrc
-ln -fs $HOME/dotfiles/.vim $HOME/.vim
-ln -fs $HOME/dotfiles/.screenrc $HOME/.screenrc
-ln -fs $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
-ln -fs $HOME/dotfiles/.bashrc $HOME/.bashrc
-ln -fs $HOME/dotfiles/.gemrc $HOME/.gemrc
+for i in .zshrc .zsh .vimrc .vim .gvimrc .screenrc .tmux.conf .bashrc .gemrc .inputrc
+do
+  if [ ! -e $HOME/$i ] ; then
+    ln -fs $HOME/dotfiles/$i $HOME/$i
+  fi
+done
+
 ln -fs $HOME/dotfiles/hooks/vimproc-post-receive $HOME/dotfiles/.vim/bundle/vimproc/.git/hooks/post-receive
