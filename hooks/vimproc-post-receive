@@ -17,5 +17,5 @@
 if [ `uname` = "Darwin" ]; then
   cd $HOME/dotfiles/.vim/bundle/vimproc; make -f make_mac.mak
 elif [ `uname` = "Linux" ]; then
-  cd $HOME/dotfiles/.vim/bundle/vimproc; make -f make -f make_unix.mak
+  cd $HOME/dotfiles/.vim/bundle/vimproc; make -f make_unix.mak
 fi
