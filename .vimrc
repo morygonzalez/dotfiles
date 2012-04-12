@@ -10,17 +10,22 @@ call vundle#rc()
 filetype off " for vundle
 " vundle
 Bundle 'gmarik/vundle'
+
 " vim online
 Bundle 'Markdown'
 Bundle 'Align'
 Bundle 'taskpaper.vim'
 Bundle 'sudo.vim'
 Bundle 'html5.vim'
+Bundle 'vim-addon-mw-utils'
+Bundle 'tlib'
+
 " github
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-fugitive'
+" Bundle 'motemen/git-vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
 Bundle 'tomtom/tcomment_vim'
@@ -33,11 +38,13 @@ Bundle 'mileszs/ack.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'ujihisa/unite-colorscheme'
-Bundle 'msanders/snipmate.vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/snipmate-snippets'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'csexton/jekyll.vim'
+
 filetype plugin indent on " for vundle
 
 "#######################
@@ -157,7 +164,7 @@ let g:unite_enable_start_insert=1
 " バッファ一覧
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 " レジスタ一覧
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
@@ -165,7 +172,7 @@ nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 " 常用セット
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
-nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file file/new<CR>
 " 新規ファイル
 nnoremap <silent> ,un :<C-u>UniteWithBufferDir -buffer-name=files file/new<CR>
 " colorscheme
