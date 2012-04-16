@@ -77,6 +77,7 @@ set hlsearch "検索結果をハイライト表示
 " ESCキー2度押しでハイライトを消す
 nnoremap <Esc><Esc> :<C-u>nohl<Return><Esc>
 " set nohlsearch "検索結果文字列の非ハイライト表示
+nnoremap :w :up "変更があれば保存
 
 " 普通にバックスペースで削除できるようにする
 set backspace=indent,eol,start
