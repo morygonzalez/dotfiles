@@ -95,8 +95,8 @@ set splitbelow "新しいウィンドウを下に開く
 set splitright "新しいウィンドウを右に開く
 set t_Co=256 " 256 color
 " molokai
-let g:molokai_original = 1
 colorscheme molokai
+let g:molokai_original = 1
 " solarized
 " let g:solarized_termcolors=256
 " colorscheme solarized
