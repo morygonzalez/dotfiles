@@ -45,6 +45,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'csexton/jekyll.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tomasr/molokai'
 
 filetype plugin indent on " for vundle
