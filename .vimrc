@@ -5,7 +5,7 @@ set rtp+=~/.vim/vundle/
 call vundle#rc()
 
 "#######################
-" Plugin
+" Vundle
 "#######################
 filetype off " for vundle
 " vundle
@@ -49,6 +49,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tomasr/molokai'
 
 filetype plugin indent on " for vundle
+
 
 "#######################
 " vim configuration
@@ -137,16 +138,23 @@ autocmd FileType scss setlocal sw=4 sts=4 ts=4 et
 "########################
 " Neocomplcache.
 "########################
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Enable heavy omni completion.
+let g:neocomplcache_enable_at_startup            = 1 " Use smartcase.
+let g:neocomplcache_enable_smart_case            = 1 " Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1 " Enable heavy omni completion.
+let g:neocomplcache_enable_underbar_completion   = 1 " Use underbar completion.
+let g:neocomplcache_min_syntax_length            = 3 " Set minimum syntax keyword length.
+let g:neocomplcache_lock_buffer_name_pattern     = '\*ku\*'
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
 
 "#######################
 " Vimfiler
@@ -155,10 +163,12 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 nnoremap <silent> ,vf :<C-u>VimFilerBufferDir<CR>
 
+
 "#######################
 " Align.vim
 "#######################
 let g:Align_xstrlen=3
+
 
 "#######################
 " Unite.vim
@@ -181,6 +191,7 @@ nnoremap <silent> ,un :<C-u>UniteWithBufferDir -buffer-name=files file/new<CR>
 " colorscheme
 nnoremap <silent> ,uc :<C-u>Unite colorscheme<CR>
 
+
 "#######################
 " vim quickrun
 "#######################
@@ -195,6 +206,7 @@ augroup END
 let g:quickrun_config['markdown'] = {
       \ 'outputter': 'browser'
       \}
+
 
 "#######################
 " Jekyll.vim
