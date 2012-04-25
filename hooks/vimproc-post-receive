@@ -15,7 +15,7 @@
 #. /usr/share/doc/git-core/contrib/hooks/post-receive-email
 
 if [ `uname` = "Darwin" ]; then
-  cd $HOME/dotfiles/.vim/bundle/vimproc; make -f make_mac.mak
+  /usr/bin/make -f $HOME/dotfiles/.vim/bundle/vimproc make_mac.mak
 elif [ `uname` = "Linux" ]; then
-  cd $HOME/dotfiles/.vim/bundle/vimproc; make -f make_unix.mak
+  /usr/bin/make -f $HOME/dotfiles/.vim/bundle/vimproc make_unix.mak
 fi
