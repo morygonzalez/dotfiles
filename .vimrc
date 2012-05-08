@@ -16,7 +16,6 @@ Bundle 'Markdown'
 Bundle 'Align'
 Bundle 'taskpaper.vim'
 Bundle 'sudo.vim'
-Bundle 'html5.vim'
 Bundle 'vim-addon-mw-utils'
 Bundle 'tlib'
 
@@ -47,6 +46,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'csexton/jekyll.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tomasr/molokai'
+Bundle 'othree/html5.vim'
 
 filetype plugin indent on " for vundle
 
@@ -220,7 +220,7 @@ map <Leader>jl :JekyllList<CR>
 "#######################
 " Indent Guides
 "#######################
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
 hi IndentGuidesOdd  ctermbg=235
 hi IndentGuidesEven ctermbg=236
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
