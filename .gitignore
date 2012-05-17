@@ -14,16 +14,4 @@ update-author-*
 doc/tags
 doc/tags-ja
 .vim/bundle/*
-.vim/autoload/fakepoll.h
-.vim/autoload/proc.c
-.vim/autoload/proc.so
-.vim/autoload/proc_w32.c
-.vim/autoload/vimproc.vim
-.vim/autoload/vimproc/parser.vim
-.vim/autoload/vimproc/util.vim
-.vim/autoload/vimstack.c
-.vim/ftplugin/ruby.vim
-.vim/ftplugin/eruby.vim
-.vim/ftdetect/ruby.vim
 .rvmrc
-Gemfile.lock
