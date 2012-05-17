@@ -43,3 +43,4 @@ else
 endif
 
 set visualbell t_vb=
+colorscheme molokai
