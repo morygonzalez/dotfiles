@@ -96,8 +96,9 @@ set splitbelow "新しいウィンドウを下に開く
 set splitright "新しいウィンドウを右に開く
 set t_Co=256 " 256 color
 " molokai
-colorscheme molokai
+set background=dark
 let g:molokai_original = 1
+colorscheme molokai
 " solarized
 " let g:solarized_termcolors=256
 " colorscheme solarized
@@ -220,7 +221,7 @@ map <Leader>jl :JekyllList<CR>
 "#######################
 " Indent Guides
 "#######################
-hi IndentGuidesOdd  ctermbg=235
-hi IndentGuidesEven ctermbg=236
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+hi IndentGuidesOdd  ctermbg=235
+hi IndentGuidesEven ctermbg=236
