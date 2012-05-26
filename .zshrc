@@ -259,13 +259,12 @@ kterm*|xterm*)
   precmd() {
     echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
   }
-  export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-  # export LSCOLORS=Exfxcxdxbxegedabagacad
-  export LS_COLORS='di=36;40:ln=35;40:so=31;:pi=0;:ex=1;;40:bd=0;:cd=37;:su=37;:sg=0;:tw=0;:ow=0;:'
-  # export LS_COLORS='di=34;01:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-  zstyle ':completion:*' list-colors \
-    'di=36' 'ln=35' 'so=31' 'ex=1' 'bd=0' 'cd=37'
-    # 'di=34;01' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+  export LSCOLORS=Exfxcxdxbxegedabagacad
+  export LS_COLORS='di=34;01:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+  zstyle ':completion:*' list-colors  'di=34;01' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+  # export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #Solarized
+  # export LS_COLORS='di=36;40:ln=35;40:so=31;:pi=0;:ex=1;;40:bd=0;:cd=37;:su=37;:sg=0;:tw=0;:ow=0;:' #Solarized
+  # zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=31' 'ex=1' 'bd=0' 'cd=37' #Solarized
   ;;
 esac
 
