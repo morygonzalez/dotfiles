@@ -1,4 +1,4 @@
-for i in .zshrc .zsh .vimrc .vim .gvimrc .screenrc .tmux.conf .bashrc .gemrc .inputrc
+for i in .zshrc .zsh .vimrc .vim .gvimrc .screenrc .tmux.conf .bashrc .gemrc .inputrc .pryrc
 do
   if [ ! -e $HOME/$i ] ; then
     ln -fs $HOME/dotfiles/$i $HOME/$i
