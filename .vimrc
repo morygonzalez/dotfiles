@@ -47,6 +47,7 @@ Bundle 'csexton/jekyll.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tomasr/molokai'
 Bundle 'othree/html5.vim'
+Bundle 'kshimo69/rsense-copy'
 
 filetype plugin indent on " for vundle
 
