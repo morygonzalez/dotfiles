@@ -47,7 +47,6 @@ Bundle 'csexton/jekyll.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tomasr/molokai'
 Bundle 'othree/html5.vim'
-Bundle 'kshimo69/rsense-copy'
 
 filetype plugin indent on " for vundle
 
@@ -154,17 +153,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-
-"#######################
-" rsense
-"#######################
-let g:rsenseHome = '/usr/local/bin'
-let g:rsenseUseOmniFunc = 1
-
-if !exists('g:neocomplcache_omni_patterns')
-let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
