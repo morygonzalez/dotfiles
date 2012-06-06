@@ -25,6 +25,7 @@ set nobackup
 " enable toolbar and menu
 set guioptions-=T
 set guioptions-=m
+set guioptions-=r
 
 " 行末強調表示
 highlight WhitespaceEOL ctermbg=red guibg=red
