@@ -191,7 +191,12 @@ nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mr
 nnoremap <silent> ,un :<C-u>UniteWithBufferDir -buffer-name=files file/new<CR>
 " colorscheme
 nnoremap <silent> ,uc :<C-u>Unite colorscheme<CR>
-
+" vimfiler で grep したとき見やすくするやつ
+let g:unite_source_grep_default_opts = '-Hn --color=never'
+if executable('ack-grep')
+  let g:unite_source_grep_command = 'ack-grep'
+  let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
+endif
 
 "#######################
 " vim quickrun
