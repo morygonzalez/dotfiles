@@ -21,4 +21,5 @@
   ro = rebase origin
   rc = rebase --continue
   wd = diff --word-diff
+  mt = mergetool
   lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
