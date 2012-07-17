@@ -50,7 +50,6 @@ Bundle 'othree/html5.vim'
 
 filetype plugin indent on " for vundle
 
-
 "#######################
 " vim configuration
 "#######################
@@ -125,6 +124,16 @@ highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 autocmd WinEnter * match WhitespaceEOL /\s\+$/
 
+" 横幅長い行対策
+" http://vim-users.jp/2011/05/hack217/
+set textwidth=0
+if exists('&colorcolumn')
+    set colorcolumn=+1
+    " sh,cpp,perl,vim,...の部分は自分が使う
+    " プログラミング言語のfiletypeに合わせてください
+    autocmd FileType sh,cpp,perl,vim,ruby,python,haskell,scheme setlocal textwidth=80
+endif
+
 " shebang template
 autocmd BufNewFile *.rb 0r ~/.vim/templates/skel.rb
 
@@ -134,7 +143,6 @@ autocmd FileType apache setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType conf setlocal sw=4 sts=4 ts=4 noet
 autocmd FileType css setlocal sw=4 sts=4 ts=4 et
 autocmd FileType scss setlocal sw=4 sts=4 ts=4 et
-
 
 "########################
 " Neocomplcache.
@@ -156,7 +164,6 @@ if !exists('g:neocomplcache_omni_patterns')
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
-
 "#######################
 " Vimfiler
 "#######################
@@ -164,12 +171,10 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 nnoremap <silent> ,vf :<C-u>VimFilerBufferDir<CR>
 
-
 "#######################
 " Align.vim
 "#######################
 let g:Align_xstrlen=3
-
 
 "#######################
 " Unite.vim
@@ -213,7 +218,6 @@ let g:quickrun_config['markdown'] = {
       \ 'outputter': 'browser'
       \}
 
-
 "#######################
 " Jekyll.vim
 "#######################
@@ -221,7 +225,6 @@ let g:jekyll_path = "~/Projects/tech.portalshit.net"
 map <Leader>jb :JekyllBuild<CR>
 map <Leader>jn :JekyllPost<CR>
 map <Leader>jl :JekyllList<CR>
-
 
 "#######################
 " Indent Guides
