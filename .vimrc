@@ -54,7 +54,7 @@ filetype plugin indent on " for vundle
 " vim configuration
 "#######################
 set encoding=utf-8
-set fileencodings=utf-8,utf-16le,iso-2022-jp,euc-jp,sjis,cp932
+set fileencodings=utf-8,latin1,utf-16le,iso-2022-jp,euc-jp,sjis,cp932
 set nowritebackup
 set nobackup
 
@@ -131,7 +131,7 @@ if exists('&colorcolumn')
     set colorcolumn=+1
     " sh,cpp,perl,vim,...の部分は自分が使う
     " プログラミング言語のfiletypeに合わせてください
-    autocmd FileType sh,cpp,perl,vim,ruby,python,haskell,scheme setlocal textwidth=80
+    autocmd FileType sh,cpp,perl,vim,ruby,python,haskell,scheme,javascript setlocal textwidth=80
 endif
 
 " shebang template
