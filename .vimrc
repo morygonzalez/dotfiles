@@ -47,6 +47,7 @@ Bundle 'csexton/jekyll.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tomasr/molokai'
 Bundle 'othree/html5.vim'
+Bundle 'vim-rsense'
 
 filetype plugin indent on " for vundle
 
@@ -131,7 +132,7 @@ if exists('&colorcolumn')
     set colorcolumn=+1
     " sh,cpp,perl,vim,...の部分は自分が使う
     " プログラミング言語のfiletypeに合わせてください
-    autocmd FileType sh,cpp,perl,vim,ruby,python,haskell,scheme,javascript setlocal textwidth=80
+    autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,html,python,haskell,scheme,javascript setlocal textwidth=80
 endif
 
 " shebang template
@@ -162,7 +163,13 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:rsenseUseOmniFunc = 1
+if filereadable(expand('/usr/local/bin/rsense'))
+  let g:rsenseHome = expand('/usr/local/Cellar/rsense/0.3/libexec')
+
+  let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+endif
 
 "#######################
 " Vimfiler
