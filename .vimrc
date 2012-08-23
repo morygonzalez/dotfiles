@@ -203,12 +203,35 @@ nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mr
 nnoremap <silent> ,un :<C-u>UniteWithBufferDir -buffer-name=files file/new<CR>
 " colorscheme
 nnoremap <silent> ,uc :<C-u>Unite colorscheme<CR>
-" vimfiler で grep したとき見やすくするやつ
+" git confilicts
+" http://aereal.hateblo.jp/entry/2012/07/28/032951
+nnoremap <silent> ,gc :<C-u>UniteWithCurrentDir git/conflicts -buffer-name=files<CR>
+
+" vimfiler で grep したとき見やすくするやつ {{{
 let g:unite_source_grep_default_opts = '-Hn --color=never'
 if executable('ack-grep')
   let g:unite_source_grep_command = 'ack-grep'
   let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
 endif
+" }}}
+
+" unite-git-conflict {{{
+let s:unite_git_conflicts = {
+  \ 'name': 'git/conflicts',
+  \ }
+function! s:unite_git_conflicts.gather_candidates(args, context)
+  let output = unite#util#system('git diff-files --name-status')
+  let conflicts = filter(split(output, "\n"), 'v:val[0] == "U"')
+  let files = map(conflicts, 'fnamemodify(split(v:val, "\\\s\\\+")[1], ":p")')
+  return map(files, '{
+    \ "word": v:val,
+    \ "source": "git/conflicts",
+    \ "kind": "file",
+    \ "action__path": v:val
+    \ }')
+endfunction
+call unite#define_source(s:unite_git_conflicts)
+" }}}
 
 "#######################
 " vim quickrun
