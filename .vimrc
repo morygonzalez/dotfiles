@@ -96,11 +96,8 @@
     set noincsearch "検索文字列入力時に順次対象文字列にヒットさせない
     set hlsearch "検索結果をハイライト表示
     " set nohlsearch "検索結果文字列の非ハイライト表示
-    " ESCキー2度押しでハイライトを消す
-    nnoremap <Esc><Esc> :<C-u>nohl<Return><Esc>
 
-    " 普通にバックスペースで削除できるようにする
-    set backspace=indent,eol,start
+    set backspace=indent,eol,start " 普通にバックスペースで削除できるようにする
 
     set number "行番号表示
     set showmode "モード表示
@@ -113,6 +110,10 @@
     set splitbelow "新しいウィンドウを下に開く
     set splitright "新しいウィンドウを右に開く
     set t_Co=256 " 256 color
+    set wildmenu
+    set wildmode=longest,list "コマンド候補補完
+    set history=1000 "コマンド履歴保存件数
+    set cursorline " カーソル行をハイライト表示
 
     " Colorscheme settings {{{
 
@@ -130,14 +131,8 @@
 
     " }}}
 
-    set cursorline " カーソル行をハイライト表示
-
     " ファイルを開いた際に、前回終了時の行で起動
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-
-    set wildmenu
-    set wildmode=longest,list "コマンド候補補完
-    set history=1000 "コマンド履歴保存件数
 
     " 行末の空白を強調表示
     " http://d.hatena.ne.jp/kasahi/20070902/1188744907
@@ -163,6 +158,9 @@
   " }}}
 
   " Keybingings {{{
+
+    " ESCキー2度押しでハイライトを消す
+    nnoremap <Esc><Esc> :<C-u>nohl<Return><Esc>
 
     " カーソル移動を見た目のやつに
     nnoremap j gj
@@ -193,6 +191,7 @@
     autocmd FileType conf setlocal sw=4 sts=4 ts=4 noet
     autocmd FileType css setlocal sw=4 sts=4 ts=4 et
     autocmd FileType scss setlocal sw=4 sts=4 ts=4 et
+    autocmd FileType vim setlocal foldmethod=marker foldmarker={{{,}}}
 
   " }}}
 
@@ -325,7 +324,7 @@
 
     " }}}
 
-    " Indent Guide {{{
+    " Indent Guides {{{
 
       let g:indent_guides_start_level = 2
       let g:indent_guides_guide_size = 1
