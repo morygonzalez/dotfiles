@@ -114,6 +114,22 @@
     set splitright "新しいウィンドウを右に開く
     set t_Co=256 " 256 color
 
+    " Colorscheme settings {{{
+
+      " molokai {{{
+        set background=dark
+        let g:molokai_original = 1
+        colorscheme molokai
+      " }}}
+
+      " solarized {{{
+        " let g:solarized_termcolors=256
+        " colorscheme solarized
+        " set bg=light
+      " }}}
+
+    " }}}
+
     set cursorline " カーソル行をハイライト表示
 
     " ファイルを開いた際に、前回終了時の行で起動
@@ -125,6 +141,7 @@
 
     " 行末の空白を強調表示
     " http://d.hatena.ne.jp/kasahi/20070902/1188744907
+    " colorscheme の設定よりも後に持ってこないといけない
     highlight WhitespaceEOL ctermbg=red guibg=red
     match WhitespaceEOL /\s\+$/
     autocmd WinEnter * match WhitespaceEOL /\s\+$/
@@ -142,22 +159,6 @@
     " コメントアウト行を改行したときにコメントアウトされるのをやめる
     " http://d.hatena.ne.jp/yuichi_katahira/20090117/1232209418
     autocmd FileType * setlocal formatoptions-=ro
-
-  " }}}
-
-  " Colorscheme settings {{{
-
-    " molokai {{{
-      set background=dark
-      let g:molokai_original = 1
-      colorscheme molokai
-    " }}}
-
-    " solarized {{{
-      " let g:solarized_termcolors=256
-      " colorscheme solarized
-      " set bg=light
-    " }}}
 
   " }}}
 
