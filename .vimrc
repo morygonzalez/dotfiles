@@ -1,4 +1,4 @@
-" vim: set foldmarker={{{,}}} foldlevel=0 foldmethod=marker
+" vim: set foldmarker={{{,}}} foldlevel=0 foldmethod=marker :
 
   " Setup {{{
 
@@ -63,6 +63,8 @@
 
       Bundle 'tomasr/molokai'
       Bundle 'altercation/vim-colors-solarized'
+      Bundle 'railscasts'
+      Bundle 'github-theme'
 
     " }}}
 
@@ -191,7 +193,6 @@
     autocmd FileType conf setlocal sw=4 sts=4 ts=4 noet
     autocmd FileType css setlocal sw=4 sts=4 ts=4 et
     autocmd FileType scss setlocal sw=4 sts=4 ts=4 et
-    autocmd FileType vim setlocal foldmethod=marker foldmarker={{{,}}}
 
   " }}}
 
