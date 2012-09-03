@@ -19,7 +19,7 @@
 
     " Utilities {{{
 
-      Bundle 'garbas/vim-snipmate'
+      " Bundle 'garbas/vim-snipmate'
       Bundle 'honza/snipmate-snippets'
       Bundle 'mattn/gist-vim'
       Bundle 'mattn/webapi-vim'
@@ -227,6 +227,10 @@
       endif
 
       " Snippet
+      " uses neocomplcache's snippet feature instead of snipMate
+      imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+      smap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+      " but uses snipMate's snippet
       let g:necomplcache_snippets_dir = '~/.vim/bundle/snipmate-snippets/snippets'
 
     " }}}
