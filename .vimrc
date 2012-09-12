@@ -44,7 +44,7 @@
       Bundle 'Shougo/vimfiler'
       Bundle 'Shougo/vimproc'
       Bundle 'vim-ruby/vim-ruby'
-      Bundle 'vim-rsense'
+      Bundle 'ujihisa/neco-look'
 
     " }}}
 
