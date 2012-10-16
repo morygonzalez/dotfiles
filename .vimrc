@@ -45,6 +45,7 @@
       Bundle 'Shougo/vimproc'
       Bundle 'vim-ruby/vim-ruby'
       Bundle 'ujihisa/neco-look'
+      Bundle 'thinca/vim-ref'
 
     " }}}
 
@@ -336,6 +337,23 @@
       let g:indent_guides_auto_colors = 0
       autocmd VimEnter,ColorScheme * hi IndentGuidesOdd  ctermbg=235
       autocmd VimEnter,ColorScheme * hi IndentGuidesEven ctermbg=236
+
+    " }}}
+
+    " web-ref {{{
+
+      let g:ref_source_webdict_sites = {
+            \   'e': {
+            \     'url': 'http://eow.alc.co.jp/%s/UTF-8/?ref=s',
+            \   }
+            \ }
+      let g:ref_source_webdict_sites.default = 'e'
+
+      function! g:ref_source_webdict_sites.e.filter(output)
+        return join(split(a:output, "\n")[43 :], "\n")
+      endfunction
+
+      nmap ,re :<C-u>Ref webdict e<Space>
 
     " }}}
 
