@@ -201,12 +201,13 @@
 
     " Neocomplcache {{{
 
-      let g:neocomplcache_enable_at_startup            = 1 " Use smartcase.
-      let g:neocomplcache_enable_smart_case            = 1 " Use camel case completion.
-      let g:neocomplcache_enable_camel_case_completion = 1 " Enable heavy omni completion.
+      let g:neocomplcache_enable_at_startup            = 1
+      let g:neocomplcache_enable_smart_case            = 1 " Use smartcase.
+      let g:neocomplcache_enable_camel_case_completion = 1 " Use camel case completion.
       let g:neocomplcache_enable_underbar_completion   = 1 " Use underbar completion.
       let g:neocomplcache_min_syntax_length            = 3 " Set minimum syntax keyword length.
       let g:neocomplcache_lock_buffer_name_pattern     = '\*ku\*'
+      let g:neocomplcache_text_mode_filetypes = {'text': 1, 'javascript': 1, 'markdown': 1, 'perl': 1, 'html': 1, 'ruby': 1}
 
       " Enable omni completion.
       autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -350,7 +351,7 @@
       let g:ref_source_webdict_sites.default = 'e'
 
       function! g:ref_source_webdict_sites.e.filter(output)
-        return join(split(a:output, "\n")[43 :], "\n")
+        return join(split(a:output, "\n")[41 :], "\n")
       endfunction
 
       nmap ,re :<C-u>Ref webdict e<Space>
