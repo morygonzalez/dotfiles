@@ -13,6 +13,7 @@
       set guifontwide=Osaka-Mono:h13
       set noimdisableactivate
       " set transparency=12
+      set macmeta
     endif
   endif
   if has('gui_gtk2')
