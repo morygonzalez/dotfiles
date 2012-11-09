@@ -39,7 +39,7 @@
       Bundle 'tlib'
       Bundle 'Lokaltog/vim-powerline'
       Bundle 'Shougo/neocomplcache'
-      Bundle 'Shougo/neocomplcache-snippets-complete'
+      Bundle 'Shougo/neosnippet'
       Bundle 'Shougo/unite.vim'
       Bundle 'Shougo/vimfiler'
       Bundle 'Shougo/vimproc'
@@ -226,12 +226,26 @@
         " let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
       endif
 
-      " Snippet
-      " uses neocomplcache's snippet feature instead of snipMate
-      imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-      smap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-      " but uses snipMate's snippet
-      let g:necomplcache_snippets_dir = '~/.vim/bundle/snipmate-snippets/snippets'
+    " }}}
+
+
+    " Neosnippet {{{
+
+      " Plugin key-mappings.
+      imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+      smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
+      " SuperTab like snippets behavior.
+      imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+      smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+      " For snippet_complete marker.
+      if has('conceal')
+        set conceallevel=2 concealcursor=i
+      endif
+
+      " Tell Neosnippet about the other snippets
+      let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
 
     " }}}
 
