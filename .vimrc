@@ -57,6 +57,7 @@
       Bundle 'taskpaper.vim'
       Bundle 'kchmck/vim-coffee-script'
       Bundle 'othree/html5.vim'
+      Bundle 'pangloss/vim-javascript'
 
     " }}}
 
