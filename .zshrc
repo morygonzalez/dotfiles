@@ -142,13 +142,6 @@ setopt hist_ignore_dups   # ignore duplication command history list
 setopt share_history    # share command history data
 
 
-## Completion configuration
-#
-fpath=(~/.zsh/functions/Completion ${fpath})
-autoload -U compinit
-compinit -u
-
-
 ## zsh editor
 #
 autoload zed
@@ -351,6 +344,14 @@ bashcompinit
 
 ## grep options
 export GREP_OPTIONS='--color=auto'
+
+
+## Completion configuration
+#
+fpath=(~/.zsh/functions/Completion ${fpath})
+autoload -U compinit
+compinit -u
+
 
 ## load user .zshrc configuration file#
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
