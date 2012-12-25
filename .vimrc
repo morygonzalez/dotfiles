@@ -58,6 +58,7 @@
       Bundle 'kchmck/vim-coffee-script'
       Bundle 'othree/html5.vim'
       Bundle 'pangloss/vim-javascript'
+      Bundle 'bbommarito/vim-slim'
 
     " }}}
 
