@@ -3,16 +3,29 @@
   " Setup {{{
 
     set nocompatible "vi非互換モード
-    " Vundle
-    filetype off " for vundle
-    set rtp+=~/.vim/vundle/
-    call vundle#rc()
 
   " }}}
 
-  " Vundle {{{
+  " NeoBundle {{{
 
-    Bundle 'gmarik/vundle'
+    if has('vim_starting')
+      set runtimepath+=~/.vim/bundle/neobundle.vim/
+    endif
+
+    call neobundle#rc(expand('~/.vim/bundle/'))
+
+    NeoBundleFetch 'Shougo/neobundle.vim'
+
+    NeoBundle 'Shougo/vimproc', {
+          \ 'build' : {
+          \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
+          \     'cygwin'  : 'make -f make_cygwin.mak',
+          \     'mac'     : 'make -f make_mac.mak',
+          \     'unix'    : 'make -f make_unix.mak',
+          \    },
+          \ }
+
+    " NeoBundle 'gmarik/vundle'
 
     " Bundle 'Shougo/vimshell'
     " Bundle 'motemen/git-vim'
@@ -20,62 +33,69 @@
     " Utilities {{{
 
       " Bundle 'garbas/vim-snipmate'
-      Bundle 'honza/snipmate-snippets'
-      Bundle 'mattn/gist-vim'
-      Bundle 'mattn/webapi-vim'
-      Bundle 'mileszs/ack.vim'
-      Bundle 'nathanaelkane/vim-indent-guides'
-      Bundle 'othree/eregex.vim'
-      Bundle 'thinca/vim-quickrun'
-      Bundle 'tomtom/tcomment_vim'
-      Bundle 'tpope/vim-endwise'
-      Bundle 'tpope/vim-fugitive'
-      Bundle 'tpope/vim-rails'
-      Bundle 'tyru/open-browser.vim'
-      Bundle 'ujihisa/unite-colorscheme'
-      Bundle 'Align'
-      Bundle 'sudo.vim'
-      Bundle 'vim-addon-mw-utils'
-      Bundle 'tlib'
-      Bundle 'Lokaltog/vim-powerline'
-      Bundle 'Shougo/neocomplcache'
-      Bundle 'Shougo/neosnippet'
-      Bundle 'Shougo/unite.vim'
-      Bundle 'Shougo/vimfiler'
-      Bundle 'Shougo/vimproc'
-      Bundle 'vim-ruby/vim-ruby'
-      Bundle 'ujihisa/neco-look'
-      Bundle 'thinca/vim-ref'
+      NeoBundle 'honza/snipmate-snippets'
+      NeoBundle 'mattn/gist-vim'
+      NeoBundle 'mattn/webapi-vim'
+      NeoBundle 'mileszs/ack.vim'
+      NeoBundle 'nathanaelkane/vim-indent-guides'
+      NeoBundle 'othree/eregex.vim'
+      NeoBundle 'thinca/vim-quickrun'
+      NeoBundle 'tomtom/tcomment_vim'
+      NeoBundle 'tpope/vim-endwise'
+      NeoBundle 'tpope/vim-fugitive'
+      NeoBundle 'tpope/vim-rails'
+      NeoBundle 'tyru/open-browser.vim'
+      NeoBundle 'ujihisa/unite-colorscheme'
+      NeoBundle 'Align'
+      NeoBundle 'sudo.vim'
+      NeoBundle 'vim-addon-mw-utils'
+      NeoBundle 'tlib'
+      NeoBundle 'Lokaltog/vim-powerline'
+      NeoBundle 'Shougo/neocomplcache'
+      NeoBundle 'Shougo/neosnippet'
+      NeoBundle 'Shougo/unite.vim'
+      NeoBundle 'Shougo/vimfiler'
+      NeoBundle 'vim-ruby/vim-ruby'
+      NeoBundle 'ujihisa/neco-look'
+      NeoBundle 'thinca/vim-ref'
 
     " }}}
 
     " Syntaxes {{{
 
-      Bundle 'csexton/jekyll.vim'
-      Bundle 'tpope/vim-markdown'
-      Bundle 'leshill/vim-json'
-      Bundle 'taskpaper.vim'
-      Bundle 'kchmck/vim-coffee-script'
-      Bundle 'othree/html5.vim'
-      Bundle 'pangloss/vim-javascript'
-      Bundle 'bbommarito/vim-slim'
+      NeoBundle 'csexton/jekyll.vim'
+      NeoBundle 'tpope/vim-markdown'
+      NeoBundle 'leshill/vim-json'
+      NeoBundle 'taskpaper.vim'
+      NeoBundle 'kchmck/vim-coffee-script'
+      NeoBundle 'othree/html5.vim'
+      NeoBundle 'pangloss/vim-javascript'
+      NeoBundle 'bbommarito/vim-slim'
 
     " }}}
 
     " Colorschemes {{{
 
-      Bundle 'tomasr/molokai'
-      Bundle 'altercation/vim-colors-solarized'
-      Bundle 'railscasts'
-      Bundle 'github-theme'
+      NeoBundle 'tomasr/molokai'
+      NeoBundle 'altercation/vim-colors-solarized'
+      NeoBundle 'railscasts'
+      NeoBundle 'github-theme'
 
     " }}}
+
+    filetype plugin indent on
+
+    if neobundle#exists_not_installed_bundles()
+      echomsg 'Not installed bundles : ' .
+            \ string(neobundle#get_not_installed_bundle_names())
+      echomsg 'Please execute ":NeoBundleInstall" command.'
+      "finish
+    endif
 
   " }}}
 
   " General Config {{{
 
-    filetype plugin indent on
     syntax on "カラー表示
 
     set encoding=utf-8
