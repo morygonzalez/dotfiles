@@ -70,7 +70,7 @@
       NeoBundle 'kchmck/vim-coffee-script'
       NeoBundle 'othree/html5.vim'
       NeoBundle 'pangloss/vim-javascript'
-      NeoBundle 'bbommarito/vim-slim'
+      NeoBundle 'slim-template/vim-slim'
 
     " }}}
 
