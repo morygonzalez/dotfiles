@@ -1,0 +1,3 @@
+--ignore-dir=coverage
+--ignore-case
+--all-types
