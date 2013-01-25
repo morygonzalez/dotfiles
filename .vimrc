@@ -351,9 +351,18 @@
         autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
       augroup END
       " preview markdown with browser
-      let g:quickrun_config['markdown'] = {
-            \ 'outputter': 'browser'
-            \}
+      " let g:quickrun_config['markdown'] = {
+      "       \ 'outputter': 'browser'
+      "       \}
+      " preview markdown with marked
+      let g:quickrun_config.markdown = {
+            \ 'outputter' : 'null',
+            \ 'command'   : 'open',
+            \ 'cmdopt'    : '-a',
+            \ 'args'      : 'Marked',
+            \ 'exec'      : '%c %o %a %s',
+            \ }
+
 
     " }}}
 
