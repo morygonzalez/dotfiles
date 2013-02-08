@@ -12,7 +12,7 @@
       set guifont=Menlo:h13
       set guifontwide=Osaka-Mono:h13
       set noimdisableactivate
-      " set transparency=12
+      map ¥ <leader>
     endif
   endif
   if has('gui_gtk2')
