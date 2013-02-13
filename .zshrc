@@ -163,7 +163,7 @@ zle -N self-insert url-quote-magic
 #
 # expand aliases before completing
 #
-setopt complete_aliases   # aliased ls needs if file/dir completions work
+# setopt complete_aliases   # aliased ls needs if file/dir completions work
 
 alias where="command -v"
 alias j="jobs -l"
@@ -277,12 +277,10 @@ function up()
   cd $to
 }
 
+# cd したときに自動的に ls する
 function chpwd() {
   ls
-  # http://filmlang.org/2011/05/12/tmux/setting
-  # [ -n $TMUX ] && tmux setenv TMUXPWD_$(tmux display -p "#I") $PWD
 }
-
 
 # ssh known_hosts completion
 # http://trashbox.g.hatena.ne.jp/lurker/20071109/1194586015
@@ -292,7 +290,6 @@ function print_known_hosts (){
   fi
 }
 _cache_hosts=($( print_known_hosts ))
-
 
 # sudo vim filename を vim sudo:filename に展開する設定
 # http://blog.monoweb.info/article/2011120320.html
@@ -317,20 +314,6 @@ sudo() {
   esac
 }
 
-# https://gist.github.com/805901
-p() {
-  local pid exit
-  # http://www.filesonic.com/file/703099021
-  afplay ~/Music/Nyan\ Cat.mp3 &
-  pid=$!
-  trap "kill -9 $pid" INT
-  command $*
-  exit=$?
-  kill -9 $pid
-  trap INT
-  return $exit
-}
-
 ## load git-completion.sh
 autoload bashcompinit
 bashcompinit
@@ -345,13 +328,11 @@ bashcompinit
 ## grep options
 export GREP_OPTIONS='--color=auto'
 
-
 ## Completion configuration
 #
 fpath=(~/.zsh/functions/Completion ${fpath})
 autoload -U compinit
 compinit -u
-
 
 ## load user .zshrc configuration file#
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
