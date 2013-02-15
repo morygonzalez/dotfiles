@@ -314,11 +314,6 @@ sudo() {
   esac
 }
 
-## load git-completion.sh
-autoload bashcompinit
-bashcompinit
-[ -f ~/.git-completion.sh ] && source ~/.git-completion.sh
-
 # bundler-exec.sh
 [ -f ~/.bundler-exec.sh ] && source ~/.bundler-exec.sh
 
