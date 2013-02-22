@@ -59,6 +59,7 @@
       NeoBundle 'ujihisa/unite-colorscheme'
       NeoBundle 'vim-addon-mw-utils'
       NeoBundle 'vim-ruby/vim-ruby'
+      NeoBundle 'scrooloose/syntastic'
 
     " }}}
 
