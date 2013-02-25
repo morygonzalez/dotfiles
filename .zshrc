@@ -169,9 +169,13 @@ alias where="command -v"
 alias j="jobs -l"
 
 case "${OSTYPE}" in
-freebsd*|darwin*)
+freebsd*)
+  alias ls="ls -G -w"
+  ;;
+darwin*)
   alias ls="ls -G -w"
   alias gvim='env LANG=ja_JP.UTF-8 open -a /Applications/MacVim.app "$@"'
+  alias tmux='tmux -2 -f ~/.tmux/osx.conf'
   ;;
 linux*)
   alias ls="ls --color"
