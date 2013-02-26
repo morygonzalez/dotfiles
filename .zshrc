@@ -27,9 +27,9 @@ case ${UID} in
     PROMPT="%{${fg[red]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
   ;;
 *)
-  PROMPT="%{${fg[yellow]}%}%/%{${reset_color}%}%{${fg[cyan]}%}⚡%{${reset_color}%} "
-  PROMPT2="%{${fg[yellow]}%}%_%%%{${reset_color}%} "
-  SPROMPT="%{${fg[yellow]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+  PROMPT="%{${fg[black]}%}%/%{${reset_color}%}%{${fg[magenta]}%}⚡%{${reset_color}%} "
+  PROMPT2="%{${fg[black]}%}%_%%%{${reset_color}%} "
+  SPROMPT="%{${fg[black]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
     PROMPT="%{${fg[red]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
   ;;
