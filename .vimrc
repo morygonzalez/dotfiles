@@ -214,7 +214,6 @@
 
     " ファイルタイプ別の設定
     autocmd FileType nginx,apache,conf setlocal sw=4 sts=4 ts=4 noet
-    autocmd FileType javascript setlocal sw=4 sts=4 ts=4 et
     autocmd FileType css,scss setlocal sw=4 sts=4 ts=4 et
 
   " }}}
