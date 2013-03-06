@@ -249,6 +249,14 @@
         " let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
       endif
 
+      " 補完候補の色づけ for vim7
+      " https://github.com/yuroyoro/dotfiles/blob/master/.vimrc.colors
+      " http://mba-hack.blogspot.jp/2013/01/vim_2945.html
+      hi Pmenu ctermbg=255 ctermfg=0 guifg=#000000 guibg=#999999
+      hi PmenuSel ctermbg=blue ctermfg=black
+      hi PmenuSbar ctermbg=0 ctermfg=9
+      hi PmenuSbar ctermbg=255 ctermfg=0 guifg=#000000 guibg=#FFFFFF
+
     " }}}
 
 
