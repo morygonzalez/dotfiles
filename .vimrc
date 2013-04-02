@@ -73,6 +73,7 @@
       NeoBundle 'othree/html5.vim'
       NeoBundle 'pangloss/vim-javascript'
       NeoBundle 'slim-template/vim-slim'
+      NeoBundle 'cakebaker/scss-syntax.vim'
 
     " }}}
 
@@ -214,7 +215,7 @@
 
     " ファイルタイプ別の設定
     autocmd FileType nginx,apache,conf setlocal sw=4 sts=4 ts=4 noet
-    autocmd FileType css,scss setlocal sw=4 sts=4 ts=4 et
+    autocmd FileType css setlocal sw=4 sts=4 ts=4 et
 
   " }}}
 
