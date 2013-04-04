@@ -404,7 +404,7 @@
       let g:ref_source_webdict_sites.default = 'e'
 
       function! g:ref_source_webdict_sites.e.filter(output)
-        return join(split(a:output, "\n")[41 :], "\n")
+        return join(split(a:output, "\n")[39 :], "\n")
       endfunction
 
       nmap ,re :<C-u>Ref webdict e<Space>
