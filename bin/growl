@@ -1,0 +1,7 @@
+#!/bin/sh
+
+restart() {
+	kill `ps -ef |grep -P "Growl\s" |awk '{ print $2 }'` && open -a Growl
+}
+
+"$@"
