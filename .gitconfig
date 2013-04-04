@@ -23,3 +23,6 @@
   wd = diff --word-diff
   mt = mergetool
   lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+[tig "bind"]
+  generic = g move-first-line
+  generic = G move-last-line
