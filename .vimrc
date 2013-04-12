@@ -74,6 +74,8 @@
       NeoBundle 'pangloss/vim-javascript'
       NeoBundle 'slim-template/vim-slim'
       NeoBundle 'cakebaker/scss-syntax.vim'
+      NeoBundle 'vim-scripts/nginx.vim'
+      NeoBundle 'vim-scripts/php.vim'
 
     " }}}
 
