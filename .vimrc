@@ -39,7 +39,7 @@
       NeoBundle 'Shougo/neosnippet'
       NeoBundle 'Shougo/unite.vim'
       NeoBundle 'Shougo/vimfiler'
-      NeoBundle 'honza/snipmate-snippets'
+      NeoBundle 'honza/vim-snippets'
       NeoBundle 'mattn/gist-vim'
       NeoBundle 'mattn/webapi-vim'
       NeoBundle 'mileszs/ack.vim'
@@ -280,7 +280,7 @@
       endif
 
       " Tell Neosnippet about the other snippets
-      let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+      let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
     " }}}
 
