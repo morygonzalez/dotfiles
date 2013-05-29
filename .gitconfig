@@ -24,3 +24,5 @@
   mt = mergetool
   lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
   pr = !REP_OWNER=$(git remote -v | grep -e "origin.*github.com[:/].*\\(push\\)" | sed "s/origin.*github.com[:/]//g" | sed "s/[/].*//g") && hub pull-request $2 -h $REP_OWNER:`git rev-parse --abbrev-ref HEAD` -b $REP_OWNER:$1 && shift "$#"
+[push]
+	default = simple
