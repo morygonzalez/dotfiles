@@ -75,7 +75,6 @@
       NeoBundle 'slim-template/vim-slim'
       NeoBundle 'cakebaker/scss-syntax.vim'
       NeoBundle 'vim-scripts/nginx.vim'
-      NeoBundle 'vim-scripts/php.vim'
       NeoBundle 'tpope/vim-git'
 
     " }}}
@@ -243,7 +242,7 @@
       let g:neocomplcache_enable_underbar_completion   = 1 " Use underbar completion.
       let g:neocomplcache_min_syntax_length            = 3 " Set minimum syntax keyword length.
       let g:neocomplcache_lock_buffer_name_pattern     = '\*ku\*'
-      let g:neocomplcache_text_mode_filetypes = {'text': 1, 'javascript': 1, 'markdown': 1, 'perl': 1, 'html': 1, 'ruby': 1}
+      let g:neocomplcache_text_mode_filetypes          = {'text': 1, 'javascript': 1, 'markdown': 1, 'perl': 1, 'html': 1, 'ruby': 1}
 
       " Enable omni completion.
       autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -427,6 +426,14 @@
       endfunction
 
       nmap ,re :<C-u>Ref webdict e<Space>
+
+    " }}}
+
+    " local configuration file {{{
+
+      if filereadable(expand('~/.vimrc.local'))
+        source ~/.vimrc.local
+      endif
 
     " }}}
 
