@@ -219,6 +219,9 @@
           \:let @a=old_reg_a<CR>
           \:let @"=old_reg<CR>
 
+    " Delete trailing white spaces
+    nnoremap <silent> ,tr :<C-u>%s/\s\+$//gI<CR>
+
   " }}}
 
   " Syntax Settings {{{
