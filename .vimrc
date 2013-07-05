@@ -39,6 +39,7 @@
       NeoBundle 'Shougo/neosnippet'
       NeoBundle 'Shougo/unite.vim'
       NeoBundle 'Shougo/vimfiler'
+      NeoBundle 'Shougo/neocomplcache-rsense.vim'
       NeoBundle 'honza/vim-snippets'
       NeoBundle 'mattn/gist-vim'
       NeoBundle 'mattn/webapi-vim'
@@ -259,11 +260,10 @@
       let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
       " RSense
-      let g:rsenseUseOmniFunc = 1
       if filereadable(expand('/usr/local/bin/rsense'))
-        let g:rsenseHome = expand('/usr/local/Cellar/rsense/0.3/libexec')
+        let g:neocomplcache#sources#rsense#home_directory = expand('/usr/local/Cellar/rsense/0.3/libexec')
 
-        " let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+        let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
       endif
 
       " 補完候補の色づけ for vim7
