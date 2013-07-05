@@ -178,7 +178,7 @@
       set colorcolumn=+1
       " sh,cpp,perl,vim,...の部分は自分が使う
       " プログラミング言語のfiletypeに合わせてください
-      autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=80
+      autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=100
     endif
 
     " コメントアウト行を改行したときにコメントアウトされるのをやめる
