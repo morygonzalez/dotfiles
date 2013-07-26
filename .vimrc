@@ -300,7 +300,17 @@
     " Vimfiler {{{
 
       let g:vimfiler_as_default_explorer = 1
+
+      " Enable file operation commands.
       let g:vimfiler_safe_mode_by_default = 0
+
+      " Like Textmate icons.
+      let g:vimfiler_tree_leaf_icon = ' '
+      let g:vimfiler_tree_opened_icon = '▾'
+      let g:vimfiler_tree_closed_icon = '▸'
+      let g:vimfiler_file_icon = '-'
+      let g:vimfiler_marked_file_icon = '*'
+
       nnoremap <silent> ,vf :<C-u>VimFilerBufferDir<CR>
 
     " }}}
@@ -392,7 +402,6 @@
             \ 'args'      : 'Marked',
             \ 'exec'      : '%c %o %a %s',
             \ }
-
 
     " }}}
 
