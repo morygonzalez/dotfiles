@@ -34,7 +34,7 @@
 
       " Bundle 'garbas/vim-snipmate'
       NeoBundle 'Align'
-      NeoBundle 'Lokaltog/vim-powerline'
+      NeoBundle 'bling/vim-airline'
       NeoBundle 'Shougo/neocomplcache'
       NeoBundle 'Shougo/neosnippet'
       NeoBundle 'Shougo/unite.vim'
@@ -312,7 +312,6 @@
 
     " }}}
 
-
     " Neosnippet {{{
 
       " Plugin key-mappings.
@@ -474,6 +473,18 @@
       endfunction
 
       nmap ,re :<C-u>Ref webdict e<Space>
+
+    " }}}
+
+    " Airline {{{
+
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_branch_prefix = ' '
+    let g:airline_readonly_symbol = ''
+    let g:airline_linecolumn_prefix = ' '
 
     " }}}
 
