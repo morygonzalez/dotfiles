@@ -9,8 +9,8 @@
       set ambiwidth=double
     endif
     if has('mac')
-      set guifont=Menlo:h12
-      set guifontwide=Osaka-Mono:h12
+      set guifont=Menlo\ Regular\ for\ Powerline:h12
+      set guifontwide=Menlo\ Regular\ for\ Powerline:h12
       set noimdisableactivate
       map ¥ <leader>
     endif
