@@ -25,8 +25,6 @@
           \    },
           \ }
 
-    " NeoBundle 'gmarik/vundle'
-
     " Bundle 'Shougo/vimshell'
     " Bundle 'motemen/git-vim'
 
@@ -110,10 +108,6 @@
     set nowritebackup
     set nobackup
 
-    " プログラミングヘルプ系
-    set smartindent "オートインデント
-    set clipboard+=autoselect
-
     " tab関連
     set expandtab "タブの代わりに空白文字挿入
     set ts=2 sw=2 sts=0 "タブは半角2文字分のスペース
@@ -127,10 +121,9 @@
     set wrapscan "検索時に最後まで行ったら最初に戻る
     set noincsearch "検索文字列入力時に順次対象文字列にヒットさせない
     set hlsearch "検索結果をハイライト表示
-    " set nohlsearch "検索結果文字列の非ハイライト表示
 
-    set backspace=indent,eol,start " 普通にバックスペースで削除できるようにする
-
+    set smartindent "オートインデント
+    set clipboard+=autoselect
     set number "行番号表示
     set showmode "モード表示
     set hidden "保存せずに buffer を移動する
@@ -146,6 +139,14 @@
     set wildmode=longest,list "コマンド候補補完
     set history=1000 "コマンド履歴保存件数
     set cursorline " カーソル行をハイライト表示
+    set backspace=indent,eol,start " 普通にバックスペースで削除できるようにする
+
+    " ファイルを開いた際に、前回終了時の行で起動
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+
+    " コメントアウト行を改行したときにコメントアウトされるのをやめる
+    " http://d.hatena.ne.jp/yuichi_katahira/20090117/1232209418
+    autocmd FileType * setlocal formatoptions-=ro
 
     " Colorscheme settings {{{
 
@@ -163,9 +164,6 @@
 
     " }}}
 
-    " ファイルを開いた際に、前回終了時の行で起動
-    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-
     " 行末の空白を強調表示
     " http://d.hatena.ne.jp/kasahi/20070902/1188744907
     " colorscheme の設定よりも後に持ってこないといけない
@@ -182,10 +180,6 @@
       " プログラミング言語のfiletypeに合わせてください
       autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=82
     endif
-
-    " コメントアウト行を改行したときにコメントアウトされるのをやめる
-    " http://d.hatena.ne.jp/yuichi_katahira/20090117/1232209418
-    autocmd FileType * setlocal formatoptions-=ro
 
     " }}}
 
