@@ -76,6 +76,8 @@
       NeoBundle 'cakebaker/scss-syntax.vim'
       NeoBundle 'vim-scripts/nginx.vim'
       NeoBundle 'tpope/vim-git'
+      NeoBundle 'joker1007/vim-markdown-quote-syntax'
+      NeoBundle 'joker1007/vim-ruby-heredoc-syntax'
 
     " }}}
 
