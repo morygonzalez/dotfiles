@@ -258,9 +258,7 @@
 
       " RSense
       if filereadable(expand('/usr/local/bin/rsense'))
-        let g:neocomplcache#sources#rsense#home_directory = expand('/usr/local/Cellar/rsense/0.3/libexec')
-
-        let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+        let g:rsenseHome = '/usr/local/Cellar/rsense/0.3/libexec'
       endif
 
       " 補完候補の色づけ for vim7
