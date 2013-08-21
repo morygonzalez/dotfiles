@@ -49,7 +49,7 @@ zstyle ':vcs_info:bzr:*' use-simple true
 autoload -U is-at-least
 if is-at-least 4.3.10; then
   # この check-for-changes が今回の設定するところ
-  zstyle ':vcs_info:git:*:-all-' command /usr/bin/git
+  zstyle ':vcs_info:git:*:-all-' command /usr/local/bin/git
   zstyle ':vcs_info:git:*' check-for-changes true
   zstyle ':vcs_info:git:*' stagedstr "+"  # 適当な文字列に変更する
   zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
