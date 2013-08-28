@@ -453,6 +453,8 @@
     let g:airline_readonly_symbol = ''
     let g:airline_linecolumn_prefix = ' '
 
+    let g:airline_theme='dark'
+
     " }}}
 
     " bufferline {{{
