@@ -191,10 +191,18 @@
     nnoremap <Esc><Esc> :<C-u>nohl<Return><Esc>
 
     " カーソル移動を見た目のやつに
-    nnoremap j gj
-    nnoremap k gk
-    vnoremap j gj
-    vnoremap k gk
+    nnoremap <silent> j gj
+    nnoremap <silent> gj j
+    nnoremap <silent> k gk
+    nnoremap <silent> gk k
+    nnoremap <silent> $ g$
+    nnoremap <silent> g$ $
+    vnoremap <silent> j gj
+    vnoremap <silent> gj j
+    vnoremap <silent> k gk
+    vnoremap <silent> gk k
+    vnoremap <silent> $ g$
+    vnoremap <silent> g$ $
 
     " bindings for easy split nav
     nnoremap <C-h> <C-w>h
