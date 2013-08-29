@@ -13,6 +13,7 @@
 (column-number-mode t)
 ;; 行番号表示
 (global-linum-mode t)
+(setq linum-format "%3d ")
 
 (custom-set-variables
  ;; Custom-set-variables was added by Custom.
