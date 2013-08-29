@@ -33,7 +33,6 @@
       " Bundle 'garbas/vim-snipmate'
       NeoBundle 'Align'
       NeoBundle 'bling/vim-airline'
-      NeoBundle 'bling/vim-bufferline'
       NeoBundle 'Shougo/neocomplcache'
       NeoBundle 'Shougo/neosnippet'
       NeoBundle 'Shougo/unite.vim'
