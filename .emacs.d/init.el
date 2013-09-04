@@ -1,8 +1,5 @@
 (setq load-path (cons "~/.emacs.d/elisp" load-path))
 
-;; theme のパス
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-
 ;; メニューバーを非表示にする
 (menu-bar-mode 0)
 
@@ -16,11 +13,27 @@
 (global-linum-mode t)
 (setq linum-format "%3d ")
 
+;; 改行時のインデント
+(global-set-key "\C-m" 'newline-and-indent)
+
+;; scroll
+(setq scroll-step 1)
+
 ;; package
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
+
+;; Rakefile や .rake を Ruby モードで開く
+(setq auto-mode-alist
+      (append
+        '(("\\.rb$" . ruby-mode)
+          ("[Rr]akefile" . ruby-mode)
+          ("\\.rake$" . ruby-mode))  auto-mode-alist))
+;; vimrc-mode
+(require 'vimrc-mode)
+(add-to-list 'auto-mode-alist '(".vim\\(rc\\)?$" . vimrc-mode))
 
 (custom-set-variables
  ;; Custom-set-variables was added by Custom.
