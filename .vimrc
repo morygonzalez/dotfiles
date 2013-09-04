@@ -39,7 +39,6 @@
       NeoBundle 'Shougo/vimfiler'
       NeoBundle 'Shougo/neocomplcache-rsense.vim'
       NeoBundle 'honza/vim-snippets'
-      NeoBundle 'kien/ctrlp.vim'
       NeoBundle 'mattn/gist-vim'
       NeoBundle 'mattn/webapi-vim'
       NeoBundle 'mileszs/ack.vim'
@@ -470,11 +469,5 @@
       endif
 
     " }}}
-
-      " CtrlP {{{
-
-        let g:ctrlp_show_hidden = 1
-
-      " }}}
 
   " }}}
