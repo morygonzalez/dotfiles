@@ -1,4 +1,4 @@
-export FILES=".zshrc .zsh .vimrc .vim .gvimrc .screenrc .tmux.conf .tmux .bashrc .gemrc .inputrc .pryrc .tigrc .ackrc .bundler"
+export FILES=".zshrc .zsh .vimrc .vim .gvimrc .screenrc .tmux.conf .tmux .bashrc .gemrc .inputrc .pryrc .tigrc .ackrc .bundler .emacs.d"
 for i in $FILES
 do
   if [ ! -e $HOME/$i ] ; then
