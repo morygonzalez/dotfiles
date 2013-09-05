@@ -31,9 +31,22 @@
         '(("\\.rb$" . ruby-mode)
           ("[Rr]akefile" . ruby-mode)
           ("\\.rake$" . ruby-mode))  auto-mode-alist))
+
 ;; vimrc-mode
 (require 'vimrc-mode)
 (add-to-list 'auto-mode-alist '(".vim\\(rc\\)?$" . vimrc-mode))
+
+;; auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+(setq ac-dwim t)
+(setq ac-use-menu-map t)
+(define-key ac-menu-map "\C-n" 'ac-next)
+(define-key ac-menu-map "\C-p" 'ac-previous)
+(setq ac-delay 0.05)
+(setq ac-auto-show-menu 0.05)
+(setq ac-ignore-case 'smart)
+(setq ac-menu-height 10)
 
 (custom-set-variables
  ;; Custom-set-variables was added by Custom.
