@@ -276,8 +276,14 @@
       hi PmenuSbar ctermbg=0 ctermfg=9
       hi PmenuSbar ctermbg=255 ctermfg=0 guifg=#000000 guibg=#FFFFFF
 
-      " Keybingings for neocomplcache
-      inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
+      " Recommended key-mappings.
+      " <CR>: close popup and save indent.
+      inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+      function! s:my_cr_function()
+        " return neocomplcache#smart_close_popup() . "\<CR>"
+        " For no inserting <CR> key.
+        return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+      endfunction
 
     " }}}
 
