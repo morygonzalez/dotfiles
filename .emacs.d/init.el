@@ -48,6 +48,12 @@
 (setq ac-ignore-case 'smart)
 (setq ac-menu-height 10)
 
+;; recentf
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
 (custom-set-variables
  ;; Custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
