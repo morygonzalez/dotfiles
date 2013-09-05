@@ -276,6 +276,9 @@
       hi PmenuSbar ctermbg=0 ctermfg=9
       hi PmenuSbar ctermbg=255 ctermfg=0 guifg=#000000 guibg=#FFFFFF
 
+      " Keybingings for neocomplcache
+      inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
+
     " }}}
 
     " Neosnippet {{{
