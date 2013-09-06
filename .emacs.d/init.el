@@ -54,6 +54,13 @@
 (setq recentf-max-menu-items 25)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
+;; 保存するときに trailing white space を削除
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; trailing white space を強調表示
+(when (boundp 'show-trailing-whitespace)
+  (setq-default show-trailing-whitespace t))
+
 (custom-set-variables
  ;; Custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
