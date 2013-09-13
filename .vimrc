@@ -59,6 +59,7 @@
       NeoBundle 'vim-addon-mw-utils'
       NeoBundle 'vim-ruby/vim-ruby'
       NeoBundle 'scrooloose/syntastic'
+      NeoBundle 'postmail.vim'
 
     " }}}
 
@@ -77,6 +78,8 @@
       NeoBundle 'tpope/vim-git'
       NeoBundle 'joker1007/vim-markdown-quote-syntax'
       NeoBundle 'joker1007/vim-ruby-heredoc-syntax'
+      NeoBundle 'mail.vim'
+      NeoBundle 'trapd00r/irc.vim'
 
     " }}}
 
