@@ -89,7 +89,7 @@
 	  (when (x-list-fonts "Menlo")
 	    (let* ((size 13)
 		   (asciifont "Menlo")
-		   (jpfont "Hiragino Maru Gothic ProN")
+		   (jpfont "Osaka")
 		   (h (* size 10))
 		   (fontspec)
 		   (jp-fontspec))
