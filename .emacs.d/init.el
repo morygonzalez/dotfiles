@@ -77,9 +77,33 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
 
- ;; font
- '(default ((t (:height: 120 :background: "black" :foreground: "white" :weight normal :width: normal :slant normal :family "Menlo"))))
+ ;; Font
  '(mode-line ((t (:foreground "skyblue" :background "#222222" :box (:line-width 1 :color nil :style released-button)))))
- )
+
+ (when window-system
+   (cond ((featurep 'carbon-emacs-package)
+	  ;; Carbon Emacs
+	  )
+	 ((featurep 'ns)
+	  ;; Cocoa Emacs
+	  (when (x-list-fonts "Menlo")
+	    (let* ((size 13)
+		   (asciifont "Menlo")
+		   (jpfont "Hiragino Maru Gothic ProN")
+		   (h (* size 10))
+		   (fontspec)
+		   (jp-fontspec))
+	      (set-face-attribute 'default nil :family asciifont :height h)
+	      (setq fontspec (font-spec :family asciifont))
+	      (setq jp-fontspec (font-spec :family jpfont))
+	      (set-fontset-font nil 'japanese-jisx0208 jp-fontspec)
+	      (set-fontset-font nil 'japanese-jisx0212 jp-fontspec)
+	      (set-fontset-font nil 'japanese-jisx0213-1 jp-fontspec)
+	      (set-fontset-font nil 'japanese-jisx0213-2 jp-fontspec)
+	      (set-fontset-font nil '(#x0080 . #x024F) fontspec)
+	      (set-fontset-font nil '(#x0370 . #x03FF) fontspec))
+	    )
+	  )))
+)
 
 (load-theme 'molokai t)
