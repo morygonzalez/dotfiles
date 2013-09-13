@@ -61,6 +61,9 @@
 (when (boundp 'show-trailing-whitespace)
   (setq-default show-trailing-whitespace t))
 
+;; 対応するカッコをハイライト
+(show-paren-mode t)
+
 (custom-set-variables
  ;; Custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
