@@ -17,7 +17,9 @@
 (global-set-key "\C-m" 'newline-and-indent)
 
 ;; scroll
-(setq scroll-step 1)
+(setq scroll-step 1
+      scroll-conservatively 35
+      scroll-margin 0)
 
 ;; package
 (require 'package)
