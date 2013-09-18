@@ -59,7 +59,6 @@
       NeoBundle 'vim-addon-mw-utils'
       NeoBundle 'vim-ruby/vim-ruby'
       NeoBundle 'scrooloose/syntastic'
-      NeoBundle 'postmail.vim'
 
     " }}}
 
