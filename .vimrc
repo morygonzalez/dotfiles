@@ -59,6 +59,7 @@
       NeoBundle 'vim-addon-mw-utils'
       NeoBundle 'vim-ruby/vim-ruby'
       NeoBundle 'scrooloose/syntastic'
+      NeoBundle 'csexton/trailertrash.vim'
 
     " }}}
 
@@ -166,13 +167,6 @@
       " }}}
 
     " }}}
-
-    " 行末の空白を強調表示
-    " http://d.hatena.ne.jp/kasahi/20070902/1188744907
-    " colorscheme の設定よりも後に持ってこないといけない
-    highlight WhitespaceEOL ctermbg=red guibg=red
-    match WhitespaceEOL /\s\+$/
-    autocmd WinEnter * match WhitespaceEOL /\s\+$/
 
     " 横幅長い行対策
     " http://vim-users.jp/2011/05/hack217/
