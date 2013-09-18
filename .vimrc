@@ -180,7 +180,7 @@
 
     " }}}
 
-  " Keybingings {{{
+  " Keybindings {{{
 
     " ESCキー2度押しでハイライトを消す
     nnoremap <Esc><Esc> :<C-u>nohl<Return><Esc>
@@ -222,6 +222,12 @@
 
     " Delete trailing white spaces
     nnoremap <silent> ,tr :<C-u>%s/\s\+$//gI<CR>
+
+    " Breakline without mode change
+    nnoremap o  :<C-u>call append('.', '')<CR>
+    nnoremap O  :normal! O<ESC>j
+    nnoremap go :normal! o<CR>
+    nnoremap gO :normal! O<CR>
 
   " }}}
 
