@@ -178,6 +178,9 @@
       autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=82
     endif
 
+    command! Ev edit $MYVIMRC
+    command! Rv source $MYVIMRC
+
     " }}}
 
   " Keybindings {{{
