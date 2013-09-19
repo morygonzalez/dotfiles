@@ -60,6 +60,7 @@
       NeoBundle 'vim-ruby/vim-ruby'
       NeoBundle 'scrooloose/syntastic'
       NeoBundle 'csexton/trailertrash.vim'
+      NeoBundle 'mhinz/vim-startify'
 
     " }}}
 
@@ -470,6 +471,28 @@
       let g:airline_linecolumn_prefix = ' '
 
       let g:airline_theme='dark'
+
+    " }}}
+
+    " startify {{{
+
+      let g:startify_custom_header = [
+            \ '',
+            \ '          (`-.              _   .-'')',
+            \ '        _(OO  )_           ( ''.( OO )_',
+            \ '    ,--(_/   ,. \  ,-.-'')   ,--.   ,--.)',
+            \ '    \   \   /(__/  |  |OO)  |   `.''   |',
+            \ '     \   \ /   /   |  |  \  |         |',
+            \ '      \   ''   /,   |  |(_/  |  |''.''|  |',
+            \ '       \     /__) ,|  |_.''  |  |   |  |',
+            \ '        \   /    (_|  |     |  |   |  |',
+            \ '         `-''       `--''     `--''   `--''',
+            \ ''
+            \ ]
+
+      highlight default link StartifyHeader Keyword
+      highlight default link StartifyPath Comment
+      highlight default link StartifySlash Comment
 
     " }}}
 
