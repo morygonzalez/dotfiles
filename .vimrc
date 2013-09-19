@@ -342,13 +342,13 @@
       " バッファ一覧
       nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
       " ファイル一覧
-      nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+      nnoremap <silent> ,uf :<C-u>Unite file_rec/async<CR>
       " レジスタ一覧
       nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
       " 最近使用したファイル一覧
       nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
       " 常用セット
-      nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+      nnoremap <silent> ,uu :<C-u>Unite buffer file_rec/async<CR>
       " 全部乗せ
       nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file file/new<CR>
       " 新規ファイル
@@ -393,6 +393,9 @@
         call unite#define_source(s:unite_git_conflicts)
 
       " }}}
+
+      " grep current word
+      nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
 
     " }}}
 
