@@ -470,18 +470,12 @@
 
     " }}}
 
-    " bufferline {{{
+  " }}}
 
-      let g:bufferline_echo = 0
+  " local configuration file {{{
 
-    " }}}
-
-    " local configuration file {{{
-
-      if filereadable(expand('~/.vimrc.local'))
-        source ~/.vimrc.local
-      endif
-
-    " }}}
+    if filereadable(expand('~/.vimrc.local'))
+      source ~/.vimrc.local
+    endif
 
   " }}}
