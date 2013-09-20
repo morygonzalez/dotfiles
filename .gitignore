@@ -16,3 +16,5 @@ doc/tags-ja
 .vim/bundle/*
 .rvmrc
 .emacs.d/elpa/archives
+.emacs.d/ac-comphist.dat
+.emacs.d/auto-save-list/
