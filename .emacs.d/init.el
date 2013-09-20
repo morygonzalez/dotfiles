@@ -70,6 +70,10 @@
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
 
+;; ruby-electric
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+
 (custom-set-variables
  ;; Custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
