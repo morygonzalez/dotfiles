@@ -66,6 +66,10 @@
 ;; 対応するカッコをハイライト
 (show-paren-mode t)
 
+;; 矩形選択
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
+
 (custom-set-variables
  ;; Custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
