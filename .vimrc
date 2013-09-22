@@ -355,8 +355,10 @@
       " git confilicts
       " http://aereal.hateblo.jp/entry/2012/07/28/032951
       nnoremap <silent> ,gc :<C-u>UniteWithCurrentDir git/conflicts -buffer-name=files<CR>
+      " grep current word
+      nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-r><C-w>
 
-      " vimfiler で grep したとき見やすくするやつ {{{
+      " vimfiler の grep エンジンを ag か ack にする {{{
 
         let g:unite_source_grep_default_opts = '-Hn --color=never'
         if executable('ag')
@@ -390,9 +392,6 @@
         call unite#define_source(s:unite_git_conflicts)
 
       " }}}
-
-      " grep current word
-      nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
 
     " }}}
 
