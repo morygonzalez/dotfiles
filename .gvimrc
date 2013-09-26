@@ -59,4 +59,7 @@
   match WhitespaceEOL /\s\+$/
   autocmd WinEnter * match WhitespaceEOL /\s\+$/
 
+  " txt の折り返しを無効にする
+  autocmd FileType text setlocal textwidth=0
+
 " }}}
