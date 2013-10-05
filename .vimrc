@@ -61,6 +61,7 @@
       NeoBundle 'scrooloose/syntastic'
       NeoBundle 'csexton/trailertrash.vim'
       NeoBundle 'mhinz/vim-startify'
+      NeoBundle 'glidenote/memolist.vim'
 
     " }}}
 
@@ -491,6 +492,15 @@
       highlight default link StartifySlash Comment
 
     " }}}
+
+      " memolist.vim {{{
+
+        let g:memolist_path = "~/Dropbox/memolist"
+        let g:memolist_unite = 1
+        let g:memolist_unite_source = "file_rec"
+        let g:memolist_unite_option = "-auto-preview -start-insert"
+
+      " }}}
 
   " }}}
 
