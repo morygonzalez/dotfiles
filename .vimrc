@@ -62,6 +62,8 @@
       NeoBundle 'csexton/trailertrash.vim'
       NeoBundle 'mhinz/vim-startify'
       NeoBundle 'glidenote/memolist.vim'
+      NeoBundle 'kana/vim-textobj-user'
+      NeoBundle 'osyo-manga/vim-textobj-multiblock'
 
     " }}}
 
@@ -508,6 +510,15 @@
       nnoremap ? :M?
       nnoremap ,/ /
       nnoremap ,? /
+
+    " }}}
+
+    " textobj-multiblock {{{
+
+      omap ab <Plug>(textobj-multiblock-a)
+      omap ib <Plug>(textobj-multiblock-i)
+      vmap ab <Plug>(textobj-multiblock-a)
+      vmap ib <Plug>(textobj-multiblock-i)
 
     " }}}
 
