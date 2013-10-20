@@ -60,7 +60,6 @@
       NeoBundle 'vim-ruby/vim-ruby'
       NeoBundle 'scrooloose/syntastic'
       NeoBundle 'csexton/trailertrash.vim'
-      NeoBundle 'mhinz/vim-startify'
       NeoBundle 'glidenote/memolist.vim'
       NeoBundle 'kana/vim-textobj-user'
       NeoBundle 'osyo-manga/vim-textobj-multiblock'
@@ -469,29 +468,6 @@
       let g:airline_linecolumn_prefix = ' '
 
       let g:airline_theme='dark'
-
-    " }}}
-
-    " Startify {{{
-
-      let g:startify_custom_header = [
-            \ '          (`-.              _   .-'')',
-            \ '        _(OO  )_           ( ''.( OO )_',
-            \ '    ,--(_/   ,. \  ,-.-'')   ,--.   ,--.)      .--------.         .---.',
-            \ '    \   \   /(__/  |  |OO)  |   `.''   |       |   __   ''        / .  |',
-            \ '     \   \ /   /   |  |  \  |         |       `--'' .  /        / /|  |',
-            \ '      \   ''   /,   |  |(_/  |  |''.''|  |           /  /        / / |  |_',
-            \ '       \     /__) ,|  |_.''  |  |   |  |          .  /        /  ''-''    |',
-            \ '        \   /    (_|  |     |  |   |  |         /  /     .-. `----|  |-''',
-            \ '         `-''       `--''     `--''   `--''        `--''      `-''      `--''',
-            \ ''
-            \ ]
-      let g:startify_bookmarks      = [ '~/dotfiles/.vimrc', '~/dotfiles/.zshrc' ]
-      let g:startify_enable_special = 0
-
-      highlight default link StartifyHeader Keyword
-      highlight default link StartifyPath Comment
-      highlight default link StartifySlash Comment
 
     " }}}
 
