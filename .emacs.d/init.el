@@ -32,7 +32,8 @@
       (append
         '(("\\.rb$" . ruby-mode)
           ("[Rr]akefile" . ruby-mode)
-          ("\\.rake$" . ruby-mode))  auto-mode-alist))
+          ("\\.rake$" . ruby-mode)
+          ("\\.gemspec$" . ruby-mode)) auto-mode-alist))
 
 ;; vimrc-mode
 (require 'vimrc-mode)
