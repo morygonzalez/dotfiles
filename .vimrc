@@ -52,7 +52,7 @@
       NeoBundle 'tpope/vim-endwise'
       NeoBundle 'tpope/vim-fugitive'
       NeoBundle 'tpope/vim-rails'
-      NeoBundle 'tpope/vim-surround'
+      " NeoBundle 'tpope/vim-surround'
       NeoBundle 'tyru/open-browser.vim'
       NeoBundle 'ujihisa/neco-look'
       NeoBundle 'ujihisa/unite-colorscheme'
@@ -63,6 +63,9 @@
       NeoBundle 'glidenote/memolist.vim'
       NeoBundle 'kana/vim-textobj-user'
       NeoBundle 'osyo-manga/vim-textobj-multiblock'
+      NeoBundle 'kana/vim-operator-user'
+      NeoBundle 'rhysd/vim-operator-surround'
+      NeoBundle 'kana/vim-smartinput'
 
     " }}}
 
@@ -226,10 +229,8 @@
     nnoremap <silent> ,tr :<C-u>%s/\s\+$//gI<CR>
 
     " Breakline without mode change
-    nnoremap o  :<C-u>call append('.', '')<CR>
-    nnoremap O  :normal! O<ESC>j
-    nnoremap go :normal! o<CR>
-    nnoremap gO :normal! O<CR>
+    nnoremap go  :<C-u>call append('.', '')<CR>
+    nnoremap gO  :normal! O<ESC>j
 
   " }}}
 
@@ -495,6 +496,15 @@
       omap ib <Plug>(textobj-multiblock-i)
       vmap ab <Plug>(textobj-multiblock-a)
       vmap ib <Plug>(textobj-multiblock-i)
+
+    " }}}
+
+    " vim-operator-surround {{{
+
+      map <silent>sa <Plug>(operator-surround-append)
+      " with multiblock
+      nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
+      nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
 
     " }}}
 
