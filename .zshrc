@@ -328,6 +328,15 @@ sudo() {
 ## grep options
 export GREP_OPTIONS='--color=auto'
 
+# tmux current dir name to window name
+show-current-dir-as-window-name() {
+  [ -n "$TMUX" ] && tmux set-window-option window-status-format " #I ${PWD:t} " > /dev/null
+}
+
+show-current-dir-as-window-name
+add-zsh-hook chpwd show-current-dir-as-window-name
+
+
 ## Completion configuration
 #
 fpath=(~/.zsh/functions/Completion ${fpath})
