@@ -75,6 +75,11 @@
 (require 'ruby-electric)
 (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 
+;;タブの代わりにスペースを使う
+(setq indent-tabs-mode nil)
+
+(add-hook 'ruby-mode-hook '(lambda () (setq tab-width 2))):
+
 (custom-set-variables
  ;; Custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
