@@ -43,7 +43,7 @@
       NeoBundle 'mattn/webapi-vim'
       NeoBundle 'mileszs/ack.vim'
       NeoBundle 'nathanaelkane/vim-indent-guides'
-      NeoBundle 'othree/eregex.vim'
+      NeoBundle 'othree/eregex.vim', 'e0501e3'
       NeoBundle 'sudo.vim'
       NeoBundle 'thinca/vim-quickrun'
       NeoBundle 'thinca/vim-ref'
