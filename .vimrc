@@ -266,11 +266,12 @@
       if !exists('g:neocomplcache_omni_patterns')
         let g:neocomplcache_omni_patterns = {}
       endif
-      let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
       " RSense
       if filereadable(expand('/usr/local/bin/rsense'))
         let g:rsenseHome = '/usr/local/Cellar/rsense/0.3/libexec'
+      else
+        let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
       endif
 
       " 補完候補の色づけ for vim7
