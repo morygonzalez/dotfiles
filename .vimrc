@@ -232,6 +232,11 @@
     nnoremap go  :<C-u>call append('.', '')<CR>
     nnoremap gO  :normal! O<ESC>j
 
+    " convert word into ruby symbol
+    " http://jetpackweb.com/blog/2010/02/15/vim-tips-for-ruby/
+    imap <C-y> <C-o>b:<Esc>Ea
+    nmap <C-y> lbi:<Esc>E
+
   " }}}
 
   " Syntax Settings {{{
