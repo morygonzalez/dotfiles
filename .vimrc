@@ -367,6 +367,14 @@
       " grep current word
       nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-r><C-w>
 
+      " バッファをを移動した時に自動的にプロジェクトルートをカレントディレクトリにする
+      " http://qiita.com/kentaro/items/6aa9f108df825b2a8b39
+      function! ChangeCurrentDirectoryToRoot()
+        let root = unite#util#path2project_directory(expand('%'))
+        execute ":lcd " . root
+      endfunction
+      :au BufEnter * :call ChangeCurrentDirectoryToRoot()
+
       " vimfiler の grep エンジンを ag か ack にする {{{
 
         let g:unite_source_grep_default_opts = '-Hn --color=never'
