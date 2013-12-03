@@ -30,14 +30,25 @@
 
     " Utilities {{{
 
+      function! s:meet_neocomplete_requirements()
+        return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
+      endfunction
+
       " Bundle 'garbas/vim-snipmate'
       NeoBundle 'Align'
       NeoBundle 'bling/vim-airline'
-      NeoBundle 'Shougo/neocomplcache'
+      if s:meet_neocomplete_requirements()
+        NeoBundle 'Shougo/neocomplete.vim'
+        NeoBundleFetch 'Shougo/neocomplcache.vim'
+        NeoBundleFetch 'supermomonga/neocomplete-rsense.vim'
+      else
+        NeoBundleFetch 'Shougo/neocomplete.vim'
+        NeoBundle 'Shougo/neocomplcache.vim'
+        NeoBundle 'Shougo/neocomplcache-rsense.vim'
+      endif
       NeoBundle 'Shougo/neosnippet'
       NeoBundle 'Shougo/unite.vim'
       NeoBundle 'Shougo/vimfiler'
-      NeoBundle 'Shougo/neocomplcache-rsense.vim'
       NeoBundle 'honza/vim-snippets'
       NeoBundle 'mattn/gist-vim'
       NeoBundle 'mattn/webapi-vim'
@@ -252,15 +263,7 @@
 
   " Plugin Settings {{{
 
-    " Neocomplcache {{{
-
-      let g:neocomplcache_enable_at_startup            = 1
-      let g:neocomplcache_enable_smart_case            = 1 " Use smartcase.
-      let g:neocomplcache_enable_camel_case_completion = 1 " Use camel case completion.
-      let g:neocomplcache_enable_underbar_completion   = 1 " Use underbar completion.
-      let g:neocomplcache_min_syntax_length            = 3 " Set minimum syntax keyword length.
-      let g:neocomplcache_lock_buffer_name_pattern     = '\*ku\*'
-      let g:neocomplcache_text_mode_filetypes          = {'text': 1, 'javascript': 1, 'markdown': 1, 'perl': 1, 'html': 1, 'ruby': 1}
+    " Neocomplete and Neocomplcache {{{
 
       " Enable omni completion.
       autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -268,15 +271,61 @@
       autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
       autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
       autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-      if !exists('g:neocomplcache_omni_patterns')
-        let g:neocomplcache_omni_patterns = {}
-      endif
 
-      " RSense
-      if filereadable(expand('/usr/local/bin/rsense'))
-        let g:rsenseHome = '/usr/local/Cellar/rsense/0.3/libexec'
+      if s:meet_neocomplete_requirements()
+        let g:neocomplete#enable_at_startup                 = 1
+        let g:neocomplete#enable_smart_case                 = 1 " Use smartcase.
+        let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
+        let g:neocomplete#lock_buffer_name_pattern          = '\*ku\*'
+        let g:neocomplete#text_mode_filetypes               = {'text': 1, 'javascript': 1, 'markdown': 1, 'perl': 1, 'html': 1, 'ruby': 1}
+
+        if !exists('g:neocomplete#sources#omni#input_patterns')
+          let g:neocomplete#sources#omni#input_patterns = {}
+        endif
+
+        " RSense
+        if filereadable(expand('/usr/local/bin/rsense'))
+          let g:neocomplete#sources#rsense#home_directiry = '/usr/local/Cellar/rsense/0.3/libexec'
+        else
+          let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+        endif
+
+        " Recommended key-mappings.
+        " <CR>: close popup and save indent.
+        inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+        function! s:my_cr_function()
+          " return neocomplcache#smart_close_popup() . "\<CR>"
+          " For no inserting <CR> key.
+          return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+        endfunction
       else
-        let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+        let g:neocomplcache_enable_at_startup            = 1
+        let g:neocomplcache_enable_smart_case            = 1 " Use smartcase.
+        let g:neocomplcache_enable_camel_case_completion = 1 " Use camel case completion.
+        let g:neocomplcache_enable_underbar_completion   = 1 " Use underbar completion.
+        let g:neocomplcache_min_syntax_length            = 3 " Set minimum syntax keyword length.
+        let g:neocomplcache_lock_buffer_name_pattern     = '\*ku\*'
+        let g:neocomplcache_text_mode_filetypes          = {'text': 1, 'javascript': 1, 'markdown': 1, 'perl': 1, 'html': 1, 'ruby': 1}
+
+        if !exists('g:neocomplcache_omni_patterns')
+          let g:neocomplcache_omni_patterns = {}
+        endif
+
+        " RSense
+        if filereadable(expand('/usr/local/bin/rsense'))
+          let g:rsenseHome = '/usr/local/Cellar/rsense/0.3/libexec'
+        else
+          let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+        endif
+
+        " Recommended key-mappings.
+        " <CR>: close popup and save indent.
+        inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+        function! s:my_cr_function()
+          " return neocomplcache#smart_close_popup() . "\<CR>"
+          " For no inserting <CR> key.
+          return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+        endfunction
       endif
 
       " 補完候補の色づけ for vim7
@@ -286,15 +335,6 @@
       hi PmenuSel ctermbg=blue ctermfg=black
       hi PmenuSbar ctermbg=0 ctermfg=9
       hi PmenuSbar ctermbg=255 ctermfg=0 guifg=#000000 guibg=#FFFFFF
-
-      " Recommended key-mappings.
-      " <CR>: close popup and save indent.
-      inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-      function! s:my_cr_function()
-        " return neocomplcache#smart_close_popup() . "\<CR>"
-        " For no inserting <CR> key.
-        return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-      endfunction
 
     " }}}
 
