@@ -63,7 +63,7 @@
       NeoBundle 'tpope/vim-endwise'
       NeoBundle 'tpope/vim-fugitive'
       NeoBundle 'tpope/vim-rails'
-      " NeoBundle 'tpope/vim-surround'
+      NeoBundle 'tpope/vim-surround'
       NeoBundle 'tyru/open-browser.vim'
       NeoBundle 'ujihisa/neco-look'
       NeoBundle 'ujihisa/unite-colorscheme'
