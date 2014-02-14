@@ -21,6 +21,10 @@
       scroll-conservatively 35
       scroll-margin 0)
 
+;; beep 音鳴らさない
+(setq visible-bell t)
+(setq ring-bell-function 'ignore)
+
 ;; package
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
