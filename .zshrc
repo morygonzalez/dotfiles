@@ -51,6 +51,9 @@ setopt auto_cd
 #
 setopt auto_pushd
 
+# pushd したとき、ディレクトリがすでにスタックに含まれていればスタックに追加しない
+setopt pushd_ignore_dups
+
 # command correct edition before each completion attempt
 #
 setopt correct
@@ -115,7 +118,10 @@ bindkey '^F' history-incremental-pattern-search-forward
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt hist_ignore_dups   # ignore duplication command history list
+# setopt hist_ignore_dups   # ignore duplication command history list
+# 入力したコマンドがすでにコマンド履歴に含まれる場合、履歴から古いほうのコマンドを削除する
+# コマンド履歴とは今まで入力したコマンドの一覧のことで、上下キーでたどれる
+setopt hist_ignore_all_dups
 setopt share_history    # share command history data
 
 
@@ -316,8 +322,7 @@ add-zsh-hook chpwd show-current-dir-as-window-name
 ## Completion configuration
 #
 fpath=(~/.zsh/functions/Completion ${fpath})
-autoload -U compinit
-compinit -u
+autoload -U compinit && compinit -u
 
 ## load user .zshrc configuration file#
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
