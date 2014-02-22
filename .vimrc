@@ -47,7 +47,9 @@
         NeoBundle 'Shougo/neocomplcache-rsense.vim'
       endif
       NeoBundle 'Shougo/neosnippet'
+      NeoBundle 'Shougo/neosnippet-snippets'
       NeoBundle 'Shougo/unite.vim'
+      NeoBundle 'Shougo/neomru.vim'
       NeoBundle 'Shougo/vimfiler'
       NeoBundle 'honza/vim-snippets'
       NeoBundle 'mattn/gist-vim'
