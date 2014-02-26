@@ -308,7 +308,7 @@ sudo() {
 [ -f ~/.zsh/functions/Completion/_incr ] && source ~/.zsh/functions/Completion/_incr
 
 ## grep options
-export GREP_OPTIONS='--color=auto'
+export GREP_OPTIONS='--color=auto -E'
 
 # tmux current dir name to window name
 show-current-dir-as-window-name() {
