@@ -72,7 +72,7 @@
       NeoBundle 'vim-addon-mw-utils'
       NeoBundle 'vim-ruby/vim-ruby'
       NeoBundle 'scrooloose/syntastic'
-      NeoBundle 'csexton/trailertrash.vim'
+      NeoBundle 'bronson/vim-trailing-whitespace'
       NeoBundle 'glidenote/memolist.vim'
       NeoBundle 'kana/vim-textobj-user'
       NeoBundle 'osyo-manga/vim-textobj-multiblock'
