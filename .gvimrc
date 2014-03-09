@@ -46,20 +46,3 @@
   set visualbell t_vb=
 
 " }}}
-
-
-" 重複設定 {{{
-
-  colorscheme molokai
-
-  " 行末強調表示
-  " colorscheme 設定より後ろのにないといけないので、
-  " .vimrc にも書いてあるけど再度設定
-  highlight WhitespaceEOL ctermbg=red guibg=red
-  match WhitespaceEOL /\s\+$/
-  autocmd WinEnter * match WhitespaceEOL /\s\+$/
-
-  " txt の折り返しを無効にする
-  autocmd FileType text setlocal textwidth=0
-
-" }}}
