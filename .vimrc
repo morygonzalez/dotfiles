@@ -78,6 +78,7 @@
       NeoBundle 'osyo-manga/vim-textobj-multiblock'
       NeoBundle 'kana/vim-operator-user'
       NeoBundle 'rhysd/vim-operator-surround'
+      NeoBundle 'rhysd/vim-textobj-ruby'
       NeoBundle 'kana/vim-smartinput'
 
     " }}}
