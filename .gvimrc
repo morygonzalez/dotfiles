@@ -45,4 +45,6 @@
 
   set visualbell t_vb=
 
+  colorscheme molokai
+
 " }}}
