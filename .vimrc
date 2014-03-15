@@ -80,6 +80,7 @@
       NeoBundle 'rhysd/vim-operator-surround'
       NeoBundle 'rhysd/vim-textobj-ruby'
       NeoBundle 'kana/vim-smartinput'
+      NeoBundleLazy 'Blackrush/vim-gocode', {"autoload": {"filetypes": ['go']}}
 
     " }}}
 
