@@ -81,6 +81,7 @@
       NeoBundle 'rhysd/vim-textobj-ruby'
       NeoBundle 'kana/vim-smartinput'
       NeoBundleLazy 'Blackrush/vim-gocode', {"autoload": {"filetypes": ['go']}}
+      NeoBundle 'closetag.vim'
 
     " }}}
 
@@ -92,6 +93,7 @@
       NeoBundle 'taskpaper.vim'
       NeoBundle 'kchmck/vim-coffee-script'
       NeoBundle 'othree/html5.vim'
+      NeoBundle 'othree/javascript-libraries-syntax.vim'
       NeoBundle 'pangloss/vim-javascript'
       NeoBundle 'slim-template/vim-slim'
       NeoBundle 'cakebaker/scss-syntax.vim'
@@ -101,6 +103,7 @@
       NeoBundle 'joker1007/vim-ruby-heredoc-syntax'
       NeoBundle 'mail.vim'
       NeoBundle 'trapd00r/irc.vim'
+      NeoBundle 'rodjek/vim-puppet'
 
     " }}}
 
@@ -423,7 +426,10 @@
       " http://qiita.com/kentaro/items/6aa9f108df825b2a8b39
       function! ChangeCurrentDirectoryToRoot()
         let root = unite#util#path2project_directory(expand('%'))
-        execute ":lcd " . root
+        let git_dir = root . "/.git"
+        if isdirectory(git_dir)
+          execute ":lcd " . root
+        endif
       endfunction
       :au BufEnter * :call ChangeCurrentDirectoryToRoot()
 
