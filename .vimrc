@@ -420,7 +420,7 @@
       " http://aereal.hateblo.jp/entry/2012/07/28/032951
       nnoremap <silent> ,gc :<C-u>UniteWithCurrentDir git/conflicts -buffer-name=files<CR>
       " grep current word
-      nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-r><C-w>
+      nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-r><C-w><CR>
 
       " バッファをを移動した時に自動的にプロジェクトルートをカレントディレクトリにする
       " http://qiita.com/kentaro/items/6aa9f108df825b2a8b39
@@ -433,10 +433,15 @@
       endfunction
       :au BufEnter * :call ChangeCurrentDirectoryToRoot()
 
-      " vimfiler の grep エンジンを ag か ack にする {{{
+      " vimfiler の grep エンジンを pt か ag か ack にする {{{
 
         let g:unite_source_grep_default_opts = '-Hn --color=never'
-        if executable('ag')
+        if executable('pt')
+          let g:unite_source_grep_command = 'pt'
+          let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+          let g:unite_source_grep_recursive_opt = ''
+          let g:unite_source_grep_max_candidates = 200
+        elseif executable('ag')
           let g:unite_source_grep_command = 'ag'
           let g:unite_source_grep_default_opts = '--nocolor --nogroup'
           let g:unite_source_grep_recursive_opt = ''
