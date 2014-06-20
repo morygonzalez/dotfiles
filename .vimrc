@@ -305,6 +305,8 @@
           " For no inserting <CR> key.
           return pumvisible() ? neocomplete#close_popup() : "\<CR>"
         endfunction
+
+        let g:neocomplete#force_overwrite_completefunc=1
       else
         let g:neocomplcache_enable_at_startup            = 1
         let g:neocomplcache_enable_smart_case            = 1 " Use smartcase.
