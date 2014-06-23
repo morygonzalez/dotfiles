@@ -4,7 +4,6 @@ function peco-src () {
         BUFFER="cd ${selected_dir}"
         zle accept-line
     fi
-    zle clear-screen
 }
 zle -N peco-src
 
@@ -19,7 +18,6 @@ function peco-select-history() {
         eval $tac | \
         peco --query "$LBUFFER")
     CURSOR=$#BUFFER
-    zle clear-screen
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
@@ -32,7 +30,6 @@ function peco-git-recent-branches () {
         BUFFER="git checkout ${selected_branch}"
         zle accept-line
     fi
-    zle clear-screen
 }
 zle -N peco-git-recent-branches
 bindkey '^b' peco-git-recent-branches
