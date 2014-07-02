@@ -204,6 +204,11 @@
 
     command! Ev edit $MYVIMRC
     command! Rv source $MYVIMRC
+    " 大文字 W で保存
+    command W w
+    " Q で quickrun 実行しないように
+    command Q q
+
 
     " }}}
 
@@ -249,9 +254,6 @@
     " Breakline without mode change
     nnoremap go  :<C-u>call append('.', '')<CR>
     nnoremap gO  :normal! O<ESC>j
-
-    " 大文字 W で保存
-    cnoremap W w
 
     " convert word into ruby symbol
     " http://jetpackweb.com/blog/2010/02/15/vim-tips-for-ruby/
