@@ -430,6 +430,8 @@
       " git confilicts
       " http://aereal.hateblo.jp/entry/2012/07/28/032951
       nnoremap <silent> ,gc :<C-u>UniteWithCurrentDir git/conflicts -buffer-name=files<CR>
+      " grep
+      nnoremap <silent> ,ug :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
       " grep current word
       nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-r><C-w><CR>
 
