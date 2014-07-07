@@ -82,6 +82,7 @@
       NeoBundle 'kana/vim-smartinput'
       NeoBundleLazy 'Blackrush/vim-gocode', {"autoload": {"filetypes": ['go']}}
       NeoBundle 'closetag.vim'
+      NeoBundle 'tyru/open-browser-github.vim'
 
     " }}}
 
@@ -256,8 +257,8 @@
     nnoremap <silent> ,tr :<C-u>%s/\s\+$//gI<CR>
 
     " Breakline without mode change
-    nnoremap go  :<C-u>call append('.', '')<CR>
-    nnoremap gO  :normal! O<ESC>j
+    nnoremap go :<C-u>call append('.', '')<CR>
+    nnoremap gO :normal! O<ESC>j
 
     " convert word into ruby symbol
     " http://jetpackweb.com/blog/2010/02/15/vim-tips-for-ruby/
@@ -600,6 +601,13 @@
       " with multiblock
       nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
       nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
+
+    " }}}
+
+    " open-browser-github {{{
+
+      map <silent>,og :OpenGithubFile<CR>
+      map '<,'>,og '<,'>OpenGithubFile<CR>
 
     " }}}
 
