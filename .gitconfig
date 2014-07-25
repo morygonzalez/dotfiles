@@ -29,3 +29,5 @@
 	default = simple
 [diff]
 	noprefix = true
+[ghq]
+	root = /Users/morygonzalez/.ghq/src
