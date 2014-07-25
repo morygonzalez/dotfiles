@@ -1,7 +1,8 @@
 *history
 *.DS_Store
 *.log
-*.swp
+.*.swp
+.*.un~
 .bash_logout
 .lesshst
 .sudo_as_admin_successful
