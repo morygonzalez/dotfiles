@@ -319,8 +319,7 @@ show-current-dir-as-window-name
 add-zsh-hook chpwd show-current-dir-as-window-name
 
 ### peco
-[ -n peco ] && source ~/.zsh/functions/peco.zsh
-
+command -v peco >/dev/null 2>&1 && source ~/.zsh/functions/peco.zsh
 
 ## Completion configuration
 #
