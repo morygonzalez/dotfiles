@@ -413,6 +413,12 @@
       let g:vimfiler_file_icon = '-'
       let g:vimfiler_marked_file_icon = '*'
 
+      " NERDTree like behavior
+      autocmd VimEnter * VimFilerExplorer -no-focus
+
+      " right side slit
+      let g:vimfiler_split_rule = 'botright'
+
       nnoremap <silent> ,vf :<C-u>VimFilerBufferDir<CR>
 
     " }}}
