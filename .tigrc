@@ -4,3 +4,5 @@ bind diff o !@hub browse -- commit/%(commit)
 bind log  o !@hub browse -- commit/%(commit)
 bind generic g move-first-line
 bind generic G move-last-line
+bind main R !git rebase -i %(commit)
+bind diff R !git rebase -i %(commit)
