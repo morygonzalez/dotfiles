@@ -1,33 +1,39 @@
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
 [user]
-  name = 森井ゴンザレス
-  email = morygonzalez@gmail.com
+	name = 森井ゴンザレス
+	email = morygonzalez@gmail.com
 [core]
-  editor = vim
-  excludesfile = /Users/morygonzalez/.gitignore
-  quotepath = false
+	editor = vim
+	excludesfile = /Users/morygonzalez/.gitignore
+	quotepath = false
 [merge]
-  tool = vimdiff
+	tool = vimdiff
 [alias]
-  co = checkout
-  st = status -sb
-  pr = pull --rebase
-  fo = fetch origin
-  ro = rebase origin
-  rc = rebase --continue
-  wd = diff --word-diff
-  mt = mergetool
-  lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
-  pr = !REP_OWNER=$(git remote -v | grep -e "origin.*github.com[:/].*\\(push\\)" | sed "s/origin.*github.com[:/]//g" | sed "s/[/].*//g") && hub pull-request $2 -h $REP_OWNER:`git rev-parse --abbrev-ref HEAD` -b $REP_OWNER:$1 && shift "$#"
-  dc = diff --cached
+	co = checkout
+	st = status -sb
+	pr = pull --rebase
+	fo = fetch origin
+	ro = rebase origin
+	rc = rebase --continue
+	wd = diff --word-diff
+	mt = mergetool
+	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+	pr = !REP_OWNER=$(git remote -v | grep -e "origin.*github.com[:/].*\\(push\\)" | sed "s/origin.*github.com[:/]//g" | sed "s/[/].*//g") && hub pull-request $2 -h $REP_OWNER:`git rev-parse --abbrev-ref HEAD` -b $REP_OWNER:$1 && shift "$#"
+	dc = diff --cached
 [push]
 	default = simple
 [diff]
 	noprefix = true
 [ghq]
 	root = /Users/morygonzalez/.ghq/src
+[pager]
+	log	= diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[pull]
+	rebase = true
