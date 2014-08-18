@@ -414,7 +414,7 @@
       let g:vimfiler_marked_file_icon = '*'
 
       " NERDTree like behavior
-      autocmd VimEnter * VimFilerExplorer -no-focus
+      nnoremap <Leader>t :<C-u>VimFilerExplorer -no-focus<CR>
 
       " right side slit
       let g:vimfiler_split_rule = 'botright'
