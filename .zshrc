@@ -326,6 +326,8 @@ command -v peco >/dev/null 2>&1 && source ~/.zsh/functions/peco.zsh
 fpath=(~/.zsh/functions/Completion ${fpath})
 autoload -U compinit && compinit -u
 
+# PATH が重複しないようにするやつ
+typeset -U path
 
 ## load user .zshrc configuration file#
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
