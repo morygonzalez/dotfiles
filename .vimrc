@@ -218,13 +218,13 @@
     command! Ev edit $MYVIMRC
     command! Rv source $MYVIMRC
     " 大文字 W で保存
-    command W w
+    command! W w
     " Wq で保存して終了
-    command Wq wq
+    command! Wq wq
     " Q で quickrun 実行しないように
-    command Q q
+    command! Q q
     " Qa で全終了
-    command Qa qa
+    command! Qa qa
 
 
     " }}}
