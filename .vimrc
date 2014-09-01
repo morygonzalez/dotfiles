@@ -66,6 +66,11 @@
       NeoBundle 'tpope/vim-fugitive'
       NeoBundle 'tpope/vim-rails'
       NeoBundle 'tpope/vim-surround'
+      NeoBundle 'tpope/vim-dispatch'
+      NeoBundleLazy 'thoughtbot/vim-rspec', {
+                      \ 'depends'  : 'tpope/vim-dispatch',
+                      \ 'autoload' : { 'filetypes' : ['ruby'] }
+                      \ }
       NeoBundle 'tyru/open-browser.vim'
       NeoBundle 'ujihisa/neco-look'
       NeoBundle 'ujihisa/unite-colorscheme'
@@ -628,6 +633,20 @@
 
       map <silent>,og :OpenGithubFile<CR>
       map '<,'>,og '<,'>OpenGithubFile<CR>
+
+    " }}}
+
+    " vim-rspec {{{
+
+      let s:bundle = neobundle#get('vim-rspec')
+      function! s:bundle.hooks.on_source(bundle)
+        let g:rspec_command = 'Dispatch bin/rspec {spec}'
+      endfunction
+
+      nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
+      nmap <silent><leader>n :call RunNearestSpec()<CR>
+      nmap <silent><leader>l :call RunLastSpec()<CR>
+      nmap <silent><leader>a :call RunAllSpecs()<CR>
 
     " }}}
 
