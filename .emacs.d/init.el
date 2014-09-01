@@ -120,4 +120,6 @@
        (set-fontset-font nil '(#x0370 . #x03FF) fontspec))))
 )
 
+(tool-bar-mode -1)
+
 (load-theme 'molokai t)
