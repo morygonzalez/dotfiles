@@ -20,7 +20,7 @@ colors
 
 case ${UID} in
 0)
-  PROMPT="%B%{${fg[yellow]}%}%/#%{${reset_color}%}%b "
+  PROMPT="%B%{${fg[yellow]}%}⚡%{${reset_color}%}%b "
   PROMPT2="%B%{${fg[yellow]}%}%_#%{${reset_color}%}%b "
   SPROMPT="%B%{${fg[yellow]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
