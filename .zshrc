@@ -27,7 +27,7 @@ case ${UID} in
     PROMPT="%{${fg[red]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
   ;;
 *)
-  PROMPT="%{${fg[black]}%}%/%{${reset_color}%}%{${fg[magenta]}%}⚡%{${reset_color}%} "
+  PROMPT="%{${fg[magenta]}%}⚡%{${reset_color}%} "
   PROMPT2="%{${fg[black]}%}%_%%%{${reset_color}%} "
   SPROMPT="%{${fg[black]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
@@ -37,6 +37,11 @@ esac
 
 # vcs info
 [ -f ~/.zsh/functions/_vsc_info ] && source ~/.zsh/functions/_vsc_info
+
+function _curdir_on_rprompt() {
+  RPROMPT="[ %{${fg[black]}%}%~%{${reset_color}%} ] $RPROMPT"
+}
+add-zsh-hook precmd _curdir_on_rprompt
 
 function _append_current_time() {
   RPROMPT="$RPROMPT %T"
