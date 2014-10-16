@@ -141,6 +141,7 @@
     set fileencodings=utf-8,utf-16le,latin1,iso-2022-jp,euc-jp,sjis,cp932
     set nowritebackup
     set nobackup
+    set noundofile
 
     " tab関連
     set expandtab "タブの代わりに空白文字挿入
