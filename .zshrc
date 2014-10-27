@@ -28,8 +28,8 @@ case ${UID} in
   ;;
 *)
   PROMPT="%{${fg[magenta]}%}⚡%{${reset_color}%} "
-  PROMPT2="%{${fg[black]}%}%_%%%{${reset_color}%} "
-  SPROMPT="%{${fg[black]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+  PROMPT2="%{${fg[magenta]}%}%_%%%{${reset_color}%} "
+  SPROMPT="%{${fg[magenta]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
     PROMPT="%{${fg[red]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
   ;;
@@ -39,7 +39,7 @@ esac
 [ -f ~/.zsh/functions/_vsc_info ] && source ~/.zsh/functions/_vsc_info
 
 function _curdir_on_rprompt() {
-  RPROMPT="[ %{${fg[black]}%}%~%{${reset_color}%} ] $RPROMPT"
+  RPROMPT="[ %{${fg[magenta]}%}%~%{${reset_color}%} ] $RPROMPT"
 }
 add-zsh-hook precmd _curdir_on_rprompt
 
