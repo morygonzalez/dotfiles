@@ -22,7 +22,7 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-function peco-git-recent-branches () {
+function peco-git-checkout-recent-branches () {
     local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | \
         perl -pne 's{^refs/heads/}{}' | \
         peco --query "$LBUFFER")
@@ -31,8 +31,8 @@ function peco-git-recent-branches () {
         zle accept-line
     fi
 }
-zle -N peco-git-recent-branches
-bindkey '^b' peco-git-recent-branches
+zle -N peco-git-checkout-recent-branches
+bindkey '^b' peco-git-checkout-recent-branches
 
 function peco-src () {
     local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
