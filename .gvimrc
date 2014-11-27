@@ -11,11 +11,11 @@
     if has('mac')
       if exists('g:loaded_airline')
         set ambiwidth=single
-        set guifont=Menlo\ Regular\ for\ Powerline:h12
-        set guifontwide=Menlo\ Regular\ for\ Powerline:h12
+        set guifont=Menlo\ Regular\ for\ Powerline:h15
+        set guifontwide=ヒラギノ丸ゴ\ Pro\ W4:h15
       else
-        set guifont=Menlo:h12
-        set guifontwide=Osaka-Mono:h12
+        set guifont=Menlo:h15
+        set guifontwide=ヒラギノ角ゴ\ Pro\ W3:h15
       endif
       set noimdisableactivate
       map ¥ <leader>
