@@ -12,7 +12,7 @@
       set runtimepath+=~/.vim/bundle/neobundle.vim/
     endif
 
-    call neobundle#rc(expand('~/.vim/bundle/'))
+    call neobundle#begin(expand('~/.vim/bundle/'))
 
     NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -98,7 +98,6 @@
       NeoBundle 'leshill/vim-json'
       NeoBundle 'taskpaper.vim'
       NeoBundle 'kchmck/vim-coffee-script'
-      NeoBundle 'othree/html5.vim'
       NeoBundle 'othree/javascript-libraries-syntax.vim'
       NeoBundle 'pangloss/vim-javascript'
       NeoBundle 'slim-template/vim-slim'
@@ -122,14 +121,11 @@
 
     " }}}
 
+    call neobundle#end()
+
     filetype plugin indent on
 
-    if neobundle#exists_not_installed_bundles()
-      echomsg 'Not installed bundles : ' .
-            \ string(neobundle#get_not_installed_bundle_names())
-      echomsg 'Please execute ":NeoBundleInstall" command.'
-      "finish
-    endif
+    NeoBundleCheck
 
   " }}}
 
