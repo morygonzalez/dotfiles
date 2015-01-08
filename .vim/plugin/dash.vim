@@ -8,3 +8,5 @@ function! s:dash(...)
   call system(printf("open dash://'%s'", word))
 endfunction
 command! -nargs=* Dash call <SID>dash(<f-args>)
+
+nnoremap <silent> ,cd :<C-u>Dash<CR><C-r><C-w><CR>
