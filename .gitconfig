@@ -14,17 +14,9 @@
 [merge]
 	tool = vimdiff
 [alias]
-	co = checkout
 	st = status -sb
-	pr = pull --rebase
-	fo = fetch origin
-	ro = rebase origin
-	rc = rebase --continue
-	wd = diff --word-diff
-	mt = mergetool
-	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
-	pr = !REP_OWNER=$(git remote -v | grep -e "origin.*github.com[:/].*\\(push\\)" | sed "s/origin.*github.com[:/]//g" | sed "s/[/].*//g") && hub pull-request $2 -h $REP_OWNER:`git rev-parse --abbrev-ref HEAD` -b $REP_OWNER:$1 && shift "$#"
-	dc = diff --cached
+  dc = diff --cached
+  current-branch = rev-parse --abbrev-ref HEAD
 [push]
 	default = simple
 [diff]
