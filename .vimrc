@@ -74,6 +74,7 @@
       NeoBundle 'tyru/open-browser.vim'
       NeoBundle 'ujihisa/neco-look'
       NeoBundle 'ujihisa/unite-colorscheme'
+      NeoBundle 'sorah/unite-ghq'
       NeoBundle 'vim-addon-mw-utils'
       NeoBundle 'vim-ruby/vim-ruby'
       NeoBundle 'scrooloose/syntastic'
@@ -458,6 +459,8 @@
       nnoremap <silent> ,ug :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
       " grep current word
       nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-r><C-w><CR>
+      " ghq
+      nnoremap <silent> ,ghq :<C-u>Unite ghq<CR>
 
       " バッファをを移動した時に自動的にプロジェクトルートをカレントディレクトリにする
       " http://qiita.com/kentaro/items/6aa9f108df825b2a8b39
