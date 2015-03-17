@@ -318,7 +318,7 @@
 
         " RSense
         if filereadable(expand('/usr/local/bin/rsense'))
-          let g:neocomplete#sources#rsense#home_directiry = '/usr/local/Cellar/rsense/0.3/libexec'
+          let g:rsenseUseOmniFunc = 1
         else
           let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
         endif
@@ -348,6 +348,7 @@
 
         " RSense
         if filereadable(expand('/usr/local/bin/rsense'))
+          let g:rsenseUseOmniFunc = 1
           let g:rsenseHome = '/usr/local/Cellar/rsense/0.3/libexec'
         else
           let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
