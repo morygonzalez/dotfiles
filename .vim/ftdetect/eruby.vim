@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+autocmd BufRead,BufNewFile *.html.erb set filetype=eruby.html
