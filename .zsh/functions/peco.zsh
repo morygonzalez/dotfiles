@@ -44,3 +44,15 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+
+function peco-bundle-open() {
+    local selected=$(bundle show 2> /dev/null | sed -e '/^  \*/!d; s/^  \* \([^ ]*\) .*/\1/' | peco --query "$LBUFFER")
+    if [ -n "$selected" ]; then
+        BUFFER="bundle open ${selected}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-bundle-open
+bindkey '^o' peco-bundle-open
