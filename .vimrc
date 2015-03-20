@@ -95,7 +95,6 @@
     " Syntaxes {{{
 
       NeoBundle 'csexton/jekyll.vim'
-      NeoBundle 'tpope/vim-markdown'
       NeoBundle 'leshill/vim-json'
       NeoBundle 'taskpaper.vim'
       NeoBundle 'kchmck/vim-coffee-script'
