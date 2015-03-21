@@ -9,7 +9,7 @@
 	email = morygonzalez@gmail.com
 [core]
 	editor = vim
-	excludesfile = /Users/morygonzalez/.gitignore
+	excludesfile = ~/.gitignore
 	quotepath = false
 [merge]
 	tool = vimdiff
@@ -22,7 +22,7 @@
 [diff]
 	noprefix = true
 [ghq]
-	root = /Users/morygonzalez/.ghq/src
+	root = ~/src
 [pager]
 	log	= diff-highlight | less
 	show = diff-highlight | less
