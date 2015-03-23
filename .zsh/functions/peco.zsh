@@ -1,12 +1,3 @@
-function peco-src () {
-    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
-    if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
-        zle accept-line
-    fi
-}
-zle -N peco-src
-
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -44,7 +35,6 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
-
 
 function peco-bundle-open() {
     local selected=$(bundle show 2> /dev/null | sed -e '/^  \*/!d; s/^  \* \([^ ]*\) .*/\1/' | peco --query "$LBUFFER")
