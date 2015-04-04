@@ -39,10 +39,8 @@
       NeoBundle 'bling/vim-airline'
       if s:meet_neocomplete_requirements()
         NeoBundle 'Shougo/neocomplete.vim'
-        NeoBundleFetch 'Shougo/neocomplcache.vim'
-        NeoBundleFetch 'supermomonga/neocomplete-rsense.vim'
+        NeoBundle 'supermomonga/neocomplete-rsense.vim'
       else
-        NeoBundleFetch 'Shougo/neocomplete.vim'
         NeoBundle 'Shougo/neocomplcache.vim'
         NeoBundle 'Shougo/neocomplcache-rsense.vim'
       endif
