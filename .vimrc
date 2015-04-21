@@ -175,7 +175,6 @@
 
       autocmd FileType ruby       setlocal sw=2 sts=2 ts=2
       autocmd FileType coffee     setlocal sw=2 sts=2 ts=2
-      autocmd FileType javascript setlocal sw=4 sts=4 ts=4
       autocmd FileType scss       setlocal sw=2 sts=2 ts=2
       autocmd FileType zsh        setlocal sw=4 sts=4 ts=4
       autocmd FileType nginx      setlocal sw=4 sts=4 ts=4 noet
