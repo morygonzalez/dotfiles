@@ -29,3 +29,5 @@
 	diff = diff-highlight | less
 [pull]
 	rebase = true
+[credential]
+	helper = osxkeychain
