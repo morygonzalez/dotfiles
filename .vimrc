@@ -281,9 +281,9 @@
   " Syntax Settings {{{
 
     " RSpec
-    autocmd BufNewFile *_spec.rb 0r ~/.vim/templates/rspec.rb
+    autocmd BufNewFile *_spec.rb 0r ~/.vim/template/rspec.rb
     " Gemfile
-    autocmd BufNewFile Gemfile 0r ~/.vim/templates/Gemfile
+    autocmd BufNewFile Gemfile 0r ~/.vim/template/Gemfile
 
     " ファイルタイプ別の設定
     autocmd FileType nginx,apache,conf setlocal sw=4 sts=4 ts=4 noet
