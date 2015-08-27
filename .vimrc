@@ -87,6 +87,7 @@
       NeoBundle 'fatih/vim-go'
       NeoBundle 'closetag.vim'
       NeoBundle 'tyru/open-browser-github.vim'
+      NeoBundle 'thinca/vim-template'
 
     " }}}
 
@@ -644,6 +645,12 @@
       nmap <silent><leader>n :call RunNearestSpec()<CR>
       nmap <silent><leader>l :call RunLastSpec()<CR>
       nmap <silent><leader>a :call RunAllSpecs()<CR>
+
+    " }}}
+
+    " vim-template {{{
+
+      autocmd User plugin-template-loaded silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
 
     " }}}
 
