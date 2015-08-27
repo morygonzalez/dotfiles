@@ -75,6 +75,10 @@ setopt noautoremoveslash
 #
 setopt nolistbeep
 
+# curl とかで URL 中の `?` を自動エスケープする
+#
+setopt nonomatch
+
 
 ## Keybind configuration
 #
