@@ -99,6 +99,7 @@
       NeoBundle 'kchmck/vim-coffee-script'
       NeoBundle 'othree/javascript-libraries-syntax.vim'
       NeoBundle 'pangloss/vim-javascript'
+      NeoBundle 'briancollins/vim-jst'
       NeoBundle 'slim-template/vim-slim'
       NeoBundle 'cakebaker/scss-syntax.vim'
       NeoBundle 'vim-scripts/nginx.vim'
@@ -108,6 +109,7 @@
       NeoBundle 'mail.vim'
       NeoBundle 'trapd00r/irc.vim'
       NeoBundle 'rodjek/vim-puppet'
+      NeoBundle 'burnettk/vim-angular'
 
     " }}}
 
