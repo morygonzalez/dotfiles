@@ -88,6 +88,8 @@
       NeoBundle 'closetag.vim'
       NeoBundle 'tyru/open-browser-github.vim'
       NeoBundle 'thinca/vim-template'
+      NeoBundle 'junegunn/vim-emoji'
+      NeoBundle 'rhysd/github-complete.vim'
 
     " }}}
 
@@ -300,7 +302,7 @@
 
       " Enable omni completion.
       autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-      autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+      autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
       autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
       autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
       autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -653,6 +655,13 @@
     " vim-template {{{
 
       autocmd User plugin-template-loaded silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
+
+    " }}}
+
+    " github-complete {{{
+
+      let g:github_complete_enable_neocomplete = 1
+      let g:github_complete_emoji_japanese_workaround = 1
 
     " }}}
 
