@@ -594,7 +594,7 @@
 
         let g:memolist_path = "~/Dropbox/memolist"
         let g:memolist_unite = 1
-        let g:memolist_unite_source = "file_rec"
+        let g:memolist_unite_source = "file"
         let g:memolist_unite_option = "-auto-preview -start-insert"
 
         map <Leader>mn  :MemoNew<CR>
