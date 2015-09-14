@@ -108,7 +108,6 @@
       NeoBundle 'tpope/vim-git'
       NeoBundle 'joker1007/vim-markdown-quote-syntax'
       NeoBundle 'joker1007/vim-ruby-heredoc-syntax'
-      NeoBundle 'mail.vim'
       NeoBundle 'trapd00r/irc.vim'
       NeoBundle 'rodjek/vim-puppet'
       NeoBundle 'burnettk/vim-angular'
@@ -119,8 +118,6 @@
 
       NeoBundle 'tomasr/molokai'
       NeoBundle 'altercation/vim-colors-solarized'
-      NeoBundle 'railscasts'
-      NeoBundle 'github-theme'
 
     " }}}
 
