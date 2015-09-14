@@ -539,7 +539,7 @@
 
     " Jekyll {{{
 
-      let g:jekyll_path = "~/Projects/tech.portalshit.net"
+      let g:jekyll_path = "~/src/github.com/morygonzalez/tech.portalshit.net"
       map <Leader>jb :JekyllBuild<CR>
       map <Leader>jn :JekyllPost<CR>
       map <Leader>jl :JekyllList<CR>
