@@ -597,6 +597,8 @@
         let g:memolist_unite = 1
         let g:memolist_unite_source = "file"
         let g:memolist_unite_option = "-auto-preview -start-insert"
+        let g:memolist_memo_suffix = "markdown"
+        let g:memolist_template_dir_path = "~/.vim/template/memolist"
 
         map <Leader>mn  :MemoNew<CR>
         map <Leader>ml  :MemoList<CR>
