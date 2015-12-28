@@ -216,6 +216,10 @@
       autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=82
     endif
 
+    " }}}
+
+  " Keybindings {{{
+
     command! Ev edit $MYVIMRC
     command! Rv source $MYVIMRC
     " 大文字 W で保存
@@ -226,11 +230,6 @@
     command! Q q
     " Qa で全終了
     command! Qa qa
-
-
-    " }}}
-
-  " Keybindings {{{
 
     " ESCキー2度押しでハイライトを消す
     nnoremap <Esc><Esc> :<C-u>nohl<Return><Esc>
