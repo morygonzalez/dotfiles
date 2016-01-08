@@ -277,6 +277,9 @@
     imap <C-y> <C-o>b:<Esc>Ea
     nmap <C-y> lbi:<Esc>E
 
+    " back tagstack
+    nnoremap <C-[> :1po<CR>
+
   " }}}
 
   " Syntax Settings {{{
