@@ -90,6 +90,7 @@
       NeoBundle 'thinca/vim-template'
       NeoBundle 'junegunn/vim-emoji'
       NeoBundle 'rhysd/github-complete.vim'
+      NeoBundle 'kien/ctrlp.vim'
 
     " }}}
 
