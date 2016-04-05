@@ -112,6 +112,7 @@
       NeoBundle 'trapd00r/irc.vim'
       NeoBundle 'rodjek/vim-puppet'
       NeoBundle 'burnettk/vim-angular'
+      NeoBundle 'digitaltoad/vim-pug'
 
     " }}}
 
