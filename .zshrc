@@ -328,6 +328,9 @@ show-current-dir-as-window-name() {
 show-current-dir-as-window-name
 add-zsh-hook chpwd show-current-dir-as-window-name
 
+# tmux doesn't support bracketed paste mode
+(( $+TMUX )) && unset zle_bracketed_paste
+
 ### peco
 command -v peco >/dev/null 2>&1 && source ~/.zsh/functions/peco.zsh
 
