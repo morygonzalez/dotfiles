@@ -11,7 +11,7 @@
     if has('mac')
       if exists('g:loaded_airline')
         set ambiwidth=single
-        set guifont=Menlo\ Regular\ for\ Powerline
+        set guifont=Menlo\ Regular\ for\ Powerline:h13
       else
         set guifont=Menlo
       endif
@@ -27,6 +27,11 @@
 " }}}
 
 " GVim 固有の設定 {{{
+
+  " 縦幅 デフォルトは24
+  " set lines=999
+  " 横幅 デフォルトは80
+  " set columns=9999
 
   " disables toolbar and menu
   set guioptions-=T
