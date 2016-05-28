@@ -273,6 +273,16 @@
     imap <C-y> <C-o>b:<Esc>Ea
     nmap <C-y> lbi:<Esc>E
 
+    " インデント一括調整したときにカーソルを移動させないやつ
+    function! IndentDoNotMove()
+      let pos = getpos(".")
+      :execute ":normal gg=G"
+      call setpos('.', pos)
+      :execute ":normal z."
+    endfunction
+
+    nnoremap <silent> ,gg=G :call IndentDoNotMove()<CR>
+
   " }}}
 
   " Syntax Settings {{{
