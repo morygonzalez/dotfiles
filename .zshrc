@@ -314,9 +314,12 @@ export GREP_OPTIONS='--color=auto -E'
 show-current-dir-as-window-name() {
   [ -n "$TMUX" ] && tmux set-window-option window-status-format " #I ${PWD:t} " > /dev/null
 }
-
 show-current-dir-as-window-name
-add-zsh-hook chpwd show-current-dir-as-window-name
+add-zsh-hook chpwd show-current-dir-as-window-name()
+
+# tmux-powerline current dir
+TMUX_DIRNAME=$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")
+PROMPT="${PROMPT}${TMUX_DIRNAME}"
 
 # tmux doesn't support bracketed paste mode
 (( $+TMUX )) && unset zle_bracketed_paste
