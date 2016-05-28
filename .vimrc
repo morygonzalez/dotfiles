@@ -189,7 +189,6 @@
     " Colorscheme settings {{{
 
       " molokai {{{
-        set background=dark
         let g:molokai_original = 1
         colorscheme molokai
       " }}}
