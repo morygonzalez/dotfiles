@@ -36,17 +36,7 @@ case ${UID} in
 esac
 
 # vcs info
-[ -f ~/.zsh/functions/_vsc_info ] && source ~/.zsh/functions/_vsc_info
-
-function _curdir_on_rprompt() {
-  RPROMPT="[ %{${fg[magenta]}%}%~%{${reset_color}%} ] $RPROMPT"
-}
-add-zsh-hook precmd _curdir_on_rprompt
-
-function _append_current_time() {
-  RPROMPT="$RPROMPT %T"
-}
-add-zsh-hook precmd _append_current_time
+# [ -f ~/.zsh/functions/_vsc_info ] && source ~/.zsh/functions/_vsc_info
 
 # auto change directory
 #
@@ -106,7 +96,7 @@ function vi_mode_prompt_info() {
 
 # define right prompt, if it wasn't defined by a theme
 if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
-  RPS1='$(vi_mode_prompt_info)'
+  RPS1="$(vi_mode_prompt_info)"
 fi
 
 
