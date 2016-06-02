@@ -15,8 +15,8 @@ case $GIT_COMMITTER_NAME in
     GIT_AUTHOR_EMAIL="morygonzalez@gmail.com"
     ;;
   * )
-    GIT_AUTHOR_NAME="森井ゴンザレス"
-    GIT_AUTHOR_EMAIL="morygonzalez@gmail.com"
+    GIT_COMMITTER_NAME="森井ゴンザレス"
+    GIT_COMMITTER_EMAIL="morygonzalez@gmail.com"
     ;;
 esac
 git commit-tree "$@"
