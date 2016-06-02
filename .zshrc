@@ -322,7 +322,14 @@ TMUX_DIRNAME=$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr
 PROMPT="${PROMPT}${TMUX_DIRNAME}"
 
 # tmux doesn't support bracketed paste mode
-(( $+TMUX )) && unset zle_bracketed_paste
+# (( $+TMUX )) && unset zle_bracketed_paste
+
+if [ $TERM == dumb -o $+TMUX ]; then
+    unset zle_bracketed_paste
+else
+    autoload -Uz bracketed-paste-magic
+    zle -N bracketed-paste bracketed-paste-magic
+fi
 
 ### peco
 command -v peco >/dev/null 2>&1 && source ~/.zsh/functions/peco.zsh
