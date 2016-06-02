@@ -641,6 +641,25 @@
 
     " }}}
 
+      " vim-markdown-quote-syntax {{{
+
+        let g:markdown_quote_syntax_filetypes = {
+          \ "coffee" : {
+          \   "start" : "coffee",
+          \},
+          \ "css" : {
+          \   "start" : "\\%(css\\|scss\\)",
+          \},
+          \ "haml" : {
+          \   "start" : "haml",
+          \},
+          \ "json" : {
+          \   "start" : "json",
+          \},
+        \}
+
+      " }}}
+
   " }}}
 
   " local configuration file {{{
