@@ -232,12 +232,23 @@
     " カーソル移動を見た目のやつに
     nnoremap <silent> j gj
     nnoremap <silent> gj j
-    nnoremap <silent> k gk
-    nnoremap <silent> gk k
     vnoremap <silent> j gj
     vnoremap <silent> gj j
+
+    nnoremap <silent> k gk
+    nnoremap <silent> gk k
     vnoremap <silent> k gk
     vnoremap <silent> gk k
+
+    nnoremap <silent> $ g$
+    nnoremap <silent> g$ $
+    vnoremap <silent> $ g$
+    vnoremap <silent> g$ $
+
+    nnoremap <silent> ^ g^
+    nnoremap <silent> g^ ^
+    vnoremap <silent> ^ g^
+    vnoremap <silent> g^ ^
 
     " bindings for easy split nav
     nnoremap <C-h> <C-w>h
