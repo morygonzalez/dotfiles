@@ -165,7 +165,7 @@
     set wildmenu
     set wildmode=longest,list "コマンド候補補完
     set history=1000 "コマンド履歴保存件数
-    set cursorline " カーソル行をハイライト表示
+    " set cursorline " カーソル行をハイライト表示
     set backspace=indent,eol,start " 普通にバックスペースで削除できるようにする
     set nojoinspaces
 
@@ -208,7 +208,7 @@
       set colorcolumn=+1
       " sh,cpp,perl,vim,...の部分は自分が使う
       " プログラミング言語のfiletypeに合わせてください
-      autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=82
+      autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=120
     endif
 
     " }}}
