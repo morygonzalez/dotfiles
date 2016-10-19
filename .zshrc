@@ -310,13 +310,6 @@ sudo() {
 ## grep options
 export GREP_OPTIONS='--color=auto -E'
 
-# tmux current dir name to window name
-show-current-dir-as-window-name() {
-  [ -n "$TMUX" ] && tmux set-window-option window-status-format " #I ${PWD:t} " > /dev/null
-}
-show-current-dir-as-window-name
-add-zsh-hook chpwd show-current-dir-as-window-name()
-
 # tmux-powerline current dir
 TMUX_DIRNAME=$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")
 PROMPT="${PROMPT}${TMUX_DIRNAME}"
@@ -331,8 +324,11 @@ else
     zle -N bracketed-paste bracketed-paste-magic
 fi
 
-### peco
+## peco
 command -v peco >/dev/null 2>&1 && source ~/.zsh/functions/peco.zsh
+
+## GitHub Pull Request id finder
+[ -f ~/.zsh/functions/_find-pr ] && source ~/.zsh/functions/_find-pr
 
 ## Completion configuration
 #
