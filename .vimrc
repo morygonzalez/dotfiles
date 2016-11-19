@@ -6,122 +6,45 @@
 
   " }}}
 
-  " NeoBundle {{{
+  " dein {{{
 
-    if has('vim_starting')
-      set runtimepath+=~/.vim/bundle/neobundle.vim/
+    " プラグインが実際にインストールされるディレクトリ
+    let s:dein_dir = expand('~/.cache/dein')
+    " dein.vim 本体
+    let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+    " dein.vim がなければ github から落としてくる
+    if &runtimepath !~# '/dein.vim'
+      if !isdirectory(s:dein_repo_dir)
+        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+      endif
+      execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
     endif
 
-    call neobundle#begin(expand('~/.vim/bundle/'))
+    " 設定開始
+    if dein#load_state(s:dein_dir)
+      call dein#begin(s:dein_dir)
 
-    NeoBundleFetch 'Shougo/neobundle.vim'
+      " プラグインリストを収めた TOML ファイル
+      let g:rc_dir    = expand('~/.vim/rc')
+      let s:toml      = g:rc_dir . '/dein.toml'
+      let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
-    NeoBundle 'Shougo/vimproc', {
-          \ 'build' : {
-          \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
-          \     'cygwin'  : 'make -f make_cygwin.mak',
-          \     'mac'     : 'make -f make_mac.mak',
-          \     'unix'    : 'make -f make_unix.mak',
-          \    },
-          \ }
+      " TOML を読み込み、キャッシュしておく
+      call dein#load_toml(s:toml,      {'lazy': 0})
+      call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-    " Bundle 'Shougo/vimshell'
-    " Bundle 'motemen/git-vim'
+      " 設定終了
+      call dein#end()
+      call dein#save_state()
+    endif
 
-    " Utilities {{{
-
-      function! s:meet_neocomplete_requirements()
-        return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
-      endfunction
-
-      " Bundle 'garbas/vim-snipmate'
-      NeoBundle 'Align'
-      NeoBundle 'bling/vim-airline'
-      NeoBundle 'Shougo/neocomplete.vim'
-      NeoBundle 'Shougo/neosnippet'
-      NeoBundle 'Shougo/neosnippet-snippets'
-      NeoBundle 'Shougo/unite.vim'
-      NeoBundle 'Shougo/neomru.vim'
-      NeoBundle 'Shougo/vimfiler'
-      NeoBundle 'honza/vim-snippets'
-      NeoBundle 'mattn/gist-vim'
-      NeoBundle 'mattn/webapi-vim'
-      NeoBundle 'mileszs/ack.vim'
-      NeoBundle 'nathanaelkane/vim-indent-guides'
-      NeoBundle 'othree/eregex.vim', 'e0501e3'
-      NeoBundle 'sudo.vim'
-      NeoBundle 'thinca/vim-quickrun'
-      NeoBundle 'thinca/vim-ref'
-      NeoBundle 'tlib'
-      NeoBundle 'tomtom/tcomment_vim'
-      NeoBundle 'tpope/vim-endwise'
-      NeoBundle 'tpope/vim-fugitive'
-      NeoBundle 'tpope/vim-rails'
-      NeoBundle 'tpope/vim-surround'
-      NeoBundle 'tpope/vim-dispatch'
-      NeoBundleLazy 'thoughtbot/vim-rspec', {
-                      \ 'depends'  : 'tpope/vim-dispatch',
-                      \ 'autoload' : { 'filetypes' : ['ruby'] }
-                      \ }
-      NeoBundle 'tyru/open-browser.vim'
-      NeoBundle 'ujihisa/neco-look'
-      NeoBundle 'ujihisa/unite-colorscheme'
-      NeoBundle 'sorah/unite-ghq'
-      NeoBundle 'vim-addon-mw-utils'
-      NeoBundle 'vim-ruby/vim-ruby'
-      NeoBundle 'scrooloose/syntastic'
-      NeoBundle 'csexton/trailertrash.vim'
-      NeoBundle 'glidenote/memolist.vim'
-      NeoBundle 'kana/vim-textobj-user'
-      NeoBundle 'osyo-manga/vim-textobj-multiblock'
-      NeoBundle 'kana/vim-operator-user'
-      NeoBundle 'rhysd/vim-operator-surround'
-      NeoBundle 'rhysd/vim-textobj-ruby'
-      NeoBundle 'kana/vim-smartinput'
-      NeoBundle 'fatih/vim-go'
-      NeoBundle 'closetag.vim'
-      NeoBundle 'tyru/open-browser-github.vim'
-      NeoBundle 'thinca/vim-template'
-      NeoBundle 'junegunn/vim-emoji'
-      NeoBundle 'rhysd/github-complete.vim'
-      NeoBundle 'kien/ctrlp.vim'
-
-    " }}}
-
-    " Syntaxes {{{
-
-      NeoBundle 'csexton/jekyll.vim'
-      NeoBundle 'leshill/vim-json'
-      NeoBundle 'taskpaper.vim'
-      NeoBundle 'kchmck/vim-coffee-script'
-      NeoBundle 'othree/javascript-libraries-syntax.vim'
-      NeoBundle 'pangloss/vim-javascript'
-      NeoBundle 'briancollins/vim-jst'
-      NeoBundle 'slim-template/vim-slim'
-      NeoBundle 'cakebaker/scss-syntax.vim'
-      NeoBundle 'vim-scripts/nginx.vim'
-      NeoBundle 'tpope/vim-git'
-      NeoBundle 'joker1007/vim-markdown-quote-syntax'
-      NeoBundle 'joker1007/vim-ruby-heredoc-syntax'
-      NeoBundle 'trapd00r/irc.vim'
-      NeoBundle 'rodjek/vim-puppet'
-      NeoBundle 'burnettk/vim-angular'
-      NeoBundle 'digitaltoad/vim-pug'
-
-    " }}}
-
-    " Colorschemes {{{
-
-      NeoBundle 'tomasr/molokai'
-      NeoBundle 'altercation/vim-colors-solarized'
-
-    " }}}
-
-    call neobundle#end()
+    " もし、未インストールものものがあったらインストール
+    if dein#check_install()
+      call dein#install()
+    endif
 
     filetype plugin indent on
-
-    NeoBundleCheck
 
   " }}}
 
@@ -174,7 +97,6 @@
       autocmd FileType ruby       setlocal sw=2 sts=2 ts=2
       autocmd FileType coffee     setlocal sw=2 sts=2 ts=2
       autocmd FileType scss       setlocal sw=2 sts=2 ts=2
-      autocmd FileType zsh        setlocal sw=4 sts=4 ts=4
       autocmd FileType nginx      setlocal sw=4 sts=4 ts=4 noet
 
     " }}}
@@ -206,8 +128,6 @@
     set textwidth=0
     if exists('&colorcolumn')
       set colorcolumn=+1
-      " sh,cpp,perl,vim,...の部分は自分が使う
-      " プログラミング言語のfiletypeに合わせてください
       autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=120
     endif
 
@@ -627,15 +547,16 @@
 
     " vim-rspec {{{
 
-      let s:bundle = neobundle#get('vim-rspec')
-      function! s:bundle.hooks.on_source(bundle)
-        let g:rspec_command = 'Dispatch bin/rspec {spec}'
-      endfunction
+      if dein#tap('vim-rspec')
+        function! s:rspec_on_source() abort
+          let g:rspec_command = 'Dispatch bin/rspec {spec}'
+        endfunction
 
-      nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
-      nmap <silent><leader>n :call RunNearestSpec()<CR>
-      nmap <silent><leader>l :call RunLastSpec()<CR>
-      nmap <silent><leader>a :call RunAllSpecs()<CR>
+        nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
+        nmap <silent><leader>n :call RunNearestSpec()<CR>
+        nmap <silent><leader>l :call RunLastSpec()<CR>
+        nmap <silent><leader>a :call RunAllSpecs()<CR>
+      endif
 
     " }}}
 
@@ -645,31 +566,24 @@
 
     " }}}
 
-    " github-complete {{{
+    " vim-markdown-quote-syntax {{{
 
-      let g:github_complete_enable_neocomplete = 1
-      let g:github_complete_emoji_japanese_workaround = 1
+      let g:markdown_quote_syntax_filetypes = {
+        \ "coffee" : {
+        \   "start" : "coffee",
+        \},
+        \ "css" : {
+        \   "start" : "\\%(css\\|scss\\)",
+        \},
+        \ "haml" : {
+        \   "start" : "haml",
+        \},
+        \ "json" : {
+        \   "start" : "json",
+        \},
+      \}
 
     " }}}
-
-      " vim-markdown-quote-syntax {{{
-
-        let g:markdown_quote_syntax_filetypes = {
-          \ "coffee" : {
-          \   "start" : "coffee",
-          \},
-          \ "css" : {
-          \   "start" : "\\%(css\\|scss\\)",
-          \},
-          \ "haml" : {
-          \   "start" : "haml",
-          \},
-          \ "json" : {
-          \   "start" : "json",
-          \},
-        \}
-
-      " }}}
 
   " }}}
 
