@@ -1,10 +1,21 @@
 [[plugins]]
+repo = 'Shougo/unite.vim'
+hook_source = 'call unite#define_source(s:unite_git_conflicts)'
+hook_source = ':au BufEnter * :call ChangeCurrentDirectoryToRoot()'
+
+[[plugins]]
 repo = 'ujihisa/unite-colorscheme'
 depends = ['unite.vim']
+on_source = ['unite.vim']
 
 [[plugins]]
 repo = 'sorah/unite-ghq'
 depends = ['unite.vim']
+on_source = ['unite.vim']
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'

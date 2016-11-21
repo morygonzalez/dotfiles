@@ -25,16 +25,10 @@ repo = 'Align'
 repo = 'bling/vim-airline'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
 repo = 'Shougo/neosnippet'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
 
 [[plugins]]
 repo = 'Shougo/vimfiler'

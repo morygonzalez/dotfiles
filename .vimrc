@@ -233,11 +233,11 @@
     " Neocomplete {{{
 
       " Enable omni completion.
-      autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-      autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+      autocmd FileType css        setlocal omnifunc=csscomplete#CompleteCSS
+      autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
       autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-      autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-      autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+      autocmd FileType python     setlocal omnifunc=pythoncomplete#Complete
+      autocmd FileType xml        setlocal omnifunc=xmlcomplete#CompleteTags
 
       let g:neocomplete#enable_at_startup                 = 1
       let g:neocomplete#enable_smart_case                 = 1 " Use smartcase.
@@ -270,10 +270,10 @@
       " 補完候補の色づけ for vim7
       " https://github.com/yuroyoro/dotfiles/blob/master/.vimrc.colors
       " http://mba-hack.blogspot.jp/2013/01/vim_2945.html
-      hi Pmenu ctermbg=255 ctermfg=0 guifg=#000000 guibg=#999999
-      hi PmenuSel ctermbg=blue ctermfg=black
-      hi PmenuSbar ctermbg=0 ctermfg=9
-      hi PmenuSbar ctermbg=255 ctermfg=0 guifg=#000000 guibg=#FFFFFF
+      hi Pmenu     ctermbg=255  ctermfg=0     guifg=#000000 guibg=#999999
+      hi PmenuSel  ctermbg=blue ctermfg=black
+      hi PmenuSbar ctermbg=0    ctermfg=9
+      hi PmenuSbar ctermbg=255  ctermfg=0     guifg=#000000 guibg=#FFFFFF
 
     " }}}
 
@@ -373,7 +373,6 @@
           execute ":lcd " . root
         endif
       endfunction
-      :au BufEnter * :call ChangeCurrentDirectoryToRoot()
 
       " vimfiler の grep エンジンを pt か ag か ack にする {{{
 
@@ -411,7 +410,6 @@
             \ "action__path": v:val
             \ }')
         endfunction
-        call unite#define_source(s:unite_git_conflicts)
 
       " }}}
 
