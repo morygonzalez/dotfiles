@@ -31,9 +31,6 @@ repo = 'Shougo/neosnippet'
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
-repo = 'Shougo/vimfiler'
-
-[[plugins]]
 repo = 'honza/vim-snippets'
 
 [[plugins]]
@@ -93,9 +90,6 @@ repo = 'scrooloose/syntastic'
 
 [[plugins]]
 repo = 'csexton/trailertrash.vim'
-
-[[plugins]]
-repo = 'glidenote/memolist.vim'
 
 [[plugins]]
 repo = 'kana/vim-textobj-user'

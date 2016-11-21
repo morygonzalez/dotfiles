@@ -1,4 +1,7 @@
 [[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
 repo = 'Shougo/unite.vim'
 hook_source = 'call unite#define_source(s:unite_git_conflicts)'
 hook_source = ':au BufEnter * :call ChangeCurrentDirectoryToRoot()'
@@ -20,6 +23,10 @@ on_source = ['unite.vim']
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
 on_i = 1
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+depends = ['unite.vim']
 
 [[plugins]]
 repo = 'vim-ruby/vim-ruby'
