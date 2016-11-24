@@ -136,9 +136,6 @@ repo = 'taskpaper.vim'
 repo = 'tpope/vim-git'
 
 [[plugins]]
-repo = 'joker1007/vim-markdown-quote-syntax'
-
-[[plugins]]
 repo = 'rodjek/vim-puppet'
 
 [[plugins]]
