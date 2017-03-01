@@ -304,9 +304,6 @@ sudo() {
 # bundler-exec.sh
 [ -f ~/.zsh/functions/_bundler-exec.sh ] && source ~/.zsh/functions/_bundler-exec.sh
 
-## load zsh completion function
-[ -f ~/.zsh/functions/Completion/_incr ] && source ~/.zsh/functions/Completion/_incr
-
 ## grep options
 export GREP_OPTIONS='--color=auto -E'
 
