@@ -19,6 +19,22 @@ hook_post_update = '''
 # Utilities
 
 [[plugins]]
+repo = 'Shougo/unite.vim'
+depends = ['neomru.vim']
+hook_source = 'call unite#define_source(s:unite_git_conflicts)'
+hook_source = ':au BufEnter * :call ChangeCurrentDirectoryToRoot()'
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
 repo = 'Align'
 
 [[plugins]]
@@ -54,6 +70,27 @@ repo = 'sudo.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'thoughtbot/vim-rspec'
+depends = ['vim-dispatch']
+hook_add = '''
+  if executable('bin/rspec')
+    let g:rspec_command = 'Dispatch bin/rspec {spec}'
+  else
+    let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
+  endif
+  nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
+  nmap <silent><leader>n :call RunNearestSpec()<CR>
+  nmap <silent><leader>l :call RunLastSpec()<CR>
+  nmap <silent><leader>a :call RunAllSpecs()<CR>
+'''
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+# [[plugins]]
+# repo = 'itmammoth/run-rspec.vim'
 
 [[plugins]]
 repo = 'thinca/vim-ref'
@@ -143,6 +180,15 @@ repo = 'digitaltoad/vim-pug'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'vim-scripts/applescript.vim'
+
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
+
+[[plugins]]
+repo = 'keith/swift.vim'
 
 # Colorschemes
 

@@ -1,12 +1,4 @@
 [[plugins]]
-repo = 'Shougo/vimfiler'
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-hook_source = 'call unite#define_source(s:unite_git_conflicts)'
-hook_source = ':au BufEnter * :call ChangeCurrentDirectoryToRoot()'
-
-[[plugins]]
 repo = 'ujihisa/unite-colorscheme'
 depends = ['unite.vim']
 on_source = ['unite.vim']
@@ -17,28 +9,12 @@ depends = ['unite.vim']
 on_source = ['unite.vim']
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-on_source = ['unite.vim']
-
-[[plugins]]
 repo = 'Shougo/neocomplete.vim'
 on_i = 1
 
 [[plugins]]
-repo = 'glidenote/memolist.vim'
-depends = ['unite.vim']
-
-[[plugins]]
 repo = 'vim-ruby/vim-ruby'
 on_ft = ['ruby']
-
-[[plugins]]
-repo = 'thoughtbot/vim-rspec'
-on_ft = ['ruby']
-depends = ['vim-dispatch']
-
-[[plugins]]
-repo = 'tpope/vim-dispatch'
 
 [[plugins]]
 repo = 'tpope/vim-endwise'
@@ -93,3 +69,7 @@ on_ft = ['nginx']
 repo = 'joker1007/vim-markdown-quote-syntax'
 on_ft = ['markdown']
 depends = ['vim-coffee-script']
+
+[[plugins]]
+repo = 'ywatase/mdt.vim'
+on_ft = ['markdown']

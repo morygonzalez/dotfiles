@@ -136,6 +136,7 @@
   " Keybindings {{{
 
     command! Ev edit $MYVIMRC
+    command! Ed edit $HOME/.vim/rc/dein.toml
     command! Rv source $MYVIMRC
     " 大文字 W で保存
     command! W w
@@ -436,6 +437,13 @@
             \ 'args'      : 'Marked\ 2',
             \ 'exec'      : '%c %o %a %s',
             \ }
+      let g:quickrun_config['markdown.slide'] = {
+            \ 'outputter' : 'null',
+            \ 'command'   : 'open',
+            \ 'cmdopt'    : '-a',
+            \ 'args'      : 'Deckset',
+            \ 'exec'      : '%c %o %a %s',
+            \ }
 
     " }}}
 
@@ -545,16 +553,13 @@
 
     " vim-rspec {{{
 
-      if dein#tap('vim-rspec')
-        function! s:rspec_on_source() abort
-          let g:rspec_command = 'Dispatch bin/rspec {spec}'
-        endfunction
-
-        nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
-        nmap <silent><leader>n :call RunNearestSpec()<CR>
-        nmap <silent><leader>l :call RunLastSpec()<CR>
-        nmap <silent><leader>a :call RunAllSpecs()<CR>
-      endif
+      " if dein#tap('vim-rspec')
+      "   let g:rspec_command = 'Dispatch bin/rspec {spec}'
+      "   nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
+      "   nmap <silent><leader>n :call RunNearestSpec()<CR>
+      "   nmap <silent><leader>l :call RunLastSpec()<CR>
+      "   nmap <silent><leader>a :call RunAllSpecs()<CR>
+      " endif
 
     " }}}
 
