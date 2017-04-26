@@ -18,7 +18,7 @@
       if !isdirectory(s:dein_repo_dir)
         execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
       endif
-      execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+      execute 'set runtimepath+=' . fnamemodify(s:dein_repo_dir, ':p')
     endif
 
     " 設定開始
@@ -91,6 +91,7 @@
     " set cursorline " カーソル行をハイライト表示
     set backspace=indent,eol,start " 普通にバックスペースで削除できるようにする
     set nojoinspaces
+    set noswapfile
 
     " FileType configuration {{{
 
