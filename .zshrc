@@ -210,42 +210,45 @@ esac
 #
 unset LSCOLORS
 case "${TERM}" in
-xterm)
-  if [ -e /lib/terminfo/x/xterm-256color -o -e /usr/share/terminfo/x/xterm-256color ] ; then
-    export TERM=xterm-256color
-  else
-    export TERM=xterm-color
-  fi
-  ;;
-kterm)
-  export TERM=kterm-color
-  # set BackSpace control character
-  stty erase
-  ;;
-cons25)
-  unset LANG
-  export LSCOLORS=FxFxCxdxBxegedabagacad
-  export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-  zstyle ':completion:*' list-colors \
-    'di=;35;01' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-  ;;
+  xterm)
+    if [ -e /lib/terminfo/x/xterm-256color -o -e /usr/share/terminfo/x/xterm-256color ] ; then
+      export TERM=xterm-256color
+    else
+      export TERM=xterm-color
+    fi
+    ;;
+  kterm)
+    export TERM=kterm-color
+    # set BackSpace control character
+    stty erase
+    ;;
+  cons25)
+    unset LANG
+    export LSCOLORS=FxFxCxdxBxegedabagacad
+    export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+    zstyle ':completion:*' list-colors \
+      'di=;35;01' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+    ;;
+  screen*|xterm-256color)
+    export LSCOLORS=Exfxcxdxbxegedabagacad
+    export LS_COLORS='di=34;01:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+    zstyle ':completion:*' list-colors  'di=34;01' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+    #Solarized
+    # export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+    # export LS_COLORS='di=36;40:ln=35;40:so=31;:pi=0;:ex=1;;40:bd=0;:cd=37;:su=37;:sg=0;:tw=0;:ow=0;:'
+    # zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=31' 'ex=1' 'bd=0' 'cd=37'
+    ;;
 esac
 
 # set terminal title including current directory
 #
 case "${TERM}" in
-kterm*|xterm*)
-  precmd() {
-    CURRENT_DIR=`basename $PWD`
-    echo -ne "\e]1;$CURRENT_DIR\a"
-  }
-  export LSCOLORS=Exfxcxdxbxegedabagacad
-  export LS_COLORS='di=34;01:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-  zstyle ':completion:*' list-colors  'di=34;01' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-  # export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #Solarized
-  # export LS_COLORS='di=36;40:ln=35;40:so=31;:pi=0;:ex=1;;40:bd=0;:cd=37;:su=37;:sg=0;:tw=0;:ow=0;:' #Solarized
-  # zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=31' 'ex=1' 'bd=0' 'cd=37' #Solarized
-  ;;
+  kterm*|xterm*)
+    precmd() {
+      CURRENT_DIR=`basename $PWD`
+      echo -ne "\e]1;$CURRENT_DIR\a"
+    }
+    ;;
 esac
 
 # Editor
@@ -256,7 +259,7 @@ export EDITOR=vim
 function up()
 {
   to=$(perl -le '$p=$ENV{PWD}."/";$d="/".$ARGV[0]."/";$r=rindex($p,$d);\
-           $r>=0 && print substr($p, 0, $r+length($d))' $1)
+    $r>=0 && print substr($p, 0, $r+length($d))' $1)
   if [ "$to" = "" ]; then
     echo "no such file or directory: $1" 1>&2
     return 1
@@ -305,7 +308,7 @@ sudo() {
 [ -f ~/.zsh/functions/_bundler-exec.sh ] && source ~/.zsh/functions/_bundler-exec.sh
 
 ## grep options
-export GREP_OPTIONS='--color=auto -E'
+# export GREP_OPTIONS='--color=auto -E'
 
 # tmux-powerline current dir
 TMUX_DIRNAME=$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")
