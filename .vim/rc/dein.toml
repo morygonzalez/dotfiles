@@ -156,7 +156,7 @@ repo = 'thinca/vim-template'
 repo = 'junegunn/vim-emoji'
 
 [[plugins]]
-repo = 'kien/ctrlp.vim'
+repo = 'ywatase/mdt.vim'
 
 # Syntaxes
 
@@ -179,13 +179,7 @@ repo = 'rodjek/vim-puppet'
 repo = 'digitaltoad/vim-pug'
 
 [[plugins]]
-repo = 'cespare/vim-toml'
-
-[[plugins]]
 repo = 'vim-scripts/applescript.vim'
-
-[[plugins]]
-repo = 'ekalinin/Dockerfile.vim'
 
 [[plugins]]
 repo = 'keith/swift.vim'
