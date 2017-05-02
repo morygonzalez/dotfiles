@@ -20,5 +20,6 @@ doc/tags-ja
 .emacs.d/ac-comphist.dat
 .emacs.d/auto-save-list/
 
+.config/fish/fishd.*
 .config/fisherman/
 .config/hub
