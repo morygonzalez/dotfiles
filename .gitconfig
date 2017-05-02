@@ -17,6 +17,7 @@
 	st = status -sb
   dc = diff --cached
   current-branch = rev-parse --abbrev-ref HEAD
+  overwrite = push --force-with-lease
 [push]
 	default = simple
 [diff]
