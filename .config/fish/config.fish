@@ -32,3 +32,6 @@ end
 function fish_prompt
   if set -q TMUX; tmux setenv TMUXPWD_(tmux display -p "#D" | tr -d '%') $PWD; end
 end
+
+# alias
+alias tmux='tmux -2 -f ~/.tmux/osx.conf'
