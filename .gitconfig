@@ -15,13 +15,14 @@
 	tool = vimdiff
 [alias]
 	st = status -sb
-  dc = diff --cached
-  current-branch = rev-parse --abbrev-ref HEAD
-  overwrite = push --force-with-lease
+	dc = diff --cached
+	current-branch = rev-parse --abbrev-ref HEAD
+	overwrite = push --force-with-lease
 [push]
 	default = simple
 [diff]
 	noprefix = true
+	compactionHeuristic = true
 [ghq]
 	root = ~/src
 [pager]
@@ -32,3 +33,5 @@
 	rebase = true
 [credential]
 	helper = osxkeychain
+[interactive]
+	diffFilter = diff-highlight
