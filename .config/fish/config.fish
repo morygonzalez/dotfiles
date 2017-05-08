@@ -25,13 +25,9 @@ function fish_user_key_bindings
   bind -M insert \cb peco_git_checkout
   bind \c] peco_select_repository
   bind -M insert \c] peco_select_repository
-  bind \ce peco_ec2ls
-  bind -M insert \ce peco_ec2ls
+  bind \cx\cs peco_ec2ls
+  bind -M insert \cx\cs peco_ec2ls
 end
 
-# function fish_prompt
-#   if set -q TMUX; tmux setenv TMUXPWD_(tmux display -p "#D" | tr -d '%') $PWD; end
-# end
-
 # alias
-alias tmux='tmux -2 -f ~/.tmux/osx.conf'
+alias tmux="tmux -2 -f ~/.tmux/osx.conf"
