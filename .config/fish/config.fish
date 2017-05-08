@@ -29,9 +29,9 @@ function fish_user_key_bindings
   bind -M insert \ce peco_ec2ls
 end
 
-function fish_prompt
-  if set -q TMUX; tmux setenv TMUXPWD_(tmux display -p "#D" | tr -d '%') $PWD; end
-end
+# function fish_prompt
+#   if set -q TMUX; tmux setenv TMUXPWD_(tmux display -p "#D" | tr -d '%') $PWD; end
+# end
 
 # alias
 alias tmux='tmux -2 -f ~/.tmux/osx.conf'

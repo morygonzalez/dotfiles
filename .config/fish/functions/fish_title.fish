@@ -1,0 +1,1 @@
+/Users/morygonzalez/.config/fisherman/bobthefish/fish_title.fish
