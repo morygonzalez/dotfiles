@@ -15,6 +15,7 @@ hook_post_update = '''
   endif
   let g:dein#plugin.build = cmd
 '''
+build = 'make'
 
 # Utilities
 
