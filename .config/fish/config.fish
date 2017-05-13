@@ -27,6 +27,8 @@ function fish_user_key_bindings
   bind -M insert \c] peco_select_repository
   bind \cx\cs peco_ec2ls
   bind -M insert \cx\cs peco_ec2ls
+  bind \cg\cp peco_github_prs
+  bind -M insert \cg\cp peco_github_prs
 end
 
 # alias
