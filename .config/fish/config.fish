@@ -7,6 +7,7 @@ end
 # Go
 set -x GOPATH $HOME
 set -x PATH $GOPATH/bin $PATH
+set -x GOBIN $GOPATH/bin
 
 # nodenv
 if which nodenv > /dev/null
