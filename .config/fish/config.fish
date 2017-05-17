@@ -1,3 +1,5 @@
+set -x EDITOR vim
+
 # rbenv
 set -x PATH $HOME/.rbenv/shims $PATH
 if which rbenv > /dev/null
