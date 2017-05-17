@@ -8,4 +8,5 @@ function peco_select_repository
   if [ $line ]
     builtin cd $line
   end
+  commandline -f repaint
 end
