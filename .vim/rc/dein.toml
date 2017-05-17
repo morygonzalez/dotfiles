@@ -36,7 +36,7 @@ on_source = ['unite.vim']
 repo = 'Shougo/vimfiler'
 
 [[plugins]]
-repo = 'Align'
+repo = 'vim-scripts/Align'
 
 [[plugins]]
 repo = 'bling/vim-airline'
@@ -67,7 +67,7 @@ repo = 'othree/eregex.vim'
 rev = 'e0501e3'
 
 [[plugins]]
-repo = 'sudo.vim'
+repo = 'vim-scripts/sudo.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -97,7 +97,7 @@ repo = 'tpope/vim-dispatch'
 repo = 'thinca/vim-ref'
 
 [[plugins]]
-repo = 'tlib'
+repo = 'vim-scripts/tlib'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -121,7 +121,7 @@ repo = 'tyru/open-browser.vim'
 repo = 'ujihisa/neco-look'
 
 [[plugins]]
-repo = 'vim-addon-mw-utils'
+repo = 'vim-scripts/vim-addon-mw-utils'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
@@ -145,7 +145,7 @@ repo = 'rhysd/vim-operator-surround'
 repo = 'kana/vim-smartinput'
 
 [[plugins]]
-repo = 'closetag.vim'
+repo = 'vim-scripts/closetag.vim'
 
 [[plugins]]
 repo = 'tyru/open-browser-github.vim'
@@ -168,7 +168,7 @@ repo = 'csexton/jekyll.vim'
 repo = 'leshill/vim-json'
 
 [[plugins]]
-repo = 'taskpaper.vim'
+repo = 'vim-scripts/taskpaper.vim'
 
 [[plugins]]
 repo = 'tpope/vim-git'
