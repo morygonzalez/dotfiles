@@ -32,7 +32,10 @@ function fish_user_key_bindings
   bind -M insert \cx\cs peco_ec2ls
   bind \cg\cp peco_github_prs
   bind -M insert \cg\cp peco_github_prs
+  bind \co peco_bundle_open
+  bind -M insert \co peco_bundle_open
 end
 
 # alias
 alias tmux="tmux -2 -f ~/.tmux/osx.conf"
+
