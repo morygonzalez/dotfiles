@@ -23,3 +23,5 @@ doc/tags-ja
 .config/fish/fishd.*
 .config/fisherman/
 .config/hub
+.config/configstore/
+.config/htop/
