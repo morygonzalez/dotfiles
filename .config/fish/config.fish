@@ -1,7 +1,6 @@
 set -x EDITOR vim
 
 # rbenv
-set -x PATH $HOME/.rbenv/shims $PATH
 if which rbenv > /dev/null
   rbenv init - fish | source
 end
@@ -13,7 +12,7 @@ set -x GOBIN $GOPATH/bin
 
 # nodenv
 if which nodenv > /dev/null
-  nodenv init - fish | source
+  status --is-interactive; and source (nodenv init -|psub)
 end
 
 # Python
@@ -38,4 +37,4 @@ end
 
 # alias
 alias tmux="tmux -2 -f ~/.tmux/osx.conf"
-
+alias diff="colordiff"
