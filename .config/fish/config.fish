@@ -16,7 +16,7 @@ if which nodenv > /dev/null
 end
 
 # Python
-# set -x PATH $HOME/Library/Python/2.7/bin $PATH
+set -x PATH $HOME/Library/Python/2.7/bin $PATH
 
 #peco
 function fish_user_key_bindings
@@ -34,6 +34,8 @@ function fish_user_key_bindings
   bind \co peco_bundle_open
   bind -M insert \co peco_bundle_open
 end
+
+source ~/.config/fish/config.local.fish
 
 # alias
 alias tmux="tmux -2 -f ~/.tmux/osx.conf"
