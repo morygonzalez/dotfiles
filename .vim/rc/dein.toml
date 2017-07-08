@@ -40,6 +40,7 @@ repo = 'vim-scripts/Align'
 
 [[plugins]]
 repo = 'bling/vim-airline'
+on_if = "!has('gui_macvim')"
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
@@ -71,21 +72,6 @@ repo = 'vim-scripts/sudo.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-
-[[plugins]]
-repo = 'thoughtbot/vim-rspec'
-depends = ['vim-dispatch']
-hook_add = '''
-  if executable('bin/rspec')
-    let g:rspec_command = 'Dispatch bin/rspec {spec}'
-  else
-    let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
-  endif
-  nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
-  nmap <silent><leader>n :call RunNearestSpec()<CR>
-  nmap <silent><leader>l :call RunLastSpec()<CR>
-  nmap <silent><leader>a :call RunAllSpecs()<CR>
-'''
 
 [[plugins]]
 repo = 'tpope/vim-dispatch'

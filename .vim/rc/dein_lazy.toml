@@ -20,6 +20,10 @@ on_ft = ['ruby']
 depends = ['vim-coffee-script']
 
 [[plugins]]
+repo = 'c-brenn/phoenix.vim'
+on_ft = ['elixir']
+
+[[plugins]]
 repo = 'othree/javascript-libraries-syntax.vim'
 on_ft = ['javascript', 'coffee']
 
@@ -56,6 +60,18 @@ repo = 'vim-scripts/nginx.vim'
 on_ft = ['nginx']
 
 [[plugins]]
+repo = 'godlygeek/tabular'
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown']
+depends = ['tabular']
+hook_add = '''
+  let g:vim_markdown_frontmatter = 1
+  let g:vim_markdown_new_list_item_indent = 2
+'''
+
+[[plugins]]
 repo = 'joker1007/vim-markdown-quote-syntax'
 on_ft = ['markdown']
 depends = ['vim-coffee-script']
@@ -67,3 +83,22 @@ on_ft = ['toml']
 [[plugins]]
 repo = 'ekalinin/Dockerfile.vim'
 on_ft = ['dockerfile']
+
+[[plugins]]
+repo = 'thoughtbot/vim-rspec'
+on_ft = ['ruby.rspec']
+depends = ['vim-dispatch']
+hook_add = '''
+  if executable("bin/rspec")
+    let g:rspec_command = "Dispatch bin/rspec {spec}"
+  else
+    let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+  endif
+  nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
+  nmap <silent><leader>n :call RunNearestSpec()<CR>
+  nmap <silent><leader>l :call RunLastSpec()<CR>
+  nmap <silent><leader>a :call RunAllSpecs()<CR>
+'''
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
