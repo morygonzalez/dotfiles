@@ -20,10 +20,6 @@ on_ft = ['ruby']
 depends = ['vim-coffee-script']
 
 [[plugins]]
-repo = 'c-brenn/phoenix.vim'
-on_ft = ['elixir']
-
-[[plugins]]
 repo = 'othree/javascript-libraries-syntax.vim'
 on_ft = ['javascript', 'coffee']
 
@@ -67,6 +63,7 @@ repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
 depends = ['tabular']
 hook_add = '''
+  let g:vim_markdown_folding_disabled = 1
   let g:vim_markdown_frontmatter = 1
   let g:vim_markdown_new_list_item_indent = 2
 '''
@@ -99,6 +96,3 @@ hook_add = '''
   nmap <silent><leader>l :call RunLastSpec()<CR>
   nmap <silent><leader>a :call RunAllSpecs()<CR>
 '''
-
-[[plugins]]
-repo = 'elixir-lang/vim-elixir'

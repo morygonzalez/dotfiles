@@ -33,6 +33,9 @@ repo = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
 [[plugins]]
+repo = 'sorah/unite-ghq'
+
+[[plugins]]
 repo = 'Shougo/vimfiler'
 
 [[plugins]]
@@ -40,7 +43,7 @@ repo = 'vim-scripts/Align'
 
 [[plugins]]
 repo = 'bling/vim-airline'
-on_if = "!has('gui_macvim')"
+on_if = 'has("gui_macvim")'
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
@@ -163,9 +166,6 @@ repo = 'tpope/vim-git'
 repo = 'rodjek/vim-puppet'
 
 [[plugins]]
-repo = 'digitaltoad/vim-pug'
-
-[[plugins]]
 repo = 'vim-scripts/applescript.vim'
 
 [[plugins]]
@@ -173,6 +173,9 @@ repo = 'keith/swift.vim'
 
 [[plugins]]
 repo = 'dag/vim-fish'
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
 
 # Colorschemes
 

@@ -10,7 +10,7 @@
     endif
     if has('mac')
       if exists('g:loaded_airline')
-        set ambiwidth=single
+        set ambiwidth=double
         set guifont=Menlo\ Regular\ for\ Powerline:h11
       else
         set guifont=Menlo
