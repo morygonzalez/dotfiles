@@ -6,45 +6,107 @@
 
   " }}}
 
-  " dein {{{
+  " Plug {{{
 
-    " プラグインが実際にインストールされるディレクトリ
-    let s:dein_dir = expand('~/.cache/dein')
-    " dein.vim 本体
-    let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+    call plug#begin('~/.vim/plugged')
 
-    " dein.vim がなければ github から落としてくる
-    if &runtimepath !~# '/dein.vim'
-      if !isdirectory(s:dein_repo_dir)
-        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+    " Utilities
+    Plug 'Shougo/neocomplete.vim'
+    Plug 'Shougo/unite.vim'
+    Plug 'glidenote/memolist.vim'
+    Plug 'Shougo/neomru.vim'
+    Plug 'Shougo/vimfiler'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'vim-scripts/Align'
+    Plug 'bling/vim-airline'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
+    Plug 'honza/vim-snippets'
+    Plug 'mattn/gist-vim'
+    Plug 'mattn/webapi-vim'
+    Plug 'mileszs/ack.vim'
+    Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'othree/eregex.vim', { 'commit':  'e0501e3' }
+    Plug 'vim-scripts/sudo.vim'
+    Plug 'thinca/vim-quickrun'
+    Plug 'tpope/vim-dispatch'
+    " Plug 'itmammoth/run-rspec.vim'
+    Plug 'thinca/vim-ref'
+    Plug 'vim-scripts/tlib'
+    Plug 'tomtom/tcomment_vim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rails'
+    Plug 'tpope/vim-projectionist'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-dispatch'
+    Plug 'tyru/open-browser.vim'
+    Plug 'ujihisa/neco-look'
+    Plug 'vim-scripts/vim-addon-mw-utils'
+    Plug 'scrooloose/syntastic'
+    Plug 'csexton/trailertrash.vim'
+    Plug 'kana/vim-textobj-user'
+    Plug 'osyo-manga/vim-textobj-multiblock'
+    Plug 'kana/vim-operator-user'
+    Plug 'rhysd/vim-operator-surround'
+    Plug 'kana/vim-smartinput'
+    Plug 'vim-scripts/closetag.vim'
+    Plug 'tyru/open-browser-github.vim'
+    Plug 'thinca/vim-template'
+    Plug 'junegunn/vim-emoji'
+    Plug 'ywatase/mdt.vim'
+
+    " Colorscheme
+    Plug 'tomasr/molokai'
+    Plug 'altercation/vim-colors-solarized'
+
+    " Syntaxes
+    Plug 'csexton/jekyll.vim'
+    Plug 'leshill/vim-json'
+    Plug 'vim-scripts/taskpaper.vim'
+    Plug 'tpope/vim-git'
+    Plug 'rodjek/vim-puppet'
+    Plug 'vim-scripts/applescript.vim'
+    Plug 'dag/vim-fish'
+    Plug 'posva/vim-vue'
+    Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
+    Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+    Plug 'keith/swift.vim', { 'for': 'swift' }
+    Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+    Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
+    Plug 'rhysd/vim-textobj-ruby', { 'for': 'ruby' }
+    Plug 'joker1007/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
+    Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'coffee'] }
+    Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
+      let g:used_javascript_libs = 'jquery,react,vue'
+    Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'coffee'] }
+    Plug 'kchmck/vim-coffee-script', { 'for': ['markdown', 'html', 'ruby'] }
+    Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+    Plug 'slim-template/vim-slim', { 'for': 'slim' }
+    Plug 'fatih/vim-go', { 'for': 'go' }
+    Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
+    Plug 'godlygeek/tabular'
+    Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+      let g:vim_markdown_folding_disabled = 1
+      let g:vim_markdown_frontmatter = 1
+      let g:vim_markdown_new_list_item_indent = 2
+      let g:vim_markdown_conceal = 0
+    Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
+    Plug 'cespare/vim-toml', { 'for': 'toml' }
+    Plug 'ekalinin/Dockerfile.vim', { 'for': ['dockerfile', 'docker-compose'] }
+    Plug 'thoughtbot/vim-rspec', { 'for': 'ruby.rspec' }
+      if executable("bin/rspec")
+        let g:rspec_command = "Dispatch bin/rspec {spec}"
+      else
+        let g:rspec_command = "Dispatch bundle exec rspec {spec}"
       endif
-      execute 'set runtimepath+=' . fnamemodify(s:dein_repo_dir, ':p')
-    endif
+      nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
+      nmap <silent><leader>n :call RunNearestSpec()<CR>
+      nmap <silent><leader>l :call RunLastSpec()<CR>
+      nmap <silent><leader>a :call RunAllSpecs()<CR>
+    Plug 'hashivim/vim-terraform'
 
-    " 設定開始
-    if dein#load_state(s:dein_dir)
-      call dein#begin(s:dein_dir)
-
-      " プラグインリストを収めた TOML ファイル
-      let g:rc_dir    = expand('~/.vim/rc')
-      let s:toml      = g:rc_dir . '/dein.toml'
-      let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
-
-      " TOML を読み込み、キャッシュしておく
-      call dein#load_toml(s:toml,      {'lazy': 0})
-      call dein#load_toml(s:lazy_toml, {'lazy': 1})
-
-      " 設定終了
-      call dein#end()
-      call dein#save_state()
-    endif
-
-    " もし、未インストールものものがあったらインストール
-    if dein#check_install()
-      call dein#install()
-    endif
-
-    filetype plugin indent on
+    call plug#end()
 
   " }}}
 
@@ -137,7 +199,6 @@
   " Keybindings {{{
 
     command! Ev edit $MYVIMRC
-    command! Ed edit $HOME/.vim/rc/dein.toml
     command! Rv source $MYVIMRC
     " 大文字 W で保存
     command! W w
@@ -554,13 +615,11 @@
 
     " vim-rspec {{{
 
-      " if dein#tap('vim-rspec')
-      "   let g:rspec_command = 'Dispatch bin/rspec {spec}'
-      "   nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
-      "   nmap <silent><leader>n :call RunNearestSpec()<CR>
-      "   nmap <silent><leader>l :call RunLastSpec()<CR>
-      "   nmap <silent><leader>a :call RunAllSpecs()<CR>
-      " endif
+      " let g:rspec_command = 'Dispatch bin/rspec {spec}'
+      " nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
+      " nmap <silent><leader>n :call RunNearestSpec()<CR>
+      " nmap <silent><leader>l :call RunLastSpec()<CR>
+      " nmap <silent><leader>a :call RunAllSpecs()<CR>
 
     " }}}
 

@@ -15,6 +15,7 @@ update-author-*
 doc/tags
 doc/tags-ja
 .vim/bundle/*
+.vim/plugged/
 .rvmrc
 .emacs.d/elpa/archives
 .emacs.d/ac-comphist.dat
