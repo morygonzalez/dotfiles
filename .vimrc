@@ -191,7 +191,7 @@
     set textwidth=0
     if exists('&colorcolumn')
       set colorcolumn=+1
-      autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=120
+      autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=80
     endif
 
     " }}}
