@@ -10,12 +10,13 @@
     endif
     if has('mac')
       if exists('g:loaded_airline')
-        set ambiwidth=double
+        set ambiwidth=single
         set guifont=Menlo\ Regular\ for\ Powerline:h11
       else
         set guifont=Menlo
       endif
       set noimdisableactivate
+      set transparency=10
       map ¥ <leader>
     endif
   endif
@@ -50,7 +51,7 @@
 
   colorscheme molokai
 
-  command! Gev edit $MYGVIMRC
-  command! Grv source $MYGVIMRC
+  command! Egv edit $MYGVIMRC
+  command! Rgv source $MYGVIMRC
 
 " }}}
