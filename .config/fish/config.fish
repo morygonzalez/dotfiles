@@ -27,8 +27,10 @@ function fish_user_key_bindings
   bind -M insert \cb peco_git_checkout
   bind \c] peco_select_repository
   bind -M insert \c] peco_select_repository
-  bind \cx\cs peco_ec2ls
-  bind -M insert \cx\cs peco_ec2ls
+  bind \cx\cs peco_ec2ls_production
+  bind -M insert \cx\cs peco_ec2ls_production
+  bind \cx\ca peco_ec2ls_development
+  bind -M insert \cx\ca peco_ec2ls_development
   bind \cg\cp peco_github_prs
   bind -M insert \cg\cp peco_github_prs
   bind \co peco_bundle_open
