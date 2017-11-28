@@ -7,7 +7,7 @@ end
 
 # Go
 set -x GOPATH $HOME
-set -x PATH $GOPATH/bin $PATH
+set -U fish_user_paths $GOPATH/bin $fish_user_paths
 set -x GOBIN $GOPATH/bin
 
 # nodenv
@@ -16,7 +16,7 @@ if which nodenv > /dev/null
 end
 
 # Python
-set -x PATH $HOME/Library/Python/2.7/bin $PATH
+set -U fish_user_paths $HOME/Library/Python/2.7/bin $fish_user_paths
 
 #peco
 function fish_user_key_bindings
