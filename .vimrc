@@ -27,7 +27,7 @@
     Plug 'mattn/webapi-vim'
     Plug 'mileszs/ack.vim'
     Plug 'nathanaelkane/vim-indent-guides'
-    Plug 'othree/eregex.vim', { 'commit':  'e0501e3' }
+    Plug 'othree/eregex.vim'
     Plug 'vim-scripts/sudo.vim'
     Plug 'thinca/vim-quickrun'
     Plug 'tpope/vim-dispatch'
@@ -55,6 +55,7 @@
     Plug 'thinca/vim-template'
     Plug 'junegunn/vim-emoji'
     Plug 'ywatase/mdt.vim'
+    Plug 'sorah/unite-ghq'
 
     " Colorscheme
     Plug 'tomasr/molokai'
