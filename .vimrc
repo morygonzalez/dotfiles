@@ -19,7 +19,7 @@
     Plug 'Shougo/vimfiler'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'vim-scripts/Align'
-    Plug 'bling/vim-airline'
+    Plug 'itchyny/lightline.vim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
     Plug 'honza/vim-snippets'
@@ -155,6 +155,7 @@
     set backspace=indent,eol,start " 普通にバックスペースで削除できるようにする
     set nojoinspaces
     set noswapfile
+    set noshowmode
 
     " FileType configuration {{{
 
@@ -546,37 +547,33 @@
 
     " }}}
 
-    " Airline {{{
+    " lightline {{{
 
-      if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-      endif
-
-      let g:airline_left_sep = ''
-      let g:airline_left_alt_sep = ''
-      let g:airline_right_sep = ''
-      let g:airline_right_alt_sep = ''
-      let g:airline_symbols.branch = ' '
-      let g:airline_symbols.readonly = ''
-      let g:airline_symbols.linenr = ' '
-
-      let g:airline_theme='dark'
+      let g:lightline = {
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'fugitive#head'
+            \ },
+            \ }
 
     " }}}
 
-      " memolist.vim {{{
+    " memolist.vim {{{
 
-        let g:memolist_path = "~/Dropbox/memolist"
-        let g:memolist_unite = 1
-        let g:memolist_unite_source = "file"
-        let g:memolist_unite_option = "-auto-preview -start-insert"
-        let g:memolist_memo_suffix = "markdown"
-        let g:memolist_template_dir_path = "~/.vim/template/memolist"
+      let g:memolist_path = "~/Dropbox/memolist"
+      let g:memolist_unite = 1
+      let g:memolist_unite_source = "file"
+      let g:memolist_unite_option = "-auto-preview -start-insert"
+      let g:memolist_memo_suffix = "markdown"
+      let g:memolist_template_dir_path = "~/.vim/template/memolist"
 
-        map <Leader>mn  :MemoNew<CR>
-        map <Leader>ml  :MemoList<CR>
+      map <Leader>mn  :MemoNew<CR>
+      map <Leader>ml  :MemoList<CR>
 
-      " }}}
+    " }}}
 
     " eregex.vim {{{
 
