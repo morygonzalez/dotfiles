@@ -32,6 +32,8 @@ function fish_user_key_bindings
   bind -M insert \cg\cp peco_github_prs
   bind \co peco_bundle_open
   bind -M insert \co peco_bundle_open
+  bind \cf\cp peco_find_pr_open
+  bind -M insert \cf\cp peco_find_pr_open
 end
 
 source ~/.config/fish/config.local.fish
