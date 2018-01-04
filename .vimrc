@@ -23,27 +23,26 @@
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
     Plug 'honza/vim-snippets'
-    Plug 'mattn/gist-vim'
-    Plug 'mattn/webapi-vim'
     Plug 'mileszs/ack.vim'
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'othree/eregex.vim'
     Plug 'vim-scripts/sudo.vim'
     Plug 'thinca/vim-quickrun'
-    Plug 'tpope/vim-dispatch'
-    " Plug 'itmammoth/run-rspec.vim'
     Plug 'thinca/vim-ref'
     Plug 'vim-scripts/tlib'
     Plug 'tomtom/tcomment_vim'
     Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-rails'
     Plug 'tpope/vim-projectionist'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-dispatch'
-    Plug 'tyru/open-browser.vim'
     Plug 'ujihisa/neco-look'
     Plug 'vim-scripts/vim-addon-mw-utils'
     Plug 'scrooloose/syntastic'
+      set statusline+=%#warningmsg#
+      set statusline+=%{SyntasticStatuslineFlag()}
+      set statusline+=%*
     Plug 'csexton/trailertrash.vim'
     Plug 'kana/vim-textobj-user'
     Plug 'osyo-manga/vim-textobj-multiblock'
@@ -51,22 +50,17 @@
     Plug 'rhysd/vim-operator-surround'
     Plug 'kana/vim-smartinput'
     Plug 'vim-scripts/closetag.vim'
-    Plug 'tyru/open-browser-github.vim'
     Plug 'thinca/vim-template'
-    Plug 'junegunn/vim-emoji'
     Plug 'ywatase/mdt.vim'
     Plug 'sorah/unite-ghq'
 
     " Colorscheme
     Plug 'tomasr/molokai'
-    Plug 'altercation/vim-colors-solarized'
 
     " Syntaxes
-    Plug 'csexton/jekyll.vim'
-    Plug 'leshill/vim-json'
+    Plug 'elzr/vim-json'
     Plug 'vim-scripts/taskpaper.vim'
     Plug 'tpope/vim-git'
-    Plug 'rodjek/vim-puppet'
     Plug 'vim-scripts/applescript.vim'
     Plug 'dag/vim-fish'
     Plug 'posva/vim-vue'
@@ -193,7 +187,7 @@
     set textwidth=0
     if exists('&colorcolumn')
       set colorcolumn=+1
-      autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=80
+      autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=100
     endif
 
     " }}}
