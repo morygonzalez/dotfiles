@@ -7,16 +7,13 @@ end
 
 # Go
 set -x GOPATH $HOME
-set -U fish_user_paths $GOPATH/bin $fish_user_paths
+set -x PATH $GOPATH/bin $PATH
 set -x GOBIN $GOPATH/bin
 
 # nodenv
 if which nodenv > /dev/null
   status --is-interactive; and source (nodenv init -|psub)
 end
-
-# Python
-set -U fish_user_paths $HOME/Library/Python/2.7/bin $fish_user_paths
 
 #peco
 function fish_user_key_bindings
