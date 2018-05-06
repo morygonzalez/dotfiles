@@ -69,14 +69,15 @@
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
     Plug 'keith/swift.vim', { 'for': 'swift' }
     Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-    Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
+      let g:ruby_indent_block_style = 'do'
+    Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir', 'ruby.rspec'] }
     Plug 'rhysd/vim-textobj-ruby', { 'for': 'ruby' }
     Plug 'joker1007/vim-ruby-heredoc-syntax', { 'for': 'ruby' }
     Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'coffee'] }
     Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'coffee'] }
       let g:used_javascript_libs = 'jquery,react,vue'
     Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'coffee'] }
-    Plug 'kchmck/vim-coffee-script', { 'for': ['markdown', 'html', 'ruby'] }
+    Plug 'kchmck/vim-coffee-script', { 'for': ['markdown', 'html', 'ruby', 'coffee'] }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'slim-template/vim-slim', { 'for': 'slim' }
     Plug 'fatih/vim-go', { 'for': 'go' }
