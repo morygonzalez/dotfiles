@@ -102,6 +102,11 @@
       nmap <silent><leader>l :call RunLastSpec()<CR>
       nmap <silent><leader>a :call RunAllSpecs()<CR>
     Plug 'hashivim/vim-terraform'
+      " let g:terraform_fmt_on_save=1
+      let g:terraform_align=1
+      let g:terraform_fold_sections=1
+      autocmd FileType terraform setlocal commentstring=#%s
+      nmap <silent>,tf :TerraformFmt<CR>
 
     call plug#end()
 
