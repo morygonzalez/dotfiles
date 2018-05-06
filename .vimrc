@@ -53,6 +53,7 @@
     Plug 'thinca/vim-template'
     Plug 'ywatase/mdt.vim'
     Plug 'sorah/unite-ghq'
+    Plug 'airblade/vim-gitgutter'
 
     " Colorscheme
     Plug 'tomasr/molokai'
