@@ -198,6 +198,9 @@
 
     command! Ev edit $MYVIMRC
     command! Rv source $MYVIMRC
+
+    command! Rd redraw!
+
     " 大文字 W で保存
     command! W w
     " Wq で保存して終了
