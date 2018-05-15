@@ -54,6 +54,7 @@
     Plug 'ywatase/mdt.vim'
     Plug 'sorah/unite-ghq'
     Plug 'airblade/vim-gitgutter'
+    Plug 'k0kubun/vim-open-github'
 
     " Colorscheme
     Plug 'tomasr/molokai'
@@ -608,10 +609,12 @@
 
     " }}}
 
-    " open-browser-github {{{
+    " vim-open-github {{{
 
-      map <silent>,og :OpenGithubFile<CR>
-      map '<,'>,og '<,'>OpenGithubFile<CR>
+      map <silent>,og :OpenGithub<CR>
+      map '<,'>,og '<,'>OpenGithub<CR>
+      map <silent>,cgh :CopyGithub<CR>
+      map '<,'>,cgh '<,'>CopyGithub<CR>
 
     " }}}
 
