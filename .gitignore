@@ -28,3 +28,4 @@ doc/tags-ja
 .config/configstore/
 .config/htop/
 .config/gocode/
+.config/slackcat/
