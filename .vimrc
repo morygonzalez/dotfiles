@@ -66,6 +66,8 @@
     Plug 'vim-scripts/applescript.vim'
     Plug 'dag/vim-fish'
     Plug 'posva/vim-vue'
+      autocmd FileType vue syntax sync fromstart
+      au BufRead,BufNewFile *.vue set ft=html
     Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
     Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
     Plug 'keith/swift.vim', { 'for': 'swift' }
