@@ -53,6 +53,7 @@
     Plug 'thinca/vim-template'
     Plug 'ywatase/mdt.vim'
     Plug 'sorah/unite-ghq'
+    Plug 'orlp/unite-git-repo'
     Plug 'airblade/vim-gitgutter'
     Plug 'k0kubun/vim-open-github'
 
@@ -414,6 +415,8 @@
       nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
       " ファイル一覧
       nnoremap <silent> ,uf :<C-u>Unite file_rec/async:!<CR>
+      " git repo
+      nnoremap <silent> ,ugf :<C-u>Unite -start-insert file_rec/git_repo:-c:-o:--exclude-standard<CR>
       " レジスタ一覧
       nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
       " 最近使用したファイル一覧
