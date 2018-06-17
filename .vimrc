@@ -70,7 +70,8 @@
       autocmd FileType vue syntax sync fromstart
       au BufRead,BufNewFile *.vue set ft=html
     Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
-    Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+    Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+    Plug 'andyl/vim-projectionist-elixir', { 'for': 'elixir' }
     Plug 'keith/swift.vim', { 'for': 'swift' }
     Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
       let g:ruby_indent_block_style = 'do'
