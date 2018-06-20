@@ -34,6 +34,8 @@ function fish_user_key_bindings
   bind -M insert \co peco_bundle_open
   bind \cf\cp peco_find_pr_open
   bind -M insert \cf\cp peco_find_pr_open
+  bind \cg\cv peco_gitlsfiles_vim
+  bind -M insert \cg\cv peco_gitlsfiles_vim
 end
 
 source ~/.config/fish/config.local.fish
