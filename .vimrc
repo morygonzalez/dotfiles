@@ -34,6 +34,24 @@
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-rails'
+    let g:rails_projections = {
+          \  "app/controllers/*_controller.rb": {
+          \      "test": [
+          \        "spec/requests/{}_spec.rb",
+          \        "spec/controllers/{}_controller_spec.rb",
+          \      ],
+          \      "alternate": [
+          \        "spec/requests/{}_spec.rb",
+          \        "spec/controllers/{}_controller_spec.rb",
+          \      ],
+          \   },
+          \   "spec/requests/*_spec.rb": {
+          \      "command": "request",
+          \      "alternate": "app/controllers/{}_controller.rb",
+          \      "template": "require 'rails_helper'\n\n" .
+          \        "RSpec.describe '{}' do\nend",
+          \   },
+          \ }
     Plug 'tpope/vim-projectionist'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-dispatch'
