@@ -16,6 +16,7 @@ doc/tags
 doc/tags-ja
 .vim/bundle/*
 .vim/plugged/
+.vim/view/
 .rvmrc
 .emacs.d/elpa/archives
 .emacs.d/ac-comphist.dat
