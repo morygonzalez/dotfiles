@@ -12,7 +12,6 @@
 
     Plug 'Shougo/vimproc.vim', { 'do': 'make' }
     " Utilities
-    Plug 'Shougo/neocomplete.vim'
     Plug 'Shougo/unite.vim'
     Plug 'glidenote/memolist.vim'
     Plug 'Shougo/neomru.vim'
@@ -321,53 +320,6 @@
   " }}}
 
   " Plugin Settings {{{
-
-    " Neocomplete {{{
-
-      " Enable omni completion.
-      autocmd FileType css        setlocal omnifunc=csscomplete#CompleteCSS
-      autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
-      autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-      autocmd FileType python     setlocal omnifunc=pythoncomplete#Complete
-      autocmd FileType xml        setlocal omnifunc=xmlcomplete#CompleteTags
-
-      let g:neocomplete#enable_at_startup                 = 1
-      let g:neocomplete#enable_smart_case                 = 1 " Use smartcase.
-      let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
-      let g:neocomplete#lock_buffer_name_pattern          = '\*ku\*'
-      let g:neocomplete#text_mode_filetypes               = {'text': 1, 'javascript': 1, 'markdown': 1, 'perl': 1, 'html': 1, 'ruby': 1}
-
-      if !exists('g:neocomplete#sources#omni#input_patterns')
-        let g:neocomplete#sources#omni#input_patterns = {}
-      endif
-
-      " RSense
-      if filereadable(expand('/usr/local/bin/rsense'))
-        " let g:rsenseUseOmniFunc = 1
-      else
-        let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-      endif
-
-      " Recommended key-mappings.
-      " <CR>: close popup and save indent.
-      inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-      function! s:my_cr_function()
-        " return neocomplcache#smart_close_popup() . "\<CR>"
-        " For no inserting <CR> key.
-        return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-      endfunction
-
-      let g:neocomplete#force_overwrite_completefunc=1
-
-      " 補完候補の色づけ for vim7
-      " https://github.com/yuroyoro/dotfiles/blob/master/.vimrc.colors
-      " http://mba-hack.blogspot.jp/2013/01/vim_2945.html
-      hi Pmenu     ctermbg=255  ctermfg=0     guifg=#000000 guibg=#999999
-      hi PmenuSel  ctermbg=blue ctermfg=black
-      hi PmenuSbar ctermbg=0    ctermfg=9
-      hi PmenuSbar ctermbg=255  ctermfg=0     guifg=#000000 guibg=#FFFFFF
-
-    " }}}
 
     " Neosnippet {{{
 
