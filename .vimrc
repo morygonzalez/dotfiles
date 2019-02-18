@@ -507,7 +507,7 @@
             \ 'outputter' : 'null',
             \ 'command'   : 'open',
             \ 'cmdopt'    : '-a',
-            \ 'args'      : 'Deckset',
+            \ 'args'      : 'Deckset\ 2',
             \ 'exec'      : '%c %o %a %s',
             \ }
 
