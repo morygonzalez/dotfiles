@@ -24,9 +24,11 @@
     if has('nvim')
       Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     else
-      Plug 'Shougo/deoplete.nvim'
-      Plug 'roxma/nvim-yarp'
-      Plug 'roxma/vim-hug-neovim-rpc'
+      if has('pythonx') && has('python3')
+        Plug 'Shougo/deoplete.nvim'
+        Plug 'roxma/nvim-yarp'
+        Plug 'roxma/vim-hug-neovim-rpc'
+      endif
     endif
     let g:deoplete#enable_at_startup = 1
     Plug 'honza/vim-snippets'
@@ -110,6 +112,7 @@
     Plug 'kchmck/vim-coffee-script', { 'for': ['markdown', 'html', 'ruby', 'coffee'] }
     Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'slim-template/vim-slim', { 'for': 'slim' }
+    Plug 'posva/vim-vue'
     Plug 'fatih/vim-go', { 'for': 'go' }
     Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
     Plug 'godlygeek/tabular'
