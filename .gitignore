@@ -25,6 +25,7 @@ doc/tags-ja
 .config/fish/config.local.fish
 .config/fish/functions/*
 .config/fish/fishd.*
+.config/fisher/
 .config/fisherman/
 .config/hub
 .config/configstore/
