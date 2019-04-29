@@ -1,1 +1,0 @@
-/Users/morygonzalez/.config/fisherman/peco/functions/peco_kill.fish
