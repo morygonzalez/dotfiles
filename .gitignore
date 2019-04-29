@@ -23,7 +23,7 @@ doc/tags-ja
 .emacs.d/auto-save-list/
 
 .config/fish/config.local.fish
-.config/fish/functions/*
+.config/fish/functions/__*
 .config/fish/fishd.*
 .config/fisher/
 .config/fisherman/

@@ -20,6 +20,8 @@ function fish_user_key_bindings
   fish_vi_key_bindings
   bind \cr peco_select_history
   bind -M insert \cr peco_select_history
+  bind \ck peco_kill
+  bind -M insert \ck peco_kill
   bind \cb peco_git_checkout
   bind -M insert \cb peco_git_checkout
   bind \c] peco_select_repository
