@@ -568,7 +568,7 @@
 
     " memolist.vim {{{
 
-      let g:memolist_path = "~/Dropbox/memolist"
+      let g:memolist_path = "~/Library/Mobile Documents/com~apple~CloudDocs/Documents/memolist"
       let g:memolist_unite = 1
       let g:memolist_unite_source = "file"
       let g:memolist_unite_option = "-auto-preview -start-insert"
