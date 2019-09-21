@@ -430,6 +430,10 @@
       " ghq
       nnoremap <silent> ,ghq :<C-u>Unite ghq<CR>
 
+      " Unite grep visually selected term
+      " NOTE: https://vim.fandom.com/wiki/Search_for_visually_selected_text
+      vnoremap ,cg y:<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R>"<CR>
+
       " バッファをを移動した時に自動的にプロジェクトルートをカレントディレクトリにする
       " http://qiita.com/kentaro/items/6aa9f108df825b2a8b39
       function! ChangeCurrentDirectoryToRoot()
