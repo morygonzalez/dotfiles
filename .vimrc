@@ -110,7 +110,8 @@
       let g:used_javascript_libs = 'jquery,react,vue'
     Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'coffee'] }
     Plug 'kchmck/vim-coffee-script', { 'for': ['markdown', 'html', 'ruby', 'coffee'] }
-    Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+    " Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+    Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
     Plug 'slim-template/vim-slim', { 'for': 'slim' }
     Plug 'posva/vim-vue'
     Plug 'fatih/vim-go', { 'for': 'go' }
