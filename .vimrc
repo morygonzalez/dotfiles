@@ -249,6 +249,8 @@
 
     command! Rd redraw!
 
+    command! Vn vnew
+
     " 大文字 W で保存
     command! W w
     " Wq で保存して終了
