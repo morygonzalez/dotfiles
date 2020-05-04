@@ -195,7 +195,7 @@
     set wildmenu
     set wildmode=longest,list "コマンド候補補完
     set history=1000 "コマンド履歴保存件数
-    " set cursorline " カーソル行をハイライト表示
+    set cursorline " カーソル行をハイライト表示
     set backspace=indent,eol,start " 普通にバックスペースで削除できるようにする
     set nojoinspaces
     set noswapfile
