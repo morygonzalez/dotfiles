@@ -35,6 +35,7 @@
     Plug 'mileszs/ack.vim'
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'othree/eregex.vim'
+      let g:eregex_default_enable = 0
     Plug 'vim-scripts/sudo.vim'
     Plug 'thinca/vim-quickrun'
     Plug 'thinca/vim-ref'
@@ -83,6 +84,46 @@
     Plug 'orlp/unite-git-repo'
     Plug 'airblade/vim-gitgutter'
     Plug 'k0kubun/vim-open-github'
+    Plug 'haya14busa/incsearch.vim'
+      map /  <Plug>(incsearch-forward)
+      map ?  <Plug>(incsearch-backward)
+      map g/ <Plug>(incsearch-stay)
+      set hlsearch
+      let g:incsearch#auto_nohlsearch = 1
+      map n  <Plug>(incsearch-nohl-n)
+      map N  <Plug>(incsearch-nohl-N)
+      map *  <Plug>(incsearch-nohl-*)
+      map #  <Plug>(incsearch-nohl-#)
+      map g* <Plug>(incsearch-nohl-g*)
+      map g# <Plug>(incsearch-nohl-g#)
+    Plug 'haya14busa/incsearch-fuzzy.vim'
+      function! s:config_fuzzyall(...) abort
+        return extend(copy({
+        \   'converters': [
+        \     incsearch#config#fuzzy#converter(),
+        \     incsearch#config#fuzzyspell#converter()
+        \   ],
+        \ }), get(a:, 1, {}))
+      endfunction
+
+      noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
+      noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
+      noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
+    Plug 'easymotion/vim-easymotion'
+      let g:EasyMotion_do_mapping = 0 "Disable default mappings
+      nmap s <Plug>(easymotion-s2)
+    Plug 'haya14busa/incsearch-easymotion.vim'
+      function! s:config_easyfuzzymotion(...) abort
+        return extend(copy({
+        \   'converters': [incsearch#config#fuzzy#converter()],
+        \   'modules': [incsearch#config#easymotion#module()],
+        \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+        \   'is_expr': 0,
+        \   'is_stay': 1
+        \ }), get(a:, 1, {}))
+      endfunction
+
+      noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
     " Colorscheme
     Plug 'tomasr/molokai'
@@ -145,7 +186,7 @@
     Plug 'rust-lang/rust.vim'
       let g:rustfmt_autosave = 1
     Plug 'racer-rust/vim-racer'
-      set hidden
+      set hidden "保存せずに buffer を移動する
       au FileType rust nmap gd <Plug>(rust-def)
       au FileType rust nmap gs <Plug>(rust-def-split)
       au FileType rust nmap gx <Plug>(rust-def-vertical)
@@ -176,14 +217,11 @@
     set ignorecase "検索文字列が小文字の場合は大文字小文字を区別なく検索する
     set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
     set wrapscan "検索時に最後まで行ったら最初に戻る
-    set noincsearch "検索文字列入力時に順次対象文字列にヒットさせない
-    set hlsearch "検索結果をハイライト表示
 
     set smartindent "オートインデント
     set clipboard+=autoselect
     set number "行番号表示
     set showmode "モード表示
-    set hidden "保存せずに buffer を移動する
     set title "編集中のファイル名を表示
     set ruler "ルーラーの表示
     set showcmd "入力中のコマンドをステータスに表示する
@@ -259,9 +297,6 @@
     command! Q q
     " Qa で全終了
     command! Qa qa
-
-    " ESCキー2度押しでハイライトを消す
-    nnoremap <Esc><Esc> :<C-u>nohl<Return><Esc>
 
     " カーソル移動を見た目のやつに
     nnoremap <silent> j gj
@@ -584,15 +619,6 @@
 
       map <Leader>mn  :MemoNew<CR>
       map <Leader>ml  :MemoList<CR>
-
-    " }}}
-
-    " eregex.vim {{{
-
-      nnoremap / :M/
-      nnoremap ? :M?
-      nnoremap ,/ /
-      nnoremap ,? /
 
     " }}}
 
