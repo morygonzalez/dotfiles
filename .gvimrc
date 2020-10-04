@@ -12,7 +12,6 @@
       set ambiwidth=double
       set guifont=Menlo\ Regular\ for\ Powerline:h14
       set noimdisableactivate
-      set transparency=10
       map ¥ <leader>
     endif
   endif
@@ -44,6 +43,7 @@
   endif
 
   set visualbell t_vb=
+  set transparency=10
 
   colorscheme molokai
 
