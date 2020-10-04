@@ -7,9 +7,9 @@ if which rbenv > /dev/null
 end
 
 # Go
-set -x GOPATH $HOME
-set -x PATH $GOPATH/bin $PATH
-set -x GOBIN $GOPATH/bin
+set -g GOPATH $HOME
+set -g fish_user_paths $GOPATH/bin $fish_user_paths
+set -g GOBIN $GOPATH/bin
 
 # nodenv
 if which nodenv > /dev/null
