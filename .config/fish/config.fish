@@ -41,7 +41,9 @@ function fish_user_key_bindings
   bind -M insert \cg\cv peco_gitlsfiles_vim
 end
 
-source ~/.config/fish/config.local.fish
+if test -f ~/.config/fish/config.local.fish
+  source ~/.config/fish/config.local.fish
+end
 
 # alias
 alias tmux="tmux -2 -f ~/.tmux/osx.conf"
