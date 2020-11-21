@@ -21,14 +21,11 @@
     Plug 'itchyny/lightline.vim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
-    if has('nvim')
-      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    else
-      if has('pythonx') && has('python3')
-        Plug 'Shougo/deoplete.nvim'
-        Plug 'roxma/nvim-yarp'
-        Plug 'roxma/vim-hug-neovim-rpc'
-      endif
+    if has('pythonx') && has('python3')
+      let g:python3_host_prog = '/usr/local/bin/python3'
+      Plug 'Shougo/deoplete.nvim'
+      Plug 'roxma/nvim-yarp'
+      Plug 'roxma/vim-hug-neovim-rpc'
     endif
     let g:deoplete#enable_at_startup = 1
     Plug 'honza/vim-snippets'
