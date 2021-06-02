@@ -8,12 +8,12 @@
       let &guifontwide=iconv('Osaka－等幅:h10:cSHIFTJIS', &encoding, 'cp932')
       set ambiwidth=double
     endif
-    if has('mac')
-      set ambiwidth=double
-      set guifont=Menlo\ Regular\ for\ Powerline:h14
-      set noimdisableactivate
-      map ¥ <leader>
-    endif
+  endif
+  if has('mac')
+    set ambiwidth=double
+    set guifont=Menlo\ Regular\ for\ Powerline:h16
+    set noimdisableactivate
+    map ¥ <leader>
   endif
   if has('gui_gtk2')
     " set guifont=Monospace\\ 11
@@ -25,9 +25,10 @@
 " GVim 固有の設定 {{{
 
   " 縦幅 デフォルトは24
-  " set lines=999
+  " set lines=24
   " 横幅 デフォルトは80
-  " set columns=9999
+  " set columns=80
+  set columns=106
 
   " disables toolbar and menu
   set guioptions-=T
