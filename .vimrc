@@ -35,6 +35,7 @@
       let g:eregex_default_enable = 0
     Plug 'vim-scripts/sudo.vim'
     Plug 'thinca/vim-quickrun'
+      nmap <silent><leader>r :QuickRun<CR>
     Plug 'thinca/vim-ref'
     Plug 'vim-scripts/tlib'
     Plug 'tomtom/tcomment_vim'
@@ -240,7 +241,7 @@
 
     " }}}
 
-  " Keybindings {{{
+  " Key map {{{
 
     command! Ev edit $MYVIMRC
     command! Rv source $MYVIMRC
