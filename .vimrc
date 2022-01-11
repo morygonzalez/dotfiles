@@ -37,7 +37,7 @@
     Plug 'thinca/vim-quickrun'
       nmap <silent><leader>r :QuickRun<CR>
     Plug 'thinca/vim-ref'
-    Plug 'vim-scripts/tlib'
+    Plug 'tomtom/tlib_vim'
     Plug 'tomtom/tcomment_vim'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
