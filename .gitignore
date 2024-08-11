@@ -24,6 +24,9 @@ doc/tags-ja
 
 .config/fish/config.local.fish
 .config/fish/functions/__*
+.config/fish/functions/fish_*
+.config/fish/functions/bobthefish_*
+.config/fish/functions/fisher.fish
 .config/fish/fishd.*
 .config/fisher/
 .config/fisherman/
