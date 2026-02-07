@@ -1,6 +1,10 @@
 set -x EDITOR vim
 set -x LC_ALL en_US.UTF-8
 
+if test -f ~/.config/fish/config.local.fish
+  source ~/.config/fish/config.local.fish
+end
+
 # rbenv
 if which rbenv > /dev/null
   rbenv init - fish | source
@@ -41,10 +45,10 @@ function fish_user_key_bindings
   bind -M insert \cg\cv peco_gitlsfiles_vim
 end
 
-if test -f ~/.config/fish/config.local.fish
-  source ~/.config/fish/config.local.fish
-end
-
 # alias
 alias tmux="tmux -2 -f ~/.tmux/osx.conf"
 alias diff="colordiff"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
