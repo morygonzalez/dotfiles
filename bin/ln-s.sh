@@ -2,6 +2,6 @@ export FILES=".zshrc .zsh .vimrc .vim .gvimrc .screenrc .tmux.conf .tmux .bashrc
 for i in $FILES
 do
   if [ ! -e $HOME/$i ] ; then
-    ln -fs $HOME/dotfiles/$i $HOME/$i
+    ln -fs $HOME/src/github.com/morygonzalez/dotfiles/$i $HOME/$i
   fi
 done
