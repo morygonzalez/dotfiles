@@ -21,13 +21,34 @@
     Plug 'itchyny/lightline.vim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
-    if has('pythonx') && has('python3')
-      let g:python3_host_prog = '/usr/local/bin/python3'
-      Plug 'Shougo/deoplete.nvim'
-      Plug 'roxma/nvim-yarp'
-      Plug 'roxma/vim-hug-neovim-rpc'
-    endif
-    let g:deoplete#enable_at_startup = 1
+    Plug 'vim-denops/denops.vim'
+      let g:denops#deno = '/opt/homebrew/bin/deno'
+      noremap <silent> <C-c> <Cmd>call denops#interrupt()<CR><C-c>
+      inoremap <silent> <C-c> <Cmd>call denops#interrupt()<CR><C-c>
+      cnoremap <silent> <C-c> <Cmd>call denops#interrupt()<CR><C-c>
+    Plug 'vim-denops/denops-helloworld.vim'
+    " Plug 'Shougo/ddc.vim'
+    "   call ddc#custom#patch_global('sources', ['around'])
+    "   call ddc#custom#patch_global('sourceOptions', {
+    "         \ '_': {
+    "         \     'matchers': ['matcher_fuzzy'],
+    "         \     'sorters': ['sorter_fuzzy'],
+    "         \     'converters': ['converter_fuzzy']
+    "         \   },
+    "         \ })
+    "   call ddc#enable()
+    " Plug 'Shougo/ddc-around'
+    " Plug 'tani/ddc-fuzzy'
+    " Plug 'mattn/vim-lsp-settings'
+    " Plug 'prabirshrestha/vim-lsp'
+    " Plug 'shun/ddc-vim-lsp'
+    " if has('pythonx') && has('python3')
+    "   let g:python3_host_prog = '/opt/homebrew/bin/python3'
+    "   Plug 'Shougo/deoplete.nvim'
+    "   Plug 'roxma/nvim-yarp'
+    "   Plug 'roxma/vim-hug-neovim-rpc'
+    "   let g:deoplete#enable_at_startup = 1
+    " endif
     Plug 'honza/vim-snippets'
     Plug 'mileszs/ack.vim'
     Plug 'nathanaelkane/vim-indent-guides'
@@ -221,6 +242,23 @@
       " molokai {{{
         let g:molokai_original = 1
         colorscheme molokai
+
+        augroup MyCursorFix
+        autocmd!
+          " colorscheme 読み込み後にカーソル色を上書き
+          autocmd ColorScheme * highlight Cursor  cterm=reverse ctermfg=NONE ctermbg=NONE
+          autocmd ColorScheme * highlight lCursor cterm=reverse ctermfg=NONE ctermbg=NONE
+        augroup END
+
+        " 起動直後にも反映（すでに colorscheme 済みの場合の保険）
+        highlight Cursor  cterm=reverse ctermfg=NONE ctermbg=NONE
+        highlight lCursor cterm=reverse ctermfg=NONE ctermbg=NONE
+
+        if &term =~# 'xterm' || &term =~# 'screen' || &term =~# 'tmux'
+          let &t_EI = "\<Esc>[2 q"  " NORMAL: 箱
+          let &t_SI = "\<Esc>[6 q"  " INSERT: 縦棒
+        endif
+
       " }}}
 
       " solarized {{{
