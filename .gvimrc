@@ -11,7 +11,7 @@
   endif
   if has('mac')
     set ambiwidth=double
-    set guifont=Menlo\ Regular\ for\ Powerline:h16
+    set guifont=Menlo\ Regular\ for\ Powerline:h13
     set noimdisableactivate
     map ¥ <leader>
   endif
