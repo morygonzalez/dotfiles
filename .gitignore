@@ -23,6 +23,8 @@ doc/tags-ja
 .emacs.d/auto-save-list/
 
 .config/fish/config.local.fish
+.config/fish/fish_variables
+.config/fish/conf.d/*
 .config/fish/functions/__*
 .config/fish/functions/fish_*
 .config/fish/functions/bobthefish_*
@@ -30,10 +32,22 @@ doc/tags-ja
 .config/fish/fishd.*
 .config/fisher/
 .config/fisherman/
+
 .config/hub
+.config/gh
 .config/configstore/
 .config/htop/
 .config/gocode/
 .config/slackcat/
 .config/yarn/
 .config/pulse/
+
+**/.claude/settings.local.json
+.config/1Password/
+.config/client_secret*
+.config/gcloud/
+.config/gws/
+.config/herdr/*.lock
+.config/herdr/*.agent
+.config/herdr/*.json
+.config/herdr/session*
