@@ -2,7 +2,10 @@
 
   " Setup {{{
 
-    set nocompatible "vi非互換モード
+    " vimrc 内の autocmd はすべてこのグループに入れる（再読み込み時の重複登録を防ぐ）
+    augroup MyVimrc
+      autocmd!
+    augroup END
 
   " }}}
 
@@ -21,34 +24,6 @@
     Plug 'itchyny/lightline.vim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
-    Plug 'vim-denops/denops.vim'
-      let g:denops#deno = '/opt/homebrew/bin/deno'
-      noremap <silent> <C-c> <Cmd>call denops#interrupt()<CR><C-c>
-      inoremap <silent> <C-c> <Cmd>call denops#interrupt()<CR><C-c>
-      cnoremap <silent> <C-c> <Cmd>call denops#interrupt()<CR><C-c>
-    Plug 'vim-denops/denops-helloworld.vim'
-    " Plug 'Shougo/ddc.vim'
-    "   call ddc#custom#patch_global('sources', ['around'])
-    "   call ddc#custom#patch_global('sourceOptions', {
-    "         \ '_': {
-    "         \     'matchers': ['matcher_fuzzy'],
-    "         \     'sorters': ['sorter_fuzzy'],
-    "         \     'converters': ['converter_fuzzy']
-    "         \   },
-    "         \ })
-    "   call ddc#enable()
-    " Plug 'Shougo/ddc-around'
-    " Plug 'tani/ddc-fuzzy'
-    " Plug 'mattn/vim-lsp-settings'
-    " Plug 'prabirshrestha/vim-lsp'
-    " Plug 'shun/ddc-vim-lsp'
-    " if has('pythonx') && has('python3')
-    "   let g:python3_host_prog = '/opt/homebrew/bin/python3'
-    "   Plug 'Shougo/deoplete.nvim'
-    "   Plug 'roxma/nvim-yarp'
-    "   Plug 'roxma/vim-hug-neovim-rpc'
-    "   let g:deoplete#enable_at_startup = 1
-    " endif
     Plug 'honza/vim-snippets'
     Plug 'mileszs/ack.vim'
     Plug 'nathanaelkane/vim-indent-guides'
@@ -87,9 +62,6 @@
     Plug 'ujihisa/neco-look'
     Plug 'vim-scripts/vim-addon-mw-utils'
     Plug 'scrooloose/syntastic'
-      set statusline+=%#warningmsg#
-      set statusline+=%{SyntasticStatuslineFlag()}
-      set statusline+=%*
     Plug 'csexton/trailertrash.vim'
     Plug 'kana/vim-textobj-user'
     Plug 'osyo-manga/vim-textobj-multiblock'
@@ -115,8 +87,7 @@
     Plug 'vim-scripts/applescript.vim'
     Plug 'dag/vim-fish'
     Plug 'posva/vim-vue'
-      autocmd FileType vue syntax sync fromstart
-      au BufRead,BufNewFile *.vue set ft=html
+      autocmd MyVimrc FileType vue syntax sync fromstart
     Plug 'avdgaag/vim-phoenix', { 'for': 'elixir' }
     Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
     Plug 'andyl/vim-projectionist-elixir', { 'for': 'elixir' }
@@ -134,11 +105,12 @@
     " Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
     Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
     Plug 'slim-template/vim-slim', { 'for': 'slim' }
-    Plug 'posva/vim-vue'
     Plug 'fatih/vim-go', { 'for': 'go' }
     Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+      " Vim 同梱の ftplugin がインデント幅を 4 に上書きするのを止める
+      let g:markdown_recommended_style = 0
       let g:vim_markdown_folding_disabled = 1
       let g:vim_markdown_frontmatter = 1
       let g:vim_markdown_new_list_item_indent = 2
@@ -160,17 +132,11 @@
       " let g:terraform_fmt_on_save=1
       let g:terraform_align=1
       let g:terraform_fold_sections=1
-      autocmd FileType terraform setlocal commentstring=#%s
+      autocmd MyVimrc FileType terraform setlocal commentstring=#%s
       nmap <silent>,tf :TerraformFmt<CR>
     Plug 'lifepillar/pgsql.vim'
     Plug 'rust-lang/rust.vim'
       let g:rustfmt_autosave = 1
-    Plug 'racer-rust/vim-racer'
-      set hidden "保存せずに buffer を移動する
-      au FileType rust nmap gd <Plug>(rust-def)
-      au FileType rust nmap gs <Plug>(rust-def-split)
-      au FileType rust nmap gx <Plug>(rust-def-vertical)
-      au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
     call plug#end()
 
@@ -189,9 +155,6 @@
     " tab関連
     set expandtab "タブの代わりに空白文字挿入
     set ts=2 sw=2 sts=0 "タブは半角2文字分のスペース
-    " set tabstop=2
-    " set shiftwidth=2
-    " set softtabstop=0
 
     " 検索系
     set ignorecase "検索文字列が小文字の場合は大文字小文字を区別なく検索する
@@ -203,7 +166,8 @@
     set smartindent "オートインデント
     set clipboard+=autoselect
     set number "行番号表示
-    set showmode "モード表示
+    set noshowmode "モードは lightline に表示するので標準の表示は消す
+    set hidden "保存せずに buffer を移動する
     set title "編集中のファイル名を表示
     set ruler "ルーラーの表示
     set showcmd "入力中のコマンドをステータスに表示する
@@ -219,40 +183,35 @@
     set backspace=indent,eol,start " 普通にバックスペースで削除できるようにする
     set nojoinspaces
     set noswapfile
-    set noshowmode
 
     " FileType configuration {{{
 
-      autocmd FileType ruby       setlocal sw=2 sts=2 ts=2
-      autocmd FileType coffee     setlocal sw=2 sts=2 ts=2
-      autocmd FileType scss       setlocal sw=2 sts=2 ts=2
-      autocmd FileType nginx      setlocal sw=4 sts=4 ts=4 noet
+      autocmd MyVimrc FileType ruby,coffee,scss    setlocal sw=2 sts=2 ts=2
+      autocmd MyVimrc FileType nginx,apache,conf   setlocal sw=4 sts=4 ts=4 noet
+      autocmd MyVimrc FileType css                 setlocal sw=4 sts=4 ts=4 et
 
     " }}}
 
     " ファイルを開いた際に、前回終了時の行で起動
-    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+    autocmd MyVimrc BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
     " コメントアウト行を改行したときにコメントアウトされるのをやめる
     " http://d.hatena.ne.jp/yuichi_katahira/20090117/1232209418
-    autocmd FileType * setlocal formatoptions-=ro
+    autocmd MyVimrc FileType * setlocal formatoptions-=ro
 
     " Colorscheme settings {{{
 
       " molokai {{{
+
+        " colorscheme 読み込み後にカーソル色を上書き
+        " （autocmd を colorscheme より先に登録しておけば起動時にも反映される）
+        autocmd MyVimrc ColorScheme * highlight Cursor  cterm=reverse ctermfg=NONE ctermbg=NONE
+        autocmd MyVimrc ColorScheme * highlight lCursor cterm=reverse ctermfg=NONE ctermbg=NONE
+        autocmd MyVimrc ColorScheme * highlight IndentGuidesOdd  ctermbg=235
+        autocmd MyVimrc ColorScheme * highlight IndentGuidesEven ctermbg=236
+
         let g:molokai_original = 1
         colorscheme molokai
-
-        augroup MyCursorFix
-        autocmd!
-          " colorscheme 読み込み後にカーソル色を上書き
-          autocmd ColorScheme * highlight Cursor  cterm=reverse ctermfg=NONE ctermbg=NONE
-          autocmd ColorScheme * highlight lCursor cterm=reverse ctermfg=NONE ctermbg=NONE
-        augroup END
-
-        " 起動直後にも反映（すでに colorscheme 済みの場合の保険）
-        highlight Cursor  cterm=reverse ctermfg=NONE ctermbg=NONE
-        highlight lCursor cterm=reverse ctermfg=NONE ctermbg=NONE
 
         if &term =~# 'xterm' || &term =~# 'screen' || &term =~# 'tmux'
           let &t_EI = "\<Esc>[2 q"  " NORMAL: 箱
@@ -274,7 +233,7 @@
     set textwidth=0
     if exists('&colorcolumn')
       set colorcolumn=+1
-      autocmd FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=100
+      autocmd MyVimrc FileType sh,cpp,perl,vim,ruby,haml,eruby.html,python,haskell,scheme,javascript,coffee setlocal textwidth=100
     endif
 
     " }}}
@@ -369,13 +328,9 @@
   " Syntax Settings {{{
 
     " RSpec
-    autocmd BufNewFile *_spec.rb 0r ~/.vim/template/rspec.rb
+    autocmd MyVimrc BufNewFile *_spec.rb 0r ~/.vim/template/rspec.rb
     " Gemfile
-    autocmd BufNewFile Gemfile 0r ~/.vim/template/Gemfile
-
-    " ファイルタイプ別の設定
-    autocmd FileType nginx,apache,conf setlocal sw=4 sts=4 ts=4 noet
-    autocmd FileType css setlocal sw=4 sts=4 ts=4 et
+    autocmd MyVimrc BufNewFile Gemfile 0r ~/.vim/template/Gemfile
 
   " }}}
 
@@ -405,7 +360,7 @@
       let g:neosnippet#enable_snipmate_compatibility = 1
 
       " Tell Neosnippet about the other snippets
-      let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+      let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
 
     " }}}
 
@@ -534,10 +489,7 @@
       let g:quickrun_config = {}
       " quickrun rspec
       let g:quickrun_config['ruby.rspec'] = {'command': 'rspec'}
-      augroup UjihisaRSpec
-        autocmd!
-        autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
-      augroup END
+      autocmd MyVimrc BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
       " preview markdown with browser
       " let g:quickrun_config['markdown'] = {
       "       \ 'outputter': 'browser'
@@ -547,7 +499,7 @@
             \ 'outputter' : 'null',
             \ 'command'   : 'open',
             \ 'cmdopt'    : '-a',
-            \ 'args'      : 'Marked\ 2',
+            \ 'args'      : 'Marked',
             \ 'exec'      : '%c %o %a %s',
             \ }
       let g:quickrun_config['markdown.slide'] = {
@@ -571,11 +523,11 @@
 
     " Indent Guides {{{
 
+      let g:indent_guides_enable_on_vim_startup = 1
       let g:indent_guides_start_level = 2
       let g:indent_guides_guide_size  = 1
       let g:indent_guides_auto_colors = 0
-      autocmd VimEnter,ColorScheme * hi IndentGuidesOdd  ctermbg=235
-      autocmd VimEnter,ColorScheme * hi IndentGuidesEven ctermbg=236
+      " 色は colorscheme の設定と一緒に定義している
 
     " }}}
 
@@ -583,7 +535,7 @@
 
       let g:ref_source_webdict_sites = {
             \   'e': {
-            \     'url': 'http://eow.alc.co.jp/%s/UTF-8/?ref=s',
+            \     'url': 'https://eow.alc.co.jp/%s/UTF-8/?ref=s',
             \   }
             \ }
       let g:ref_source_webdict_sites.default = 'e'
@@ -604,7 +556,7 @@
             \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
             \ },
             \ 'component_function': {
-            \   'gitbranch': 'fugitive#head'
+            \   'gitbranch': 'FugitiveHead'
             \ },
             \ }
 
@@ -629,7 +581,7 @@
        nnoremap / :M/
        nnoremap ? :M?
        nnoremap ,/ /
-       nnoremap ,? /
+       nnoremap ,? ?
 
      " }}}
 
@@ -662,19 +614,9 @@
 
     " }}}
 
-    " vim-rspec {{{
-
-      " let g:rspec_command = 'Dispatch bin/rspec {spec}'
-      " nmap <silent><leader>c :call RunCurrentSpecFile()<CR>
-      " nmap <silent><leader>n :call RunNearestSpec()<CR>
-      " nmap <silent><leader>l :call RunLastSpec()<CR>
-      " nmap <silent><leader>a :call RunAllSpecs()<CR>
-
-    " }}}
-
     " vim-template {{{
 
-      autocmd User plugin-template-loaded silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
+      autocmd MyVimrc User plugin-template-loaded silent %s/<%=\(.\{-}\)%>/\=eval(submatch(1))/ge
 
     " }}}
 
